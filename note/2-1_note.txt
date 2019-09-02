@@ -1,0 +1,78 @@
+2-1 執筆ノート
+
+## この章の方針
+
+HTMLのマークアップの基礎。
+これを読むと、とりあえず最低限のマークアップは理解できるようになるというレベル。
+
+
+## 調査・確認したこと
+
+### tbodyの開始タグ省略時の挙動
+
+tbodyの開始タグを省略した際、ブラウザ側の実装として実際にtbody要素は補われるのか?
+→補われた。tag-omit.htmlをchromeで表示して確認。
+
+### </br>の挙動
+
+終了タグ </br> が出現すると、パースエラーとなり、 <br> の開始タグが補われる。
+出典: https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inbody
+>An end tag whose tag name is "br"
+>Parse error. Drop the attributes from the token, and act as described in the next entry; i.e. act as if this was a "br" start tag token with no attributes, rather than the end tag token that it actually is.
+
+※next entryというのは「A start tag whose tag name is one of: "area", "br", "embed", "img", "keygen", "wbr"」
+
+ブラウザ側の挙動もそうなっている?
+→error-br.htmlをchromeで表示し、<br></br>がbr要素ふたつと解釈されることを確認。
+
+### 内容が空 = void element という説明でいいか?
+
+簡単に言えばそうなるが、内容モデル "Nothing" と空要素は厳密には異なるコンセプトであると書いてある
+https://html.spec.whatwg.org/multipage/dom.html#the-nothing-content-model
+
+まあいいかという判断。
+
+## その他メモ
+
+### 空要素の例をbrにした理由
+
+空要素の例としてはimg要素のほうが思い浮かびそうだが、そうしなかったのは、img要素の設計がよくないから。
+img要素は、本来は内容を持つべき要素であり、空要素ではなく代替テキストを内容とする要素として設計すべきだった。
+HTML4ではobject要素がそのように設計され、imgもobjectに置き換えたいという思惑があったようだが失敗して今日に至っている。
+
+### 要素の内容がたまたま空になる例
+
+script要素で頻繁に発生するが、script要素は特殊なので扱いにくい……
+
+関係ないがscript要素は内容書けるやつと書けないやつを別の要素にすればよかったのにと思う。
+そうするとXMLから吐くのもやりやすいし。
+
+### 内容モデルの話
+
+ブロックとインラインがなくなって複雑に。この章には書かないが、どこかで触れる必要がある
+次の章でふれるか?
+
+### DOCTYPEについて
+
+この章だけでHTML文書を完成させられるようにすると考えるなら、でDOCTYPEについても触れるべきではある。
+とはいえ他のマークアップと性質が異なるので一緒には扱いにくい。
+迷ったが、いったん触れずに次の章に送ることにした。
+
+### ブール型属性は何を「省略」しているのか
+
+これは属性値を省略してるいのか、属性名を省略しているのか? という疑問があるかもしれない。
+HTML5では checked="" のような書き方は明らかに属性値の略記である。
+checked と書いた時も属性値の省略と思われるかもしれないが、実はこれは難しい問題で、HTML4では属性名の方が省略されているという解釈だった (SGMLのルールで、択一式属性の属性名が省略できる)。
+HTML5でどうなのかは謎で、何が省略されているのかは書かれていない (あえて明記を避けている可能性が大)。
+
+https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes
+
+
+## コラム
+
+コラム候補:
+- tbodyの歴史
+- DOCTYPEについて
+- XML構文ではどうなるか
+
+
