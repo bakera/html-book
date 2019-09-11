@@ -1,0 +1,88 @@
+
+# 書く内容
+
+主に https://html.spec.whatwg.org/multipage/syntax.html のタグ以外の部分について。
+
+
+## マーク宣言
+
+パーサーの字句解析アルゴリズムには Markup declaration open state というステートがある
+
+
+
+## コメント
+
+https://html.spec.whatwg.org/multipage/syntax.html#comments
+
+The string "<!--".
+Optionally, text, with the additional restriction that the text must not start with the string ">", nor start with the string "->", nor contain the strings "<!--", "-->", or "--!>", nor end with the string "<!-".
+The string "-->".
+The text is allowed to end with the string "<!", as in <!--My favorite operators are > and <!-->.
+
+
+https://html.spec.whatwg.org/multipage/parsing.html#comment-start-state
+
+正しくないコメントがどのようにパースされるか
+
+<! をパースすると MDO Stateになる
+
+MDO
+<!-- で空のコメントノードを作って comment start state へ
+
+comment start
+<!--- で  comment start dash state へ
+<!--> は abrupt-closing-of-empty-comment parse errorとなりコメントはここで終了。空のコメントノードができる
+<!--x comment stateへ
+
+comment start dash
+<!---- comment end state
+<!---> abrupt-closing-of-empty-comment parse error. となりコメント終了。空のコメント。
+<!---(EOF) eof-in-comment parse error となりコメント終了。空のコメントができてEOF
+<!---x - をコメントの頭に足してComment stateへ
+
+Comment state
+<!--xxx<　xxx< をコメントにして comment less-than sign state　へ
+<!--xxx- comment end dash state　へ
+<!--xxx(NUL) unexpected-null-character parse errorとなり、U+FFFD REPLACEMENT CHARACTER をコメントに追加する
+<!--xxx(EOF) eof-in-comment parse error となりxxxがコメントになる。
+
+Comment less-than sign state
+<!--xxx<! xxx<! をコメントにして comment less-than sign bang state へ
+<!--xxx<< xxx<< をコメントにする。
+<!--xxx<x comment state にもどる (つまり xxx<x は普通にコメントとみなされる)
+
+Comment less-than sign bang state
+<!--xxx<!- comment less-than sign bang dash stateへ
+<!--xxx<!x comment state にもどる (つまり xxx<!x は普通にコメントとみなされる)
+ 
+Comment less-than sign bang dash state
+<!--xxx<!-- comment less-than sign bang dash dash state へ
+<!--xxx<!-x comment end dash stateへ
+
+Comment less-than sign bang dash dash state
+<!--xxx<!--> xxx<!をコメントにしてcomment end state へ
+<!--xxx<!--(EOF) comment end state へ
+<!--xxx<!--x nested-comment parse errorとなり comment end stateへ
+
+Comment end dash state
+<!--xxx-- comment end stateへ
+<!--xxx-(EOF) eof-in-comment parse errorとなりxxxというコメントが追加される
+<!--xxx-x xxx-x がコメントになる。comment state に戻る。
+
+Comment end state
+<!--xxx--> コメントが終わり data stateに戻る
+<!--xxx--! comment end bang state へ
+<!--xxx--- コメントに - を追加 (つまりxxx-がコメントになる)
+<!--xxx--(EOF) eof-in-comment parse error となってコメントノードができてEOF
+<!--xxx--x コメントに -- を追加して comment state へ
+
+Comment end bang state
+<!--xxx--!- コメントに --! を追加して comment end dash state へ
+<!--xxx--!> incorrectly-closed-comment parse error となりコメント終了、xxxがコメントになる。data stateへ戻る
+<!--xxx--!(EOF) eof-in-comment parse error、いつもの
+<!--xxx--!x コメントに --! を追加して comment state へ
+
+
+
+
+
