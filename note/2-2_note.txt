@@ -62,7 +62,7 @@ Comment less-than sign bang dash state
 Comment less-than sign bang dash dash state
 <!--xxx<!--> xxx<!をコメントにしてcomment end state へ
 <!--xxx<!--(EOF) comment end state へ
-<!--xxx<!--x nested-comment parse errorとなり comment end stateへ
+<!--xxx<!--x nested-comment parse errorとなり xxx<!--x をコメントにして comment end stateへ
 
 Comment end dash state
 <!--xxx-- comment end stateへ
