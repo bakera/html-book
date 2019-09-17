@@ -83,6 +83,10 @@ Comment end bang state
 <!--xxx--!x コメントに --! を追加して comment state へ
 
 
+## Bogus Comment
 
-
+SGMLの処理命令 <? は unexpected-question-mark-instead-of-tag-name parse error となり Bogus Comment と扱われる
+End tag open stateでASCII Alpha、>、EOF以外が出現するとinvalid-first-character-of-tag-name parse error となり Bogus Comment
+HTMLの文脈でCDATA区間が出現すると cdata-in-html-content parse error となり Bogus Comment
+MDOのあとに -、DOCTYPE、[CDATA[ 以外が出現すると incorrectly-opened-comment parse error となりBogus Comment
 
