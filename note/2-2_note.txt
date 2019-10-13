@@ -92,30 +92,58 @@ MDOのあとに -、DOCTYPE、[CDATA[ 以外が出現すると incorrectly-opene
 
 
 
+## 文字参照
 
-## 属性のパース
+https://html.spec.whatwg.org/multipage/syntax.html#character-references
 
-同じ属性名が複数ある場合はduplicate-attribute parse errorとなり、あとのほうが無視される
-
-When the user agent leaves the attribute name state (and before emitting the tag token, if appropriate), the complete attribute's name must be compared to the other attributes on the same token; if there is already an attribute on the token with the exact same name, then this is a duplicate-attribute parse error and the new attribute must be removed from the token.
-
-
-属性のパース時、Before attribute name stateを抜ける時に属性名・属性値共に空文字列がセットされる。
-
->Start a new attribute in the current tag token. Set that attribute name and value to the empty string. Reconsume in the attribute name state.
-
-属性名のみで属性値がない場合、属性値が空文字列のまま終了する、すなわち値が空の属性ができる。
-
-U+003E GREATER-THAN SIGN (>)
-Switch to the data state. Emit the current tag token.
-
-Anything else
-Start a new attribute in the current tag token. Set that attribute name and value to the empty string. Reconsume in the attribute name state.
-
-これにより <input checked> は <inpiut checked=""> と同じとみなされる。
-同様に <img alt> は <img alt=""> と同じである。chromeの開発者ツールなどは前者に正規化して表示する。
+ここで定義されている
+https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references
 
 
+名前付き文字参照は属性値の中と外とで解釈が異なる
+属性値の中かつセミコロンがないかつ後ろが=や数字の場合は文字参照として展開せずにそのままのテキストとみなされる、パースエラーにもならない
+
+https://html.spec.whatwg.org/multipage/parsing.html#named-character-reference-state
+>If the character reference was consumed as part of an attribute, and the last character matched is not a U+003B SEMICOLON character (;), and the next input character is either a U+003D EQUALS SIGN character (=) or an ASCII alphanumeric, then, for historical reasons, flush code points consumed as a character reference and switch to the return state. 
+
+これはURLに含まれる&を文字参照として展開しないための歴史的なルール
+HTML4では「エスケープしろ」「めんどくさいのでそもそも&ではなく;で区切ろう」など書かれていたが残念ながら後者は普及しなかった
+ブラウザからフォームをGETで送ると普通に&区切りになってしまうので仕方ないね
+
+それ以外で末尾にセミコロンがないと missing-semicolon-after-character-reference
+実はそもそもセミコロンなしで解釈される名前付き文字参照は限られている
+表の中にセミコロンなしで書いてあるものだけが解釈可能
+
+セミコロンがないときは最も長いものにマッチする
+
+大文字小文字を区別する
+Aacute; と aacute; は別の文字
+
+AMP LT QUOT GTなどは大文字の参照も定義されているので大文字でも良い
+Ampは定義されていないので混ざるのはだめ
+
+XML/SGMLの文字参照ではないので「実体」という言葉は使わなくなった。
+
+>The character reference names originate from XML Entity Definitions for Characters, though only the above is considered normative. [XMLENTITY]
+
+起源はそれだがここに書かれていることだけが標準である (つまりXMLの文字参照ではない) ということ。
+なにげに以下のファイルがentities.jsonだったりして排除しきれていない
+https://html.spec.whatwg.org/entities.json
+
+
+一覧にマッチしないと unknown-named-character-reference parse error になる
+
+
+今のHTMLはUTF-8なので基本なんでも書ける
+ただしマークをマークとして解釈されないようにするのに必要
+&自体もマークなので&amp;とする
+
+script要素の中など例外もある
+
+
+
+
+https://html.spec.whatwg.org/multipage/syntax.html#cdata-sections
 
 
 
