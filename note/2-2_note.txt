@@ -140,8 +140,13 @@ https://html.spec.whatwg.org/entities.json
 
 script要素の中など例外もある
 
+>を&gt;とエスケープしなければならない局面はほとんどない
+引用符で括っていない属性値の中くらい
 
 
+
+
+CDATA区間
 
 https://html.spec.whatwg.org/multipage/syntax.html#cdata-sections
 
