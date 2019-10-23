@@ -1,0 +1,173 @@
+
+# 書く内容
+
+主に https://html.spec.whatwg.org/multipage/syntax.html のタグ以外の部分について。
+
+
+## マーク宣言
+
+パーサーの字句解析アルゴリズムには Markup declaration open state というステートがある
+
+
+
+## コメント
+
+https://html.spec.whatwg.org/multipage/syntax.html#comments
+
+The string "<!--".
+Optionally, text, with the additional restriction that the text must not start with the string ">", nor start with the string "->", nor contain the strings "<!--", "-->", or "--!>", nor end with the string "<!-".
+The string "-->".
+The text is allowed to end with the string "<!", as in <!--My favorite operators are > and <!-->.
+
+
+https://html.spec.whatwg.org/multipage/parsing.html#comment-start-state
+
+正しくないコメントがどのようにパースされるか
+
+<! をパースすると MDO Stateになる
+
+MDO
+<!-- で空のコメントノードを作って comment start state へ
+
+comment start
+<!--- で  comment start dash state へ
+<!--> は abrupt-closing-of-empty-comment parse errorとなりコメントはここで終了。空のコメントノードができる
+<!--x comment stateへ
+
+comment start dash
+<!---- comment end state
+<!---> abrupt-closing-of-empty-comment parse error. となりコメント終了。空のコメント。
+<!---(EOF) eof-in-comment parse error となりコメント終了。空のコメントができてEOF
+<!---x - をコメントの頭に足してComment stateへ
+
+Comment state
+<!--xxx<　xxx< をコメントにして comment less-than sign state　へ
+<!--xxx- comment end dash state　へ
+<!--xxx(NUL) unexpected-null-character parse errorとなり、U+FFFD REPLACEMENT CHARACTER をコメントに追加する
+<!--xxx(EOF) eof-in-comment parse error となりxxxがコメントになる。
+
+Comment less-than sign state
+<!--xxx<! xxx<! をコメントにして comment less-than sign bang state へ
+<!--xxx<< xxx<< をコメントにする。
+<!--xxx<x comment state にもどる (つまり xxx<x は普通にコメントとみなされる)
+
+Comment less-than sign bang state
+<!--xxx<!- comment less-than sign bang dash stateへ
+<!--xxx<!x comment state にもどる (つまり xxx<!x は普通にコメントとみなされる)
+ 
+Comment less-than sign bang dash state
+<!--xxx<!-- comment less-than sign bang dash dash state へ
+<!--xxx<!-x comment end dash stateへ
+
+Comment less-than sign bang dash dash state
+<!--xxx<!--> xxx<!をコメントにしてcomment end state へ
+<!--xxx<!--(EOF) comment end state へ
+<!--xxx<!--x nested-comment parse errorとなり xxx<!--x をコメントにして comment end stateへ
+
+Comment end dash state
+<!--xxx-- comment end stateへ
+<!--xxx-(EOF) eof-in-comment parse errorとなりxxxというコメントが追加される
+<!--xxx-x xxx-x がコメントになる。comment state に戻る。
+
+Comment end state
+<!--xxx--> コメントが終わり data stateに戻る
+<!--xxx--! comment end bang state へ
+<!--xxx--- コメントに - を追加 (つまりxxx-がコメントになる)
+<!--xxx--(EOF) eof-in-comment parse error となってコメントノードができてEOF
+<!--xxx--x コメントに -- を追加して comment state へ
+
+Comment end bang state
+<!--xxx--!- コメントに --! を追加して comment end dash state へ
+<!--xxx--!> incorrectly-closed-comment parse error となりコメント終了、xxxがコメントになる。data stateへ戻る
+<!--xxx--!(EOF) eof-in-comment parse error、いつもの
+<!--xxx--!x コメントに --! を追加して comment state へ
+
+
+## Bogus Comment
+
+SGMLの処理命令 <? は unexpected-question-mark-instead-of-tag-name parse error となり Bogus Comment と扱われる
+End tag open stateでASCII Alpha、>、EOF以外が出現するとinvalid-first-character-of-tag-name parse error となり Bogus Comment
+HTMLの文脈でCDATA区間が出現すると cdata-in-html-content parse error となり Bogus Comment
+MDOのあとに -、DOCTYPE、[CDATA[ 以外が出現すると incorrectly-opened-comment parse error となりBogus Comment
+
+
+
+## 文字参照
+
+https://html.spec.whatwg.org/multipage/syntax.html#character-references
+
+ここで定義されている
+https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references
+
+
+名前付き文字参照は属性値の中と外とで解釈が異なる
+属性値の中かつセミコロンがないかつ後ろが=や数字の場合は文字参照として展開せずにそのままのテキストとみなされる、パースエラーにもならない
+
+https://html.spec.whatwg.org/multipage/parsing.html#named-character-reference-state
+>If the character reference was consumed as part of an attribute, and the last character matched is not a U+003B SEMICOLON character (;), and the next input character is either a U+003D EQUALS SIGN character (=) or an ASCII alphanumeric, then, for historical reasons, flush code points consumed as a character reference and switch to the return state. 
+
+これはURLに含まれる&を文字参照として展開しないための歴史的なルール
+HTML4では「エスケープしろ」「めんどくさいのでそもそも&ではなく;で区切ろう」など書かれていたが残念ながら後者は普及しなかった
+ブラウザからフォームをGETで送ると普通に&区切りになってしまうので仕方ないね
+
+それ以外で末尾にセミコロンがないと missing-semicolon-after-character-reference
+実はそもそもセミコロンなしで解釈される名前付き文字参照は限られている
+表の中にセミコロンなしで書いてあるものだけが解釈可能
+
+セミコロンがないときは最も長いものにマッチする
+
+大文字小文字を区別する
+Aacute; と aacute; は別の文字
+
+AMP LT QUOT GTなどは大文字の参照も定義されているので大文字でも良い
+Ampは定義されていないので混ざるのはだめ
+
+XML/SGMLの文字参照ではないので「実体」という言葉は使わなくなった。
+
+>The character reference names originate from XML Entity Definitions for Characters, though only the above is considered normative. [XMLENTITY]
+
+起源はそれだがここに書かれていることだけが標準である (つまりXMLの文字参照ではない) ということ。
+なにげに以下のファイルがentities.jsonだったりして排除しきれていない
+https://html.spec.whatwg.org/entities.json
+
+
+一覧にマッチしないと unknown-named-character-reference parse error になる
+
+
+今のHTMLはUTF-8なので基本なんでも書ける
+ただしマークをマークとして解釈されないようにするのに必要
+&自体もマークなので&amp;とする
+
+script要素の中など例外もある
+
+>を&gt;とエスケープしなければならない局面はほとんどない
+引用符で括っていない属性値の中くらい
+
+
+# 数値文字参照
+
+If the number is 0x00, then this is a null-character-reference parse error. Set the character reference code to 0xFFFD.
+
+If the number is greater than 0x10FFFF, then this is a character-reference-outside-unicode-range parse error. Set the character reference code to 0xFFFD.
+
+If the number is a surrogate, then this is a surrogate-character-reference parse error. Set the character reference code to 0xFFFD.
+
+If the number is a noncharacter, then this is a noncharacter-character-reference parse error.
+
+If the number is 0x0D, or a control that's not ASCII whitespace, then this is a control-character-reference parse error. If the number is one of the numbers in the first column of the following table, then find the row with that number in the first column, and set the character reference code to the number in the second column of that row.
+
+NULは書けない
+0x10FFFF以上は書けない
+サロゲートペアの片割れは書けない
+制御文字は書けない、一部の文字は置き換えられる
+
+
+
+CDATA区間
+
+https://html.spec.whatwg.org/multipage/syntax.html#cdata-sections
+
+
+
+
+

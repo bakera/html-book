@@ -1,0 +1,35 @@
+
+
+## 属性のパース
+基本シンタックスここ
+https://html.spec.whatwg.org/multipage/syntax.html#attributes-2
+
+
+同じ属性名が複数ある場合はduplicate-attribute parse errorとなり、あとのほうが無視される
+
+When the user agent leaves the attribute name state (and before emitting the tag token, if appropriate), the complete attribute's name must be compared to the other attributes on the same token; if there is already an attribute on the token with the exact same name, then this is a duplicate-attribute parse error and the new attribute must be removed from the token.
+
+
+属性のパース時、Before attribute name stateを抜ける時に属性名・属性値共に空文字列がセットされる。
+
+>Start a new attribute in the current tag token. Set that attribute name and value to the empty string. Reconsume in the attribute name state.
+
+属性名のみで属性値がない場合、属性値が空文字列のまま終了する、すなわち値が空の属性ができる。
+
+U+003E GREATER-THAN SIGN (>)
+Switch to the data state. Emit the current tag token.
+
+Anything else
+Start a new attribute in the current tag token. Set that attribute name and value to the empty string. Reconsume in the attribute name state.
+
+これにより <input checked> は <inpiut checked=""> と同じとみなされる。
+同様に <img alt> は <img alt=""> と同じである。chromeの開発者ツールなどは前者に正規化して表示する。
+
+
+
+
+https://html.spec.whatwg.org/multipage/syntax.html#optional-tags
+
+
+
+
