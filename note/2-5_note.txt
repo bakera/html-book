@@ -1,0 +1,14 @@
+https://html.spec.whatwg.org/multipage/syntax.html
+
+
+
+
+https://momdo.github.io/html/syntax.html#start-tags
+self-closingが「自己終了」と訳されていますが、end tagが「終了タグ」でend-終了という関係があるので、closeを終了としない方が良いのではないか? という疑問が。
+XMLを見るとそもそも self-closing とは言っていなくてEmpty-Element Tagsで通している (JISでは「空要素タグ」と訳されている) のであまり参考にならなりませんでした。
+
+
+
+
+
+
