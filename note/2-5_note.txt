@@ -9,6 +9,15 @@ XMLを見るとそもそも self-closing とは言っていなくてEmpty-Elemen
 
 
 
+エラー処理
+https://html.spec.whatwg.org/multipage/parsing.html#an-introduction-to-error-handling-and-strange-cases-in-the-parser
+This section is non-normative.　とあるが内容はパーサー仕様のわかりやすい説明なので、ここで説明されている挙動自体は標準。
+
+
+
+ノアの箱舟
+https://html.spec.whatwg.org/multipage/parsing.html#the-list-of-active-formatting-elements
+
 
 
 

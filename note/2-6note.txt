@@ -1,0 +1,16 @@
+
+
+<削ったもの>
+なお、使われている文字符号化方式の種類によっては、かなり早い段階で確定することもあります。文字符号化方式の中には「ASCII互換符号化」(ASCII-compatible encoding) とそうでないものもあり、ASCIIとの互換性がない符号化は早期に確定します。
+
+encoding nameとencoding labels
+https://encoding.spec.whatwg.org/#names-and-labels
+
+
+UTF-16BE, LE
+ガリバー旅行記の話する?
+
+
+ASCII-compatible encoding 
+https://html.spec.whatwg.org/multipage/infrastructure.html#ascii-compatible-encoding
+
