@@ -15,44 +15,44 @@
 }
 
 /* closed */
-.hamburgerMenu.js-closed{
+.hamburgerMenu{
     border: none;
     background: transparent;
     padding: 0;
 }
 
-.hamburgerMenu.js-closed .button{
+.hamburgerMenu .button{
     border: 1px solid #000;
     background: #fec;
     width: 20px;
     padding: 5px;
 }
-.hamburgerMenu.js-closed .button .close-icon{
+.hamburgerMenu .button .close-icon{
     display: none;
 }
-.hamburgerMenu.js-closed .button .menu-icon{
+.hamburgerMenu .button .menu-icon{
     display: inline-block;
 }
-.hamburgerMenu.js-closed ul{
+.hamburgerMenu ul{
     display: none;
 }
 /* opened */
-.hamburgerMenu{
+.hamburgerMenu.js-opened{
     border: 1px solid #000;
     background: #fec;
     padding: 5px;
 }
-.hamburgerMenu .button{
+.hamburgerMenu.js-opened .button{
     border: none;
     background: transparent;
 }
-.hamburgerMenu .button .menu-icon{
+.hamburgerMenu.js-opened .button .menu-icon{
     display: none;
 }
-.hamburgerMenu .button .close-icon{
+.hamburgerMenu.js-opened .button .close-icon{
     display: inline-block;
 }
-.hamburgerMenu ul{
+.hamburgerMenu.js-opened ul{
     display: block;
 }
 </style>
@@ -61,13 +61,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const hamburgerMenu = document.querySelector('.hamburgerMenu');
     const hamburgerMenuButton = hamburgerMenu.querySelector('.button');
     hamburgerMenuButton.addEventListener('click', event => {
-        hamburgerMenu.classList.toggle('js-closed');
+        hamburgerMenu.classList.toggle('js-opened');
     });
 });    
 </script>
 <body>
 
-<div class="hamburgerMenu js-closed">
+<div class="hamburgerMenu">
     <div class="button">
         <span class="menu-icon"></span>
         <span class="close-icon"></span>
