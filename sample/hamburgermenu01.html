@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<title>hamburgermenu</title>
+<style>
+.hamburgerMenu .button span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+.hamburgerMenu .button .menu-icon{
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath stroke='%23000' stroke-width='2' d='M2 4h16M2 11h16M2 18h16'/%3E%3C/svg%3E");
+}
+.hamburgerMenu .button .close-icon{
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath stroke='%23000' stroke-width='2' d='M2 2l16 16M2 18l16 -16'/%3E%3C/svg%3E");
+}
+
+/* closed */
+.hamburgerMenu{
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.hamburgerMenu .button{
+    border: 1px solid #000;
+    background: #fec;
+    width: 20px;
+    padding: 5px;
+}
+.hamburgerMenu .button .close-icon{
+    display: none;
+}
+.hamburgerMenu .button .menu-icon{
+    display: inline-block;
+}
+.hamburgerMenu ul{
+    display: none;
+}
+/* opened */
+.hamburgerMenu.js-opened{
+    border: 1px solid #000;
+    background: #fec;
+    padding: 5px;
+}
+.hamburgerMenu.js-opened .button{
+    border: none;
+    background: transparent;
+}
+.hamburgerMenu.js-opened .button .menu-icon{
+    display: none;
+}
+.hamburgerMenu.js-opened .button .close-icon{
+    display: inline-block;
+}
+.hamburgerMenu.js-opened ul{
+    display: block;
+}
+</style>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+    const hamburgerMenu = document.querySelector('.hamburgerMenu');
+    const hamburgerMenuButton = hamburgerMenu.querySelector('.button');
+    hamburgerMenuButton.addEventListener('click', event => {
+        hamburgerMenu.classList.toggle('js-opened');
+    });
+});    
+</script>
+<body>
+
+<div class="hamburgerMenu">
+    <div class="button">
+        <span class="menu-icon"></span>
+        <span class="close-icon"></span>
+    </div>
+    <ul>
+        <li><a href="/">ホーム</a></li>
+        <!-- メニュー -->
+    </ul>
+</div>
+</body>
