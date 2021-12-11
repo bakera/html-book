@@ -1,1 +1,4 @@
 .textlintrc
+.DS_Store
+sample/
+note/
