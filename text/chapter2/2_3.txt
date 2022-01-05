@@ -74,7 +74,6 @@ foo/bar.html
 ・./baz2.html → /foo/bar/baz2.html
 ・../baz2.html → /foo/baz2.html
 
-
 ＜中見出し＞
 URLに使える文字とパーセントエンコード
 ＜本文＞
@@ -109,7 +108,7 @@ URLに使用できない文字や、特別な意味に解釈される文字は�
 仕様上、%が単独で出現したり、後ろ2文字が16進数と解釈できない場合は、そのまま%という文字とみなすことになっています。たとえば、%xxxという文字列は、そのまま%xxxと解釈されます。しかし、ウェブサーバーやプロキシーの中には、%が単独で出現すると"400 bad request"エラーを返すものもあります。
 パーセントエンコード・デコードの処理の詳細については、URL Standardを参照してください。
 
-<memo＞
+＜memo＞
 1.3. Percent-encoded bytes
 https://url.spec.whatwg.org/#percent-encoded-bytes
 
@@ -146,7 +145,7 @@ URLで示されるリソースを取得することを「フェッチ（Fetch）
 ・blob
 ・data
 
-<memo>
+＜memo＞
 Fetch Living Standard
 https://fetch.spec.whatwg.org/
 
@@ -197,7 +196,3 @@ Fetchスキーム以外のURLのスキームは、リソースを取得できな
 <img src="javascript:alert(1)" alt="alert">
 
 ＜本文＞
-
-
-
-

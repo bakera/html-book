@@ -43,12 +43,12 @@ table要素の内容モデルは複雑です。caption要素、colgroup要素、
 table要素には最低でもtbody要素が1つ以上必要です。しかし、tbody要素は開始タグと終了タグが共に省略可能であるため、何も書かなくてもパース時にtbody要素が補われます。そのため、table要素の内容に何も書かない場合でも構文違反にはなりません。また、上記の例のように、tr要素をtable要素の直接の子要素であるかのような記述も可能です。ただしこの場合、tr要素はtbody要素の子要素になります。tbody要素についての説明も参照してください。
 table要素直下には、これらテーブルに関連する要素のほかにscript要素とtemplate要素を入れることができますが、他の要素やテキストは入れられません。本来入れられない要素がtable要素の内部に出現した場合、"foster parenting"と呼ばれる特殊なエラー処理が行われ、該当の要素がtable要素の前に挿入されます。このエラー処理の詳細については、Chapter2-8を参照してください。
 
-<memo>
+＜memo＞
 空のtable要素は意味のないマークアップなので、HTML Checkerで報告されないからといってそのように記述してはなりません。
 
 ＜小見出し＞
 属性
-<本文＞
+＜本文＞
 ここではtable要素の廃止された属性について説明します。
 
 ＜丸見出し＞
@@ -58,11 +58,11 @@ summary属性
 ウェブアクセシビリティのために導入された属性ですが、画面表示されないスクリーンリーダーのためだけの説明を設定・保守するのは困難だったこともあり、適切な利用法は普及しませんでした。ブラウザーのCSSのサポートが貧弱であった時代では、レイアウトの目的でtable要素が使われていたこともあり、summary="layout table"という無意味な指定が一部で普及してしまいました。この用法は、Techniques for WCAG 2.1 F46において名指しで否定されています。
 そのような利用状況を鑑みて、現在のHTML仕様では削除されています。テーブルの説明を提供したい場合は、地の文やcaption要素などで提供します。そのほかにもHTML仕様で複数の実装パターンが説明されています。
 
-<memo>
+＜memo＞
 Failure of Success Criterion 1.3.1 due to using th elements, caption elements, or non-empty summary attributes in layout tables
 https://www.w3.org/WAI/WCAG21/Techniques/failures/F46.html
 
-<memo＞
+＜memo＞
 4.9.1.1 Techniques for describing tables
 https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques
 
@@ -203,9 +203,8 @@ rowspan属性とcolspan属性
 ＜本文＞
 th要素およびtd要素にrowspan属性を指定すると、1つのセルを複数行にまたがるようにできます。同様に、colspan属性でセルを複数列にまたがるようにできます。たとえば〓08〓のようになります。表示例は〓09〓となります。
 
-＜memo>
+＜memo＞
 〓09〓はわかりやすいようにCSSでボーダーを付けています。
-
 
 〓08〓rowspan属性とcolspan属性の記述例
 ＜コード＞
@@ -244,7 +243,7 @@ colspan属性の値には1～1000の整数を、rowspan属性の値には0～655
 rowspan属性やcolspan属性を用いると、視覚的に複雑なテーブルを作成できます。しかし、支援技術は見出しとセルの関係性を上手く解釈できない場合があるため、アクセシビリティの観点からは勧められません。可能であれば、セルを拡げることのないシンプルなテーブルで表現することを勧めます。
 また、複数のセルが重なる（オーバーラップする）ような指定はできません。〓10〓は正しくない例です。
 
-<memo>
+＜memo＞
 W3CのWAI Web Accessibility Tutorialsが参考になります。
 Web Accessibility Tutorials
 https://www.w3.org/WAI/tutorials/tables/tips/
@@ -302,7 +301,7 @@ caption要素はtable要素のキャプション（タイトル、表題）を�
 caption要素はtable要素の冒頭、つまりtr要素などが出現する前に記述します。省略は可能ですが、複数置くことはできません。
 caption要素は、figcaption要素と同様の役割を果たします。よって、table要素とfigure要素を併用する場合、具体的にはtable要素がfigure要素の子要素であり、兄弟要素がfigcaption要素しかない場合には、caption要素を用いずにfigcaption要素のみを利用するようにします。
 
-<memo＞
+＜memo＞
 WAI-ARIA 1.2仕様のcaptionロールではcaption要素とfigcaption要素が同じ役割を果たすことが示唆されています。
 
 ＜小見出し＞
@@ -316,10 +315,9 @@ caption要素の内容モデルはFlowです。ただし、子孫要素として
 ＜本文＞
 caption要素にデフォルトのARIAロールはありません。テーブル読み上げ機能を持つスクリーンリーダーのほとんどはcaption要素を認識し、テーブルに差し掛かるとキャプションとして読み上げます。
 
-<memo＞
+＜memo＞
 WAI-ARIA 1.2仕様ではcaptionロールが存在します。
 https://www.w3.org/TR/wai-aria-1.2/#caption
-
 
 ＜中見出し＞
 テーブルの行グループ：thead要素、tbody要素、tfoot要素
@@ -420,7 +418,6 @@ colgroup要素の開始タグは省略可能です。〓16〓は、table要素�
   <col>
   <tbody>
 <!-- 略 -->
-
 
 〓17〓〓16〓の解釈
 ＜コード＞

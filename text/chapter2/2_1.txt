@@ -42,7 +42,7 @@ Chapter1では、HTMLがマークアップ言語であることを説明しま�
 <p>これは本文です。</p>
 <p>この<mark>キーワード</mark>はこの文章で重要なものを表します。</p>
 
-<memo＞
+＜memo＞
 「content」は日本語に訳さず、コンテントやコンテンツと呼ばれることもあります。
 
 ＜本文＞
@@ -50,7 +50,6 @@ Chapter1では、HTMLがマークアップ言語であることを説明しま�
 2行目は開始タグ<p>と終了タグ</p>でマークアップされ、p要素であることを表しています。要素の内容は「これは本文です。」というテキストです。
 3行目は少し複雑です。2行目と同じようにp要素としてマークアップされていますが、要素の内容は単純なテキストではありません。この要素の中にはさらに<mark>と</mark>というタグがあります。
 p要素の内容には、テキストだけでなく、mark要素も入っている形になります。
-
 
 ＜小見出し＞
 終了タグの省略
@@ -61,7 +60,7 @@ p要素の内容には、テキストだけでなく、mark要素も入ってい
 Tag omission in text/html: A p element's end tag can be omitted if the p element is immediately followed by an address, article, aside, blockquote, details, div, dl, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, main, menu, nav, ol, p, pre, section, table, or ul element, or if there is no more content in the parent element and the parent element is an HTML element that is not an a, audio, del, ins, map, noscript, or video element, or an autonomous custom element.
 ＜/引用囲み＞
 
-<memo>
+＜memo＞
 4.4.1 The p element
 https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element
 
@@ -88,7 +87,7 @@ p要素のほかに終了タグが省略可能な要素としては、li要素�
 Tag omission in text/html: Neither tag is omissible.
 ＜/囲み＞
 
-<memo>
+＜memo＞
 4.5.23 The mark element 
 https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element
 
@@ -128,7 +127,6 @@ br要素は終了タグを持たないとされています。このように、
 ＜本文＞
 html要素、head要素、body要素、tbody要素の開始タグが書かれていません。しかしこのマークアップはエラーではなく、〓06〓のように解釈されます。
 
-
 〓06〓ブラウザーによる解釈
 ＜コード＞
 <!DOCTYPE html>
@@ -154,8 +152,6 @@ html要素、head要素、body要素、tbody要素の開始タグが書かれて
 
 ＜本文＞
 このように、タグを一切書かなくても要素が存在する場合があります。とはいえ、HTMLのソースコードを読んだときにわかりにくく、挙動が予想しにくくなるため、ほとんどの場合において開始タグの省略はしません。
-
-
 
 ＜小見出し＞
 要素の入れ子
@@ -196,7 +192,6 @@ html要素、head要素、body要素、tbody要素の開始タグが書かれて
 ＜本文＞
 このようなエラー処理は要素によって異なります。〓08〓の例でmark要素のかわりにb要素を使った場合、エラー処理により、〓09〓のようになります。
 
-
 〓09〓エラー処理による解釈
 ＜コード＞
 <p>ある<b>長いキーワード</b></p>
@@ -210,8 +205,6 @@ HTMLを他の文書に埋め込むなどの場合に、HTMLを文書全体とし
 ここまで、タグを使って要素をマークアップする方法を説明してきましたが、HTML文書を完成させるためには追加で必要なものがあります。
 HTML文書の冒頭には、〓10〓のような「DOCTYPE」と呼ばれるマークを書く必要があります。
 大文字・小文字は区別しないため、小文字で書くこともできます。
-
-
 
 〓10〓DOCTYPEの記述
 ＜コード＞

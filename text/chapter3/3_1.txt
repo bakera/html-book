@@ -37,10 +37,9 @@ lang属性は、要素内の言語（自然言語）を指定するものです�
 ＜コード＞
 <html lang="ja"><!-- ページ全体の言語が日本語であることを表す -->
 
-<memo>
+＜memo＞
 Success Criterion 3.1.1 Language of Page
 https://www.w3.org/TR/WCAG21/#language-of-page
-
 
 このようにページ全体の言語を明示することで、日本語で書かれた文章を持つHTML文書としてユーザーエージェントに認識させることができます。ユーザーエージェントが適切なフォントを選択したり、スクリーンリーダーが適切な音声合成エンジンを選択したりすることが可能になります。
 逆に、誤った言語が指定されていると問題を起こすことがあります。例えばiOSのVoiceOverでは、日本語の文章にlang="en"が指定された場合、うまく読み上げないことがあります。
@@ -68,7 +67,7 @@ Chapter1-3で触れたように、HTML文書はXML構文としても記述でき
 「"http://www.w3.org/1999/xhtml"」はHTMLの名前空間で、この要素と子孫がHTMLの要素であることを表します。
 MIMEタイプtext/htmlで配信される通常のHTML構文では、xmlns属性は不要です。指定自体は可能ですが、属性値として「"http://www.w3.org/1999/xhtml"」以外を指定した場合はエラーになります。
 
-<memo>
+＜memo＞
 HTML仕様で扱う名前空間はInfra Standardの8. Namespacesで定義されています。通常、これを意識する必要はありません。
 8. Namespaces
 https://infra.spec.whatwg.org/#namespaces
@@ -122,7 +121,7 @@ title要素の指針
 サイト名を前に置くべきか、後ろに置くべきかという議論があります。スマートフォンやブラウザーのタブにタイトルが表示されること考えると、表示されるスペースはかなり狭く、長いタイトルの場合は後ろが見切れてしまいます。共通の名称を前に置くと、それぞれのページがすべて同じタイトルに見えてしまう場合があるため、後ろに置くほうがよいでしょう。
 なお、WCAG 2.1達成基準2.4.2ページタイトルでも、ページの主題、または目的を説明するタイトルを付けることを求めています
 
-<memo>
+＜memo＞
 Success Criterion 2.4.2 Page Titled
 https://www.w3.org/TR/WCAG21/#page-titled
 
@@ -153,7 +152,6 @@ base要素の属性には以下のようなものがあります。
 ...
 <a href="page.html">ページ</a>
 
-
 ＜丸見出し＞
 デフォルトのウィンドウ表示位置（target属性）
 ＜本文＞
@@ -164,7 +162,7 @@ base要素の属性には以下のようなものがあります。
 ＜コード＞
 <base target="_blank">
 
-<memo>
+＜memo＞
 Success Criterion 3.2.5 Change on Request
 https://www.w3.org/TR/WCAG21/#change-on-request
 
@@ -197,7 +195,7 @@ meta要素には、次の4つの属性のうち、少なくとも1つを指定�
 charset属性を指定した場合を除き、content属性も同時に指定しなければなりません。
 なお、meta要素のname属性については、仕様に記載されている「標準メタデータ名」と、WHATWG Wiki MetaExtensions pageに登録される「他のメタデータ名」があります。本書ではこのうちのいくつかについて取り上げていきます。
 
-<memo＞
+＜memo＞
 WHATWG Wiki MetaExtensions page
 https://wiki.whatwg.org/wiki/MetaExtensions
 
@@ -231,7 +229,7 @@ http-equiv属性を指定すると、これはプラグマ（Pragma）と解釈�
 前述の文字エンコーディング宣言も、HTTPレスポンスヘッダーで文字符号化方式を提供していれば、省略可能です。ただし、省略することで、ローカルにダウンロードしてHTMLを閲覧した場合などに文字化けすることがあるため、保険として指定しておくとよいでしょう。
 http-equiv属性は列挙型属性であり、決められた値しか指定できません。詳細は仕様の4.2.5.3 Pragma directivesを参照してください。ここでは、代表的なものに絞って説明します。
 
-<memo>
+＜memo＞
 4.2.5.3 Pragma directives
 https://html.spec.whatwg.org/multipage/semantics.html#pragma-directives
 
@@ -261,11 +259,11 @@ http-equiv="refresh"を指定して、content属性に負ではない整数を�
 ＜コード＞
 <meta http-equiv="Refresh" content="0; URL=https://www.example.net/">
 
-<memo>
+＜memo＞
 Success Criterion 3.2.5 Change on Request
 https://www.w3.org/TR/WCAG21/#change-on-request
 
-<memo>
+＜memo＞
 リダイレクトと Google検索
 https://developers.google.com/search/docs/advanced/crawling/301-redirects?hl=ja
 
@@ -276,13 +274,12 @@ http-equiv="content-security-policy"を指定すると、「CSP（Content Securi
 CSPについても他のhttp-equiv属性で指定するものと同様に、基本的にはHTTPレスポンスヘッダーで指定できます。サーバー側での設定が難しい場合や、個別のページに試験的に適用する場合などには、meta要素を使用してもよいでしょう。
 CSPの詳細については本書では触れません。2021年10月時点でCSP2の仕様がW3C勧告となっており、CSP3が策定中となっています。
 
-<memo>
+＜memo＞
 Content Security Policy Level 2
 https://www.w3.org/TR/CSP2/
 
 Content Security Policy Level 3
 https://www.w3.org/TR/CSP3/
-
 
 ＜丸見出し＞
 name属性を指定する場合
@@ -291,10 +288,9 @@ name属性を指定した場合、name属性値の指定した名前と、conten
 name属性には任意の値を指定できますが、よく使われるものは仕様の4.2.5.1 Standard metadata namesで説明されています。
 ここでは、そこからさらに絞っていくつかを紹介します。
 
-<memo>
+＜memo＞
 4.2.5.1 Standard metadata names
 https://html.spec.whatwg.org/multipage/semantics.html#standard-metadata-names
-
 
 ・ページコンテンツの説明（name="description"）
 name="description"を指定すると、content属性の値はページコンテンツの説明（ディスクリプション）となります。検索エンジンはこの値を読み、検索結果ページに表示することがあります〓15〓。
@@ -308,7 +304,7 @@ name="description"を指定すると、content属性の値はページコンテ�
 ・ページのキーワード（name="keywords"）
 name="keywords"は、ページに関連するキーワードをカンマ区切りで記述するものです。しかし、検索エンジンスパムに濫用された経緯があり、現在ではほとんどの検索エンジンがこれを無視します。ウェブ上で指定する必要性はほとんどないでしょう。
 
-<memo>
+＜memo＞
 "keywords"は複数形で、"keyword"とスペルミスしないようにという注意点も昔はありました。
 
 ＜本文＞
@@ -321,13 +317,13 @@ name="viewport"は、主に画面の小さなモバイルブラウザーに対�
 ＜本文＞
 とりうる値については、CSS Device Adaptation仕様で参照されています。maximum-scale=1.0、user-scalable=noのようなズームする機能を禁止する設定は、ウェブアクセシビリティに悪影響を与えるため、避けるべきです。WCAG 2.1達成基準1.4.4テキストのサイズ変更では、テキストの拡大ができることを求めています。
 
-<memo＞
+＜memo＞
 9. Viewport <META> element
 https://www.w3.org/TR/2016/WD-css-device-adapt-1-20160329/#viewport-meta
 不幸なことに、2021年10月時点で規範的な定義ではなく以下で議論が続いています。
 https://github.com/w3c/csswg-drafts/issues/331
 
-<memo>
+＜memo＞
 Success Criterion 1.4.4 Resize text
 https://www.w3.org/TR/WCAG21/#resize-text
 
@@ -349,7 +345,6 @@ meta要素は典型的にはhead要素内に出現しますが、microdataとし
 </figure>
 
 ＜/コラム＞
-
 
 ＜中見出し＞
 style要素

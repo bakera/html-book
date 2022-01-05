@@ -13,7 +13,7 @@ HTTPの黎明期とHTTP/1.1の成熟
 ＜本文＞
 初期のHTTPはHTTP/0.9と呼ばれますが、これはリクエストでURLを指定し、レスポンスでHTMLが返るだけのものでした。ヘッダーもなく、ステータスもないためエラー応答もできませんでした（つまり、存在しないページにアクセスした際に表示される404 Not Foundもありませんでした）。
 
-<memo>
+＜memo＞
 HTTP/0.9
 https://www.w3.org/Protocols/HTTP/AsImplemented.html
 
@@ -23,7 +23,7 @@ https://www.w3.org/Protocols/HTTP/AsImplemented.html
 1997年にはRFC 2068が、1999年にその更新版であるRFC 2616が発行され、HTTP/1.1が標準化されました。このバージョンは広く普及し、HTTPはいったん成熟した安定期を迎えます。
 その後、2014年になってHTTP/1.1の仕様書は更新、再編され、RFC 7230〜7235の6つの文書に分割されました。
 
-<memo>
+＜memo＞
 RFC 1945
 https://datatracker.ietf.org/doc/html/rfc1945
 
@@ -32,7 +32,6 @@ https://datatracker.ietf.org/doc/html/rfc2068
 
 RFC 2616
 https://datatracker.ietf.org/doc/html/rfc2616
-
 
 ＜本文＞
 ・RFC 7230: Message Syntax and Routing
@@ -48,7 +47,7 @@ https://datatracker.ietf.org/doc/html/rfc2616
 ・HTTP/1.1
 ・HTTP Caching
 
-＜memo>
+＜memo＞
 IETF HTTP（httpbis）
 https://datatracker.ietf.org/wg/httpbis/documents/
 
@@ -60,7 +59,7 @@ HTTP/1.1は長期にわたって利用されていますが、近年ではウェ
 現在では、さらにバフォーマンスを向上したHTTP/3も開発中であり、サーバーとブラウザーでの試験的な実装が進んでいます。
 このようにHTTPは進化していますが、HTTP/2以降の進化は主にパフォーマンスの向上であり、やりとりするメッセージの形式に大きな変化はありません。2021年現在、HTTP/1.1は現役であり、広く利用されています。
 
-<memo>
+＜memo＞
 RFC 7540
 https://datatracker.ietf.org/doc/html/rfc7540
 
@@ -72,7 +71,7 @@ HTTPメッセージ
 HTTPの通信では、ユーザーエージェントとサーバーがメッセージのやりとりを行います。メッセージの書式はRFC 7230で定義されています。
 ユーザーエージェントがサーバーに送るメッセージを「HTTPリクエスト（HTTP request）」、サーバーからユーザーエージェントに返ってくるメッセージを「HTTPレスポンス（HTTP response）」と呼びます。
 
-<memo>
+＜memo＞
 RFC 7230を廃止するHTTP Semanticsによって、HTTPメッセージに関係する用語の再整理が予定されていますが、本書ではRFC 7230に基づく説明を行います。
 
 ＜小見出し＞
@@ -101,7 +100,7 @@ User-Agent: curl/7.16.3
 ・HEAD：GETとほぼ同じだが、サーバーからはヘッダー情報だけが送られ、リソース本体は送られない。リソースの更新日だけを確認したいような場合に利用。
 ・OPTIONS：リクエストターゲットに対してどのようなリクエストが可能かを問い合わせる。従来は利用頻度の少ないメソッドだったが、現在ではCORSのプリフライトリクエストとして用いられる
 
-<memo>
+＜memo＞
 Preflight request（プリフライトリクエスト）
 https://developer.mozilla.org/ja/docs/Glossary/Preflight_request
 
@@ -110,7 +109,7 @@ https://developer.mozilla.org/ja/docs/Glossary/Preflight_request
 ＜本文＞
 開始行の後には「ヘッダーフィールド（header field）」が続きます。HTTPリクエストのヘッダーフィールドは「リクエストヘッダー」と呼ばれることもあります。ヘッダーフィールドは、フィールド名: フィールド値の形式で、末尾には改行1つ（CR+LF）を置きます。
 
-<memo>
+＜memo＞
 改行の次の行の先頭がスペースで始まった場合、前行のフィールドの続きとみなされる継続行という仕組みもあります。ただし、現在の仕様では継続行は非推奨とされ、一部の用法を除いて利用することができません。
 
 ＜本文＞
@@ -211,15 +210,15 @@ Content-Typeフィールドに指定する値は、「メディアタイプ（me
 MIMEタイプはIANAによって管理されており、IANAのウェブサイトのMedia Typesのページで一覧を見ることができます。
 メディアタイプという呼び方は、CSSのメディアクエリーで記述するメディアタイプと紛らわしいため、本書では今後、MIMEタイプと呼びます。
 
-<memo>
+＜memo＞
 RFC 2046
 https://datatracker.ietf.org/doc/html/rfc2046
 
-<memo>
+＜memo＞
 IANA Media Types
 https://www.iana.org/assignments/media-types/media-types.xhtml
 
-<memo>
+＜memo＞
 「メディアタイプと紛らわしい」点についてはMIME sniffing Standardでも指摘されています。 
 https://mimesniff.spec.whatwg.org/#mime-type-representation
 
@@ -299,16 +298,14 @@ MIME sniffing
 従来、MIME sniffingの挙動はブラウザーの実装に依存していました。一部のブラウザーはURLに含まれる拡張子を手掛かりにしたり、Content-Typeの指定を無視してsniffingの推測結果を優先することがありました。これはセキュリティ上の問題を引き起こすことがあります。
 各ウェブブラウザーが独自に異なるMIME sniffingを行う状況では、サーバー側でセキュリティの問題を回避するための十分な対策を施すのが困難でした。そのような背景もあり、現在ではこの挙動はMIME sniffing仕様として文書化され、標準化されています。
 
-
-
 ＜memo＞
 この問題への対応のため、X-Content-Type-Options: nosniffフィールドでsniffingを抑制する仕様が採用されました。現在では各ブラウザーもX-Content-Type-Optionsを解釈してsniffingを抑制するようになっています。
 
-<memo>
+＜memo＞
 IE8 Security Part VI: Beta 2 Update MIME-Handling: Sniffing Opt-Out
 https://docs.microsoft.com/ja-jp/archive/blogs/ie/ie8-security-part-vi-beta-2-update#mime-handling-sniffing-opt-out
 
-<memo>
+＜memo＞
 MIME Sniffing
 https://mimesniff.spec.whatwg.org/
 
@@ -326,7 +323,6 @@ text/html; charset=ISO-2022-JP
 
 ＜本文＞
 character setという言葉は本来は文字集合を表すもので、文字エンコーディングを表す言葉はcharacter encodingですが、両者はよく混同されます。charsetパラメーターもこの例に漏れず、実際に指定する値は文字集合ではなく、文字エンコーディングの名称です。
-
 
 ＜コラム＞
 ＜コラムタイトル＞
@@ -346,7 +342,6 @@ https://jvn.jp/jp/JVN91706484/
 このアプリケーションにはWikiページの機能があり、任意のテキストを書くことができましたが、HTMLを書き込んでも適切にエスケープされていました。HTMLとして表示されたり、スクリプトが実行されることはありません。
 このWikiにはデータをテキスト形式でダウンロードする機能もあり、ダウンロードファイルをContent-Type: text/plainで配信していました。HTMLが書かれていても、通常は単なるテキストと解釈され、HTMLとして解釈されることはありません。
 ところが、Internet ExplorerではContent-Typeを無視してHTMLとして解釈することがあります。ダウンロードURLへのリンクの方法を工夫することにより、Internet ExplorerではテキストファイルをHTMLと解釈させて、ブラウザー上で表示させることが可能でした。これを利用して、対象サービスのドメイン上で任意のJavaScriptを実行することが可能でした。
-
 
 ＜コラム見出し　色つき太字で＞
 charsetパラメーターの欠如により攻撃が成立する例

@@ -8,7 +8,7 @@ a要素
 ＜本文＞
 a要素は、「アンカー（anchor）」を表現する要素です。href属性を指定することで、ハイパーリンクとして機能します。ユーザーがハイパーリンクをクリックしたり、フォーカスを当ててEnterキーを押すと、指定されたURLへのナビゲーションが行われ、リンク先のコンテンツが表示されます。
 
-<memo>
+＜memo＞
 URLのスキームや、リンク先リソースのMIMEタイプの値によって異なる挙動になる場合もあります。Chapter2-3「リソースを取得できないスキームの例」、Chapter1-6「MIMEタイプ」の項を参照してください。 
 
 ＜本文＞
@@ -82,7 +82,7 @@ HTML4ではid属性が利用できるようになり、任意の要素にid属�
 ＜コード＞
 <h1 id="midashi">見出し</h1>
 
-<memo＞
+＜memo＞
 16.1 Obsolete but conforming features
 https://html.spec.whatwg.org/multipage/obsolete.html#obsolete-but-conforming-features
 
@@ -105,7 +105,7 @@ href属性を持つa要素のデフォルトのARIAロールはlinkです。
 <a href="wcag.html">こちら</a>をご覧ください。
 </p>
 
-<memo>
+＜memo＞
 Success Criterion 2.4.4 Link Purpose (In Context)
 https://www.w3.org/TR/WCAG21/#link-purpose-in-context
 
@@ -120,7 +120,7 @@ WCAGの関連資料は<a href="wcag.html">こちら</a>
 この例では、a要素の直前のテキストを読むとリンク先の内容がわかり、前後のコンテキストからリンク先を推測できます。そのため、最低限のアクセシビリティは担保できているといえます。
 より高度なアクセシビリティ基準として、WCAG 2.1達成基準2.4.9リンクの目的 (リンクのみ)があります。こちらでは、コンテキストに頼らず、リンクテキストのみでリンク先を理解できるようにすることを求めています。スクリーンリーダーをはじめとする多くの支援技術は、次のリンクに飛ぶ機能やリンクだけを読み上げる機能を持ち、前後の文とは切り離されてリンクテキストだけが読み上げられることがあるためです。
 
-＜memo>
+＜memo＞
 Success Criterion 2.4.9 Link Purpose (Link Only)
 https://www.w3.org/TR/WCAG21/#link-purpose-link-only
 
@@ -163,10 +163,10 @@ target属性の注意点
 ほとんどのブラウザーはtarget="_blank"を指定した場合に特別な通知をすることはありません。また、この挙動がユーザーに伝わりにくいことがあります。特にスクリーンリーダーのユーザーや画面を拡大しているユーザーの場合、状況によっては新しいタブで開いたことに気づかず、混乱することもあります。そのため、target="_blank"を指定する場合は、リンクテキスト内に新しいタブで開くことがわかる説明を検討しましょう。
 また、ユーザーによってはブラウザータブを閉じるのが容易でない場合や、わずらわしいと感じることがあります。target="_blank"がそのリンクに対して本当に必要かどうかもあわせて吟味したほうがよいでしょう。WCAG 2.1達成基準3.2.5要求による変化の観点でも配慮が必要とされています。
 
-＜memo>
+＜memo＞
 多くの場合、新しく開いたタブでブラウザーの「戻る」機能が動作せず、これが混乱の原因となります。ただし、macOS/iOSのSafariでは別タブで開いた場合でも「戻る」が機能するようです。
 
-<memo>
+＜memo＞
 Success Criterion 3.2.5 Change on Request
 https://www.w3.org/TR/WCAG21/#change-on-request
 
@@ -188,7 +188,7 @@ https://www.w3.org/TR/WCAG21/#change-on-request
   </main>
 </body>
 
-<memo＞
+＜memo＞
 Success Criterion 2.4.1 Bypass Blocks
 https://www.w3.org/TR/WCAG21/#bypass-blocks
 
@@ -240,7 +240,7 @@ href属性には、リンクの対象リソースのURLを指定します。指�
 コードの可読性の観点から、通常はスペースを入れずに書きます。
 また、a要素のhref属性値に#で始まるURLフラグメントを指定した場合、該当するフラグメントIDを持つ要素の場所までページをスクロールします。フラグメントについては、Chapter1-5を参照してください。なお、#topを指定していて、かつtopというフラグメントIDがページ内に存在しない場合は、ページの最上部へスクロールします。これは仕様に定められた挙動です。
 
-<memo>
+＜memo＞
 7.11.9 Navigating to a fragment
 https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-fragid
 
@@ -304,7 +304,6 @@ download属性に空でない値を指定した場合、ダウンロードファ
 4.6.5 Downloading resources
 https://html.spec.whatwg.org/multipage/links.html#downloading-resources
 
-
 ＜小見出し＞
 hreflang属性
 ＜本文＞
@@ -318,7 +317,7 @@ referrerpolicy属性
 a要素とarea要素、link要素でreferrerpolicy属性を利用すると、リンク先に送信するHTTP Refererを制御できます。rel=nofollowを指定することでもRefererの送信を抑制できますが、referrerpolicy属性ではさらに細かい制御が可能です。
 詳細はReferrer Policy仕様を参照してください。
 
-<memo＞
+＜memo＞
 Referrer Policy
 https://w3c.github.io/webappsec-referrer-policy/
 
@@ -327,8 +326,6 @@ ping属性
 ＜本文＞
 リンク先へ遷移するときに、ping属性で指定したURLにリンク元とリンク先を伝えます。例として、https://example.net/link-from/というURLに〓16〓のようなリンクがあるとします。
 この場合、/trackerに対して次のようなHTTP POSTリクエストを送信します。〓17〓のように、Ping-Fromヘッダーにリンク元のURL、Ping-Toヘッダーにリンク先のURLの情報が記録されます。
-
-
 
 〓16〓ping属性の記述例
 ＜コード＞
@@ -345,7 +342,7 @@ Ping-To: https://example.com/link-to/
 どこからどこへページ遷移したのかを知る方法としては、HTTPリダイレクトやJavaScriptなどの既存の技術を用いる方法が知られています。しかし、ping属性を用いることで、ユーザーがリンク先を正確に知ることができる、ユーザーエージェントが情報を送信するかどうかを制御できる、追加の処理が発生しないためにパフォーマンスの向上が見込まれるといった利点があります。HTTP仕様でもこの属性を用いることをアドバイスしています。
 ただし、2021年10月現在で、Firefoxはping属性をデフォルトで無効にしている点に注意が必要です。
 
-<memo＞
+＜memo＞
 https://caniuse.com/ping
 
 ＜小見出し＞
@@ -384,11 +381,11 @@ rel属性とリンクタイプ
 キーワードは大文字小文字を区別しません。たとえば、stylesheetとStyleSheetとSTYLESHEETは同じ意味になります。
 本書では代表的なリンクタイプをいくつか紹介します。リンクタイプの対応状況はブラウザーによって異なります。MDNを参照してください。
 
-<memo>
+＜memo＞
 4.6.7 Link types
 https://html.spec.whatwg.org/multipage/links.html#linkTypes
 
-<memo>
+＜memo＞
 ブラウザーの互換性
 https://developer.mozilla.org/ja/docs/Web/HTML/Link_types#browser_compatibility
 
@@ -422,7 +419,7 @@ link要素でstylesheetキーワードとともにalternateが指定される場
 この例の場合、初期状態は「基本スタイル」で、base.cssとdefault.cssが適用されています。「シンプル」に切り替えるとdefault.cssは適用されなくなり、base.cssとsimple.cssが適用されるようになります。細かい挙動の詳細は、CSS Object Model (CSSOM)仕様を参照してください。
 残念なことに、このような切り替え機能を持たないブラウザーもあり、代替スタイルシートを利用するには拡張機能の導入が必要となる場合があります。また、標準対応しているブラウザーでも使い方がわかりにくく、ユーザーが代替スタイルシートを活用することは難しいでしょう。
 
-<memo＞
+＜memo＞
 6.2. CSS Style Sheet Collections
 https://drafts.csswg.org/cssom/#css-style-sheet-collections
 
@@ -496,7 +493,6 @@ https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls?hl=ja
 このリンクタイプをa要素、area要素で用いた場合は、最も近い祖先のarticle要素の著作者を指すものと解釈されます。article要素の外で用いられているときは、HTML文書全体の著作者を指します。
 古いブラウザーの中には、これを解釈し、文書の著作者へ即座に電子メールを送信できるものがありました。現在のブラウザーはそのような機能をほとんどサポートしていませんので、無理に指定する必要はないでしょう。
 
-
 ＜小見出し＞
 リンクタイプbookmark
 ＜本文＞
@@ -553,7 +549,7 @@ link要素でリンクタイプiconを使用すると、リンク先がアイコ
 link要素によるアイコンの指定がない場合、ブラウザーは/favicon.icoというURLにアクセスしてアイコンの取得を試みます。この挙動はHTML仕様4.6.6.8 Link type "icon"で明確に定義されています。逆に言えば、/favicon.icoにアイコンが置いてあり、それを使えばよい場合は指定不要といえます。
 ブラウザーの種類や端末の種類によって、アイコンの大きさやフォーマットを変えたい場合もあるでしょう。その場合は、type属性、sizes属性、media属性と組み合わせて、さまざまなバージョンのアイコンが指定できます。〓31〓はHTML仕様で紹介されている例です。
 
-<memo＞
+＜memo＞
 4.6.7.8 Link type "icon"
 https://html.spec.whatwg.org/multipage/links.html#rel-icon
 
@@ -568,7 +564,7 @@ https://html.spec.whatwg.org/multipage/links.html#rel-icon
 ＜本文＞
 また、主にiOSやAndroidといったモバイル端末向けに、拡張キーワードapple-touch-iconとともにアイコンを指定するという方法があります。
 
-<memo>
+＜memo＞
 Configuring Web Applications
 https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
 
@@ -607,10 +603,8 @@ Canonical Linkは、あるリソースが複数のURLで示されるとき、正
 ＜コード＞
 <link rel="canonical" href="https://www.example.com/">
 
-
-<memo>
+＜memo＞
 https://datatracker.ietf.org/doc/html/rfc6596
-
 
 ＜小見出し＞
 リンクタイプnofollow
@@ -623,7 +617,7 @@ a要素やarea要素でリンクタイプnofollowを使用すると、ページ�
 ＜コード＞
 <a href="http://example.net/untrusted.html" rel="nofollow">品質が信頼できないページ</a>
 
-<memo＞
+＜memo＞
 Googleはこれらの目的のために、キーワードsponsoredやucgをサポートします。
 https://developers.google.com/search/docs/advanced/appearance/qualify-outbound-links?hl=ja
 
@@ -664,7 +658,7 @@ link要素でリンクタイプdns-prefetchを指定すると、指定された�
 ＜コード＞
 <link rel="dns-prefetch" href="https://example.com">
 
-＜memo >
+＜memo＞
 Resource Hints
 https://w3c.github.io/resource-hints/
 2021年10月時点ではW3C文書ですが、WHATWGに移管される予定です。
@@ -688,7 +682,7 @@ link要素でリンクタイプpreloadを指定すると、現在のページで
 サブリソースの多くはimg要素のsrc属性などで記述されており、HTMLを読み込んだ時点で必要性を判断できます。しかし、中にはCSSから読み込まれるもの、JavaScriptで挿入されるものなどもあり、これらの必要性はHTMLを読み込んだ時点では判断できません。preloadは、こういったサブリソースの必要性を事前に伝えておくことで、動作を高速化するものです。詳細はPreload仕様を参照してください。
 〓39〓の例では、スタイルシートで利用する画像を事前に読み込んでいます。
 
-<memo＞
+＜memo＞
 Preload
 https://w3c.github.io/preload/
 2021年10月時点ではW3C文書ですが、WHATWGに移管される予定です。
@@ -708,7 +702,7 @@ rel=preloadを用いる場合、as属性を指定する必要があります。a
 前述の例では、画像として利用するためas=imageを指定しています。Webフォントであれば"font"、JavaScriptであれば"script"など、それぞれ対応する適切な値を指定する必要があります。この指定により、ブラウザーはリソースの優先順位を判断したり、Content Security Policyを適切に処理できます。
 integrity属性を指定して、プリロードする外部リソースの完全性が担保できます。これはscript要素のintegrity属性と同じものです。Chapter3-11のscript要素を参照してください。
 
-<memo>
+＜memo＞
 https://fetch.spec.whatwg.org/#concept-request-destination
 
 ＜小見出し＞
@@ -743,7 +737,6 @@ link要素にリンクタイプstylesheetを指定すると、外部スタイル
 ＜本文＞
 古いHTMLではtype=text/cssもあわせて指定していましたが、現在のHTML仕様はCSS以外のスタイルシート言語を想定しておらず、デフォルトでtext/cssとみなされるため、type属性は省略することが推奨されています。type属性があり、かつtext/css以外の値だった場合、そのスタイルシートは無視されます。
 media属性にはメディアクエリーを指定できます。media属性を併用することで、特定のデバイスに向けたスタイルシートであることを宣言できます。〓43〓の例では、印刷用のスタイルシートを定義しています。
-
 
 〓43〓印刷用のスタイルシートを定義
 ＜コード＞
@@ -783,7 +776,6 @@ link要素だけでなくa要素にも使用できるので、ページナビゲ
 その他のリンクタイプ
 ＜本文＞
 HTML仕様に示されたキーワード以外にも、microformats wikiのexisting-rel-valuesページに登録されたものを使用できます。このページは誰でも登録できるため、事実上、自由に拡張可能です。
-
 
 ＜memo＞
 HTML5 link type extensions（保護されれていない）

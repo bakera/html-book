@@ -11,11 +11,11 @@
 ブラウザー上でもスクリプト言語が動作します。そこで利用される言語がJavaScriptです。JavaScriptを利用することで、ユーザーの操作に応じてウェブページの内容を動的に変化させる、コンテンツを動的に読み込んで表示するなど、さまざまな処理が可能になります。
 以前のHTML仕様では、利用できるスクリプト言語の種類までは規定しておらず、たとえば古いIEではJavaScriptの他にVBScriptも動作していました。しかし、現在のHTML仕様はJavaScriptのみを想定しており、ブラウザー上で動作するスクリプト言語は事実上、JavaScriptのみとなっています。
 
-＜memo>
+＜memo＞
 ECMA-262
 https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
 
-<memo>
+＜memo＞
 8.4.3 document.write()
 https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()
 
@@ -23,12 +23,12 @@ https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.wr
 JavaScriptによるプログラミングについては本書の範囲外となるため、その詳細は扱いません。JavaScriptの言語仕様は、Ecma InternationalのTechnical Committee 39 (TC39)が中心になって策定されており、ECMA-262の仕様がコアとなっています。必要に応じて参照してください。
 また、このChapterのJavaScriptのサンプルコードは要素説明のための便宜的なものであり、実用性はありません。特に、サンプルコードではdocument.write()メソッドを利用していることがありますが、仕様ではこのメソッドの利用を推奨していないことに注意してください。
 
-<memo>
+＜memo＞
 現在のIEでは、VBScriptは既定で無効になっています。
 An update on disabling VBScript in Internet Explorer 11 
 https://blogs.windows.com/msedgedev/2019/08/02/update-disabling-vbscript-internet-explorer-windows-7-8/ 
 
-<memo>
+＜memo＞
 モダンブラウザーではWebAssembly（wasmとも呼ばれる）も動作しますが、このコンパイル前の言語には特に制限がありませんので、C++、C#、Rustなどで書いたコードを動作させることも可能になります。WebAssemblyの詳細はMDNを参照してください。
 https://developer.mozilla.org/ja/docs/WebAssembly 
 
@@ -53,14 +53,13 @@ Script-supporting elementは、通常は他の要素が配置できない場所�
 ＜本文＞
 このように、script要素はたいていの要素の子要素となることができます。しかし、本書では読みやすさのために、各要素の内容モデルの説明からScript-supporting elementを省いていますのでご注意ください。
 
-
 ＜小見出し＞
 内容モデル
 ＜本文＞
 script要素の内容モデルは複雑です。まず、有効なsrc属性が指定されている場合には、意味のある内容を含めることはできません。含めることのできる内容は、スペース、タブ、改行（LF）およびJavaScriptのコメントと解釈される値のみです。src属性も参照してください。
 有効なsrc属性が指定されていない場合は、特定の文字列を除いた任意の内容を含めることができます。内容はそのままスクリプトエンジンに渡され、JavaScriptとして解釈されます（script要素がデータブロックである場合は、何もしません）。
 
-<memo>
+＜memo＞
 HTML仕様の"13.2.5 Tokenization"にある"Script data..."で始まる項目はすべてscript要素の内容を解析するためのものです。HTMLのすべての字句を解析するのに必要なステートが全部で80種類であり、そのうちの17種類がscript要素関連ですから、2割以上がscript要素のために費やされています。
 
 ＜丸見出し＞
@@ -123,10 +122,10 @@ HTML構文の場合、script要素内に<!--という文字列があっても、
 データブロックの場合にも、単なる文字列として扱われ、そのまま渡されます。〓07〓の例では<!---->という文字列が表示されます。
 ただし、文字列<!--が出現した場合に扱いが変わる部分もあります〓08〓。
 
-<memo>
+＜memo＞
 XML構文の場合にはXMLのコメントとみなされ、内容がスクリプトエンジンに渡りません。
 
-<memo>
+＜memo＞
 ECMAScript 2015では、互換性のためのHTML-likeコメントが正式に仕様に追加され、HTMLのコメント区切り子（<!--および-->）をECMAScriptの1行コメントして解釈するよう定めています。つまり、これらは//と同じ効力を持つことになります。
 https://262.ecma-international.org/6.0/#sec-html-like-comments 
 
@@ -153,8 +152,7 @@ script要素内に<!--が出現した場合に、さらに<scriptが出現して
 逆に、この処理が意図しない挙動を招くこともあります。〓09〓は仕様で挙げられている、意図どおりに解析されない例です。
 記には<!--および<script>という文字列が含まれているため、その後の</script>はscript要素の終了タグとみなされません。</script>という文字列はscript要素の内容の一部として扱われ、これ以降の内容もscript要素の内容とみなされます。
 
-
-<memo>
+＜memo＞
 HTMLパーサーの字句解析器の挙動としては、<!--が出現すると"Script data escaped state"という状態に遷移し、そこで<scriptが出現すると"Script data double escaped state"に遷移します。このときに</scriptが出現しても終了タグとみなさず、単に"Script data escaped state"に戻ります。
 
 〓09〓意図通りに解析されない記述例
@@ -181,10 +179,10 @@ type属性は、スクリプトの種類を指定します。script要素には�
 type属性にJavaScriptとみなされるMIMEタイプの値、たとえば"application/javascript"や"text/javascript"などを指定すると、クラシックスクリプトとして扱われます。また、script要素の内容、もしくはsrc属性で指定したリソースはJavaScriptのスクリプトとして解釈され、実行されます。
 type属性を省略した場合や、空の値を指定した場合もクラシックスクリプトとみなされます。古いHTML4ではscript要素のtype属性は必須でしたが、現在では省略可能です。クラシックスクリプトを意図する場合は省略することが推奨されています。
 
- <memo>
+ ＜memo＞
  RFC 4329で登録されたMIMEタイプですが、ECMAScript Media Types UpdatesというI-Dで廃止扱いとすることが提案されています。https://datatracker.ietf.org/doc/html/draft-ietf-dispatch-javascript-mjs
  
- <memo>
+ ＜memo＞
  クラシックスクリプトとみなされる値の正確な一覧は、MIME Sniffing Living Standardで定義されています。https://mimesniff.spec.whatwg.org/#javascript-mime-type
  
  ＜丸見出し＞
@@ -195,7 +193,7 @@ type属性の値として"module"を指定すると、モジュールスクリ�
 モジュールは比較的新しい機能であるため、モジュールを扱えない古いブラウザーにフォールバックを提供するためのnomodule属性が定義されています。詳しくは後述のnomodule属性を参照してください。
 モジュールスクリプトは即時に実行されず、常に遅延読み込みされます。そのため、defer属性を指定しても無視されます（常にdefer属性が指定されているかのように動作します）。詳しくはdefer属性、async属性を参照してください。
 
-<memo>
+＜memo＞
 以下のURLが参考になります。
 MDN
 https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules
@@ -209,10 +207,10 @@ type属性が妥当なMIME typeであり、かつJavaScriptとみなされない
 ブラウザーは、データブロックに対して何の処理も行いません。内容がJavaScriptとして実行されることも、ウェブページに表示されることもありません。script要素の属性のうち、type属性以外の属性は指定できず、すべて無視されます（idなどのグローバル属性は有効です）。
 内容をJavaScriptから参照できるため、ウェブページに表示したくないデータを埋め込むのに利用できます。また、クローラーによって処理される場合もあります。〓10〓のコードは、データブロックを利用してテキストデータを埋め込んでいる例です。
 
-<memo>
+＜memo＞
 正確には、クラシックスクリプトにもモジュールスクリプトにも当てはまらない値はすべてデータブロックとみなされます。しかし仕様では、type属性はMIMEタイプでなければならないとされています。これは、将来の仕様でtype属性に"module"以外のキーワードが使えるようになったときに、誤動作しないようにするためです。
 
-<memo>
+＜memo＞
 データブロックに指定できない属性は次の7つです：src、async、nomodule、defer、crossorigin、integrity、referrerpolicy。
 
 〓10〓データブロックを利用してテキストデータを埋め込んだ記述例
@@ -234,11 +232,11 @@ JSON（JavaScript Object Notation）データを埋め込むこともできま�
 JSON（JavaScript Object Notation）
 ジェイソンと発音。RFC 8259/ECMA-404 2nd editionで定義される、JavaScript構造データオブジェクトの表記法をベースにしたフォーマットです。https://datatracker.ietf.org/doc/html/rfc8259 https://www.ecma-international.org/publications-and-standards/standards/ecma-404/ 
 
-<memo>
+＜memo＞
 JSON-LD（JSON for Linked Data）はJSON-LD 1.1としてW3Cから勧告されています。
 https://www.w3.org/TR/json-ld11/ 
 
-<memo>
+＜memo＞
 RDFaやMicrodataが類似のメタデータ表現として知られています。総称して構造化データとも呼ばれることがあります。
 
 〓11〓JSON-LDによるメタデータを埋め込んだ記述例
@@ -273,8 +271,7 @@ src属性とインラインスクリプト
 src属性を利用すると、外部JavaScriptのURLを指定して読み込むことができます。src属性が指定されていない場合、script要素の内容がJavaScriptとして解釈されます。
 src属性を指定している場合、script要素の内容に意味のあるJavaScriptを書くことはできません。内容があるとエラーとなりますが、その場合、内容は無視されてsrc属性の指定が優先されます。
 
-
-<memo>
+＜memo＞
 JavaScriptのコメントと改行、空白類文字のみが許されます。詳細は仕様を参照ください。
 https://html.spec.whatwg.org/multipage/scripting.html#inline-documentation-for-external-scripts 
 
@@ -323,8 +320,7 @@ DOM操作でscript要素を生成した場合、DOMツリーに挿入されて�
   alert(scriptElement.async); // true
 </script>
 
-
-<memo>
+＜memo＞
 4.12.1.1 Processing model
 https://html.spec.whatwg.org/multipage/scripting.html#script-processing-model
 
@@ -364,8 +360,7 @@ integrity属性
 ＜本文＞
 integrity属性を使用すると、サブリソースとして取得したJavaScriptが改竄されていないかをブラウザーが検出できます。この仕組みは「サブリソース完全性」(Subresource Integrity)と呼ばれます。仕様としてはSubresource Integrityで規定されています。
 
-
-<memo>
+＜memo＞
 Subresource Integrity
 https://w3c.github.io/webappsec-subresource-integrity/
 
@@ -424,7 +419,7 @@ referrerpolicy属性で指定したポリシーはfetch()で読み込むリソ�
 ただし、charset属性の値が"utf-8"の場合（大文字小文字は区別しません）のみ、「旧式だが適合する機能（Obsolete but conforming）」として扱われ、仕様に適合します。
 現在のHTMLでは、外部JavaScriptファイルの文字エンコーディングはHTTPレスポンスヘッダーのcharsetパラメーターに依存し、charsetパラメーターがない場合はUTF-8とみなされます。charset属性は基本的に無視されますので、指定しないようにします。
 
-＜memo>
+＜memo＞
 RFC 4329 Scripting Media Types 
 https://www.rfc-editor.org/rfc/rfc4329.html#section-4.2 
 
@@ -481,7 +476,7 @@ canvas要素は、JavaScriptで任意のビットマップを描画できるキ�
 ＜本文＞
 canvas要素にはさまざまなものを多岐にわたる方法で描画できますが、具体的な描画の仕方は本書の扱う範囲を超えますので、割愛します。MDNのチュートリアルなどを参照してください。
 
-<memo>
+＜memo＞
 Canvas チュートリアル
 https://developer.mozilla.org/ja/docs/Web/API/Canvas_API/Tutorial
 
@@ -514,7 +509,7 @@ Web Components（ウェブコンポーネントなどと呼ばれることがあ
 
 Web ComponentsはJavaScriptでの操作になりますので、JavaScriptに関係する内容については他に譲ります。本書では、HTML要素として存在するtemplate要素、slot要素、カスタム要素について簡単に触れます。
 
-<memo>
+＜memo＞
 たとえばMDNのWeb Componentsにまとまった情報が記載されています。
 https://developer.mozilla.org/docs/Web/Web_Components 
 
@@ -555,7 +550,6 @@ slot要素の内容モデルはTransparentです。slot要素はプレースホ�
 ・アルファベットの小文字で始まること
 ・1つのハイフンを含むこと
 
-
 追加の制約として、「MathMLやSVGで既に定義されている要素名と同一であってはならない」がありますが、-が要素名に含まれる場合、カスタム要素の可能性が高いでしょう。
 なお、要素名についての正確な制約は、HTML仕様に示されるPotentialCustomElementNameで定義されています。
 ここでカスタム要素の例を示します。たとえば、Googleの検索結果で5つ星の評価については、〓23〓のようにカスタム要素を用いてマークアップされています。
@@ -574,6 +568,6 @@ slot要素の内容モデルはTransparentです。slot要素はプレースホ�
 
 JavaScriptを用いて、カスタム要素自身とその動作を定義していくことになりますが、本書の範囲を超えますので、詳細についてはMDN3やGoogle Developersの記事などを参照してください。
 
-<memo＞
+＜memo＞
 Custom Elements v1: Reusable Web Components  |  Web Fundamentals  |  Google Developers 
 https://developers.google.com/web/fundamentals/web-components/customelements

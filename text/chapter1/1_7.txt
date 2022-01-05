@@ -20,7 +20,7 @@ MDNで調べる
 ＜本文＞
 ウェブ技術については、MDN Web Docs（通称MDN）を参照する方も多いでしょう。以前はMozilla Developer Networkと呼ばれていたもので、こちらの名前で覚えている方もいるかもしれません。
 
-<memo>
+＜memo＞
 名前の変更の経緯はMozilla Blogの記事で読むことができます。
 https://blog.mozilla.org/opendesign/future-mdn-focus-web-docs/
 
@@ -47,7 +47,7 @@ HTMLについて調べたい場合、実際にHTMLを書いてブラウザーで
 ＜本文＞
 HTMLがルールに従っているかどうかは機械的にチェックできます。古くからあるサービスとしては、W3CのMarkup Validation Serviceが有名です。これは現在でも利用できますが、このサービスに取って代わる新しいHTMLチェッカーとしてNu Html Checkerが現在開発されています。
 
-<memo>
+＜memo＞
 W3C Markup Validation Service
 https://validator.w3.org/
 
@@ -57,7 +57,7 @@ https://validator.w3.org/nu/
 ＜本文＞
 ただし、機械的にチェックできるのは、基本的に字句的ルールと語彙的ルールだけです。意味論的ルールの大半は、その性質上、機械でのチェックが困難です。
 
-<memo>
+＜memo＞
 中にはチェック可能なものもあり、たとえば、テーブルの行が空であるというようなエラーを報告することがあります。詳細はChapter3-8参照してください。
 
 ＜本文＞
@@ -77,7 +77,7 @@ HTML仕様を読む
 HTML仕様を実際に読んでみたいという方に向けて、仕様の読み方や注意点をご紹介します。WHATWGが公開しているHTML Standardはウェブで公開されています。
 URLのmultipageは複数ページ版（Multipage Version）を意味しています。URLからmultipage/を削除すると単一ページ版（One-Page Version）になりますが、膨大な内容を1つのページに収めたものであり、読み込みに長い時間がかかります。通常は複数ページ版を参照するとよいでしょう。
 
-＜memo>
+＜memo＞
 HTML Standard
 https://html.spec.whatwg.org/multipage/
 
@@ -85,7 +85,7 @@ https://html.spec.whatwg.org/multipage/
 また、コンテンツ制作者向けとして、ブラウザベンダー向けの情報を省いたバージョンがHTML Standard, Developer's Editionとして存在しています。
 Chapter1-3で触れたように、WHATWGの仕様は同じURLで常に更新され続けます。そのため、URLに日付やバージョン番号は含まれません。
 
-<memo＞
+＜memo＞
 HTML Standard, Developer's Edition
 https://html.spec.whatwg.org/dev/
 
@@ -95,7 +95,7 @@ https://html.spec.whatwg.org/dev/
 インターネット関連のほとんどの仕様は英語で書かれています。HTMLの仕様もその例に漏れません。
 同時に、多くの仕様はライセンスで翻訳を許可しているため、有志が日本語訳を公開していることがあります。
 
-<memo>
+＜memo＞
 HTML Standard（日本語訳）
 https://github.com/whatwg/html/wiki/Translations
 
@@ -123,7 +123,7 @@ https://html.spec.whatwg.org/multipage/introduction.html#how-to-read-this-specif
 「逆から読んだ方がよい」というのは半ば冗談でしょうが、仕様は基本的に、前から順に通読できるように書かれています。とはいえHTML仕様そのものが巨大ということもあり、通読はなかなか難しいというのが現状でしょう。
 なお、WHATWGの策定する仕様の共通ルールはInfra Standardという文書にまとめられています。用語の使い方や記述ルールはこちらもあわせて参照する必要があります。
 
-<memo>
+＜memo＞
 Infra Standard
 https://infra.spec.whatwg.org/
 
@@ -134,7 +134,7 @@ HTML仕様の目次を利用する
 とはいえ、初見ではどの章に何が書かれているのかわからないことも多いでしょう。以下に、よくありそうな用途と、その情報が2021年10月時点でどの章に書かれているかを簡単に紹介します。
 なお、仕様にも各章の簡単な説明が記載されています。
 
-<meom>
+＜memo＞
 中にはチェック可能なものもあり、たとえば、テーブルの行が空であるというようなエラーを報告することがあります。詳細はChapter3-8参照してください。
 
 ＜memo＞
@@ -195,7 +195,6 @@ https://html.spec.whatwg.org/multipage/indices.html
 
 〓01〓
 HTML仕様の索引ページ
-
 
 ＜中見出し＞
 仕様を読む上で注意が必要な点
@@ -269,9 +268,7 @@ WHATWGの仕様と異なり、W3C等の仕様は常に更新され続けるわ�
 ウェブ開発者がよく参照するのは、CSSの仕様などを策定しているW3Cの仕様でしょう。例として、あるW3C仕様の冒頭部分を紹介します。
 〓03〓に示したW3C仕様が最新の仕様かどうか、どのように確認すればよいでしょうか。この冒頭部分にはさまざまな情報があります。図中の番号①～⑦を順を追って説明します。
 
-
 〓03〓あるW3C仕様の冒頭部分のスクリーンショット
-
 
 ＜本文＞
 ①：仕様の名前です。

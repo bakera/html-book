@@ -64,14 +64,12 @@ alt属性は、画像の代替テキスト（alternative text）または置換�
 たとえば、第三者が投稿した画像や、ウェブカメラからライブ配信された画像など、意味のある画像でありながら、理由があって代替テキストが提供できない場合が該当します。この場合、alt属性は省略できますが、そのかわりtitle属性かfigcaption要素を用いて画像の説明をしなければなりません。
 alt属性は、ウェブアクセシビリティを考える上で、もっとも重要な属性の1つに挙げられます。アクセシビリティ上の注意点も参照してください。
 
-<memo＞
+＜memo＞
 いわゆるスペーサー画像も「装飾的な画像」に該当します。仕様ではimg要素をレイアウトに用いてはならないとされており、スペーサー画像自体を使うべきではありませんが、やむをえず用いる場合にはalt属性を空にします。
 
-<memo＞
+＜memo＞
 Images whose contents are not known
 https://html.spec.whatwg.org/multipage/images.html#unknown-images
-
-
 
 ＜丸見出し＞
 loading属性
@@ -109,7 +107,7 @@ align属性は、画像の配置を指定する属性です。"left"や"right"�
 HTML4では、img要素にlongdesc属性が定義されていました。
 これは画像の説明を参照するための属性で、属性値にはURLを指定します。a要素のように画像をクリックして飛ぶというものではなく、ブラウザーやスクリーンリーダーの機能でリンク先の説明が利用できる想定でした。具体的な用法は、Techniques for WCAG 2のH45を参照してください。
 
-<memo＞
+＜memo＞
 Using longdesc
 https://w3c.github.io/wcag/techniques/html/H45
 
@@ -117,10 +115,9 @@ https://w3c.github.io/wcag/techniques/html/H45
 ウェブアクセシビリティのために導入された属性ですが、適切に利用されるケースが少なく、対応するブラウザーも少なかったため、現在のHTML仕様では削除されています。
 画像の詳細な説明を提供したい場合は、可視のテキストとして説明を配置するか、あるいはa要素で説明にリンクさせるとよいでしょう。具体例については、Techniques for WCAG 2のG73が参考になるでしょう。
 
-<memo＞
+＜memo＞
 Providing a long description in another location with a link to it that is immediately adjacent to the non-text content
 https://w3c.github.io/wcag/techniques/general/G73
-
 
 ＜中見出し＞
 アクセシビリティ上の注意点
@@ -144,7 +141,7 @@ alt属性を指定するときは、どのような意図で画像を使って�
 ここでは、代替テキストを記述する際のヒントとして、2つの原則を紹介します。
 なお、代替テキストのパターンについては、HTML仕様のRequirements for providing text to act as an alternative for imagesで詳しく説明されています。また、アクセシビリティの観点からAn alt Decision TreeというW3Cによるリソースも存在します。それぞれ参考にするとよいでしょう。
 
-<memo＞
+＜memo＞
 4.8.4.4 Requirements for providing text to act as an alternative for images
 https://html.spec.whatwg.org/multipage/images.html#alt
 
@@ -175,7 +172,6 @@ https://www.w3.org/WAI/tutorials/images/decision-tree/
 ＜コード＞
 <p><img src="rough-map.png" alt="当社ビルまでの地図">
 <p>当社入居ビルまでの地図。九段下駅の6番出口から出て、靖国通りを西に進み、九段下の交差点を南に進んだ建物です。</p>
-
 
 ＜中見出し＞
 picture要素とレスポンシブ画像
@@ -220,7 +216,6 @@ srcset属性で複数の画像を指定し、それぞれにw記述子で画像�
 複数の画像を提示し、それぞれに対してメディアクエリーを指定すると、指定した状況に応じて画像を切り替えることができます。縦長の画面と横長の画面で表示する画像を切り替えたい場合など、コンテンツ制作者側で細かい制御をしたい場合に利用できます〓10〓。
 ブラウザーのウィンドウ幅が1024 CSSピクセル以上の場合、全景の写真（fullshot.jpg）が選択されます。ウィンドウ幅がそれよりも小さい場合は、ズームアップされた写真（closeup.jpg）が選択されます。
 
-
 〓10〓アートディレクションに基づく選択の例
 ＜コード＞
 <picture>
@@ -228,7 +223,6 @@ srcset属性で複数の画像を指定し、それぞれにw記述子で画像�
                 srcset="fullshot.jpg">
   <img src="closeup.jpg" alt="Opera House">
 </picture>
-
 
 ＜小見出し＞
 画像フォーマットに基づく選択
@@ -280,7 +274,7 @@ allow属性、allowfullscreen属性
 allow属性はPermissions policy仕様に基づいて、許可する機能やAPIを指定するものです。
 allowfullscreen属性もPermissions policy仕様に基づくもので、全画面表示のAPI requestFullscreen()を許可するブール型属性です。
 
-<memo＞
+＜memo＞
 Permissions Policy 
 https://w3c.github.io/webappsec-permissions-policy/ 
 
@@ -316,7 +310,7 @@ iframe要素にsandbox属性を指定すると、iframeに埋め込まれたコ�
   sandbox="allow-forms allow-downloads">
 </iframe>
 
-<memo>
+＜memo＞
 https://developer.mozilla.org/ja/docs/Web/HTML/Element/iframe#attr-sandbox
 
 ＜丸見出し＞
@@ -333,7 +327,7 @@ iframe要素を使って外部サービスを埋め込むための埋め込み�
 iframe要素で読み込んだウェブページと、iframe要素の置かれたウェプページは、postMessageという機能で通信して情報のやり取りができます。本書では詳細を述べませんが、この利用方法を誤ると、情報漏洩などのセキュリティ問題を起こすことがあります。
 また、iframe要素を悪用する攻撃手法もあります。その代表例が「クリックジャッキング」で、攻撃側のサイトでiframe要素を利用します。この攻撃への対策として、多くのウェブサイトがiframe要素で読み込まれないように制限をするようになりました。かつては外部サイトであっても自由にiframe要素で埋め込むことができましたが、現在は埋め込みできないサイトが増えています。
 
-<memo＞
+＜memo＞
 徳丸浩著「体系的に学ぶ 安全なWebアプリケーションの作り方 第2版 脆弱性が生まれる原理と対策の実践」などが参考になります。 
 
 ＜小見出し＞
@@ -343,7 +337,7 @@ iframe要素はアクセシビリティ上の問題を起こしやすい要素�
 iframe要素にtitle属性を付けておくと、スクリーンリーダーはそのtitle属性の値を読み上げることがあります。読み上げる必要のないiframe要素を読み飛ばしたいと考えるユーザーもいるため、iframe要素には正確な名前を付けておくとよいでしょう。
 外部のウェブサービスのコンテンツを埋め込んで利用する際、サービス側から指定された埋め込みコードにiframe要素が含まれることがあります。この場合、提供されるHTMLコードは、構文上必ずしも正しいとは限りません。アクセシビリティの配慮が不足していることも多く、そのまま利用すると問題を起こす場合があります。外部から提供されたコードについても、アクセシブルであるかどうか確認してから用いると良いでしょう。
 
-<memo＞
+＜memo＞
 WCAG2 SC 2.4.1を満たすのに十分な方法です。
 Techniques for WCAG 2 H64も参照。https://www.w3.org/WAI/WCAG21/Techniques/html/H64
 
@@ -365,7 +359,7 @@ object要素は、外部リソースを表す汎用的な要素です。主に�
   <param name="movie" value="movie.swf">
 </object>
 
-<memo>
+＜memo＞
 Flashプラグインのサポートは終了しているため、モダンな環境ではもはやこのコードは動作しません。
 
 ＜小見出し＞
@@ -406,7 +400,7 @@ object要素にデフォルトのロールはありません。object要素は�
 object要素の内容がアプリケーションのようなものであって、キー操作を必要とする場合、role="application"を指定すると、スクリーンリーダーにキー操作を横取りされず、直接操作できることが期待されます。
 role="img"を追加した場合、スクリーンリーダーによっては単に「ラベルのない画像」とだけ読み上げ、フォールバックコンテンツの内容を確認できないことがあります。この場合、aria-labelledby属性でフォールバックコンテンツを参照すれば読まれることもありますが、このように苦労してobject要素を使うより、img要素を利用する方が早いでしょう。
 
-<memo＞
+＜memo＞
 aria-labelledby属性についてはChapter4-1を参照してください。
 
 ＜コラム＞
@@ -447,9 +441,8 @@ embed要素は、object要素が登場する前から使われていた要素で
 video要素およびaudio要素の内容モデルは、source要素（src属性がない場合に限る）、track要素（後述）、そしてTransparentです。Transparentの部分にはフォールバックコンテンツを入れることができます〓22〓。
 ただし、video要素およびaudio要素を子孫要素にできません。複数の映像や音声をフォールバックさせたい場合は、先に紹介したようにsource要素を使用してください。
 
-
 〓22〓video要素およびaudio要素の内容モデル
-<コード＞
+＜コード＞
 <video controls src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
     poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
     width="620">
@@ -499,7 +492,7 @@ my-cue-id-1
 字幕の作成はなかなかに大変な作業ですが、近年では作成を支援するサービスも多数出てきています。たとえば、YouTubeには自動字幕生成の機能がありますし、生成された字幕をテキストトラックファイルに書き出すこともできます。字幕は、画像の代替テキストと同様の重要性を持つものですので、積極的に取り組んでいくとよいでしょう。
 動画に関する一般的なアクセシビリティの対処方法については、W3C WAIのリソースMaking Audio and Video Media Accessibleも参考になります。
 
-<memo＞
+＜memo＞
 Making Audio and Video Media Accessible
 https://www.w3.org/WAI/media/av/
 

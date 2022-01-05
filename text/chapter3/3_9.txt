@@ -106,7 +106,7 @@ application/x-www-form-urlencoded
 application/x-www-form-urlencodedは、フォームコントロールの名前と値のペアをURLエンコードして連結したもので、フォーム送信では最もよく利用される形式です。URL Standardで定義されています。
 たとえば、〓02〓の簡単な検索フォームの例において、「k（name="k"）」という名前の入力欄に「テスト」と入力した場合は〓07〓の上のような形式になります。名前と値のペアが複数ある場合は〓07〓の下のように&で連結します。
 
-<memo>
+＜memo＞
 5. application/x-www-form-urlencoded
 https://url.spec.whatwg.org/#application/x-www-form-urlencoded
 
@@ -115,7 +115,6 @@ https://url.spec.whatwg.org/#application/x-www-form-urlencoded
 k=%E3%83%86%E3%82%B9%E3%83%88
 
 name1=value1&name2=value2&
-
 
 ＜本文＞
 multipart/form-data
@@ -133,8 +132,7 @@ Content-Disposition: form-data; name="name2"
 value2
 ------WebKitFormBoundarygOTbtF2D0Y0ZT1Ak--
 
-
-<memo＞
+＜memo＞
 RFC7538
 https://datatracker.ietf.org/doc/html/rfc7578
 
@@ -160,7 +158,7 @@ novalidate属性を指定すると、フォーム送信時の入力値の検証�
 特定の形式の値のみを許すフォームコントロール（type=emailなど）や、required属性、pattern属性などで値が制限されている場合、「クライアント側フォーム検証（Client-side form validation）が行われ、条件を満たしていないとエラーとなります。
 novalidate属性を指定すると、この検証を無効にし、無条件でフォーム送信ができるようになります。
 
-<memo>
+＜memo＞
 4.10.1.4 Client-side form validation
 https://html.spec.whatwg.org/multipage/forms.html#client-side-form-validation
 
@@ -208,7 +206,6 @@ label要素の内容モデルはPhrasingです。ただし、label要素を子�
 内容モデルがFlowではないことに注意してください。label要素にh1などの見出しや、p要素などを入れることはできません。
 内容にラベル付け可能要素が含まれている場合、label要素はその要素に結び付けられます。〓10〓では、入力欄に「クエリー:」というラベルが結び付けられます。
 
-
 〓10〓入力欄に「クエリー:」ラベルが結び付けられた例
 ＜コード＞
 <label>クエリー: <input name="q" type="text"></label>
@@ -248,7 +245,6 @@ for属性
 <label for="text2">Query: <input id="text1"></label>
 <input id="text2">
 
-
 for属性を利用すると、ラベル付け可能要素をlabel要素の中に入れる必要はないため、配置の自由度が増します。ただし、id属性はページ内で一意でなければならないため、ラベル付け可能要素が複数ある場合、id属性はそれぞれ異なる値にする必要があります。フォームコントロールが増減するような場合は扱いに注意が必要です。
 for属性を利用すると、1つのラベル付け可能要素に複数のlabel要素を関連付けることも可能です。〓14〓は正しい例です。
 この場合、<input id="text1">に対して3つのラベルが結び付けられ、ラベル1、ラベル2、ラベル3の順に読み上げることが期待されます。
@@ -272,7 +268,6 @@ label要素を利用する際は、ラベル付け可能要素との結び付け
 <!-- label要素が結び付けられていない -->
 <label>名前</label>
 <input name="name" type="text">
-
 
 ＜本文＞
 また、for属性の誤りで結び付けに失敗している例もよく見られます〓16〓。
@@ -338,7 +333,6 @@ type=telは、電話番号の入力や編集をするコントロールを表し
 type=telの場合、デフォルトのARIAロールはtextboxです。有効なlist属性が指定されている場合には、デフォルトのARIAロールはcomboboxとなります。後述のlist属性を参照してください。
 スクリーンリーダーはtype=textの入力欄と同様に読み上げ、電話番号の入力欄であることは伝えない場合があります。電話番号の入力欄であることがわかるラベルを関連付けておくとよいでしょう。
 
-
 ＜小見出し＞
 URLの入力: url
 ＜本文＞
@@ -367,7 +361,7 @@ type=emailの入力欄では、フォーム送信時に入力値の検証が行�
 また、type=urlの場合と同様、後述のpattern属性との併用も可能です。
 type=emailの入力欄には、multiple属性を指定できます。multiple属性はブール型属性です。multiple属性が指定されていると、複数のメールアドレスをカンマ区切りで列挙して入力できるようになります。
 
-<memo >
+＜memo＞
 A valid email address
 https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address
 
@@ -455,7 +449,6 @@ min属性やmax属性には負の数も指定可能です。また、step属性�
 type=numberの入力欄では、フォーム送信時に入力値の検証が行われます。空でない値が入力されている場合には、浮動小数点数の形式となる必要があります。そうでない場合、フォーム送信をしようとするとエラーメッセージが表示され、送信できません。
 値の先頭に符号を付けていたり、指数形式で入力していたりする場合でも、値の変換は行われないことに注意してください。たとえば、"+1e-3"と入力されていた場合、これは"0.001"と同値ですが、変換されることなく"+1e-3"という文字列がそのまま送られます。数字のみで構成された値を選択させたい場合は、select要素を検討するとよいでしょう。
 
-
 ＜丸見出し＞
 maxlength属性とsize属性の扱い
 ＜本文＞
@@ -484,7 +477,6 @@ datalist要素と組み合わせると、スライダーに目盛りを付ける
 <option>100</option>
 </datalist>
 
-
 〓28〓〓27〓の表示例
 
 ＜丸見出し＞
@@ -509,14 +501,13 @@ type=colorは、色を選択するコントロールを表します。ブラウ�
 ＜本文＞
 type=colorの場合、デフォルトのARIAロールはありません。このコントロールの表現方法はブラウザーによってさまざまであり、スクリーンリーダーによる読み上げや操作方法もさまざまです。
 
-
 ＜小見出し＞
 チェックボックス: checkbox
 ＜本文＞
 type=checkboxは、チェックボックスを表します。チェックボックスは、チェックされている状態と、チェックされていない状態を持ちます。
 典型的には、YES/NO、ON/OFFのような二択で選ぶ項目に使うことができます。〓30〓の例は、「利用規約に同意する」というラベルを伴うチェックボックスの例です。
 
-<memo >
+＜memo＞
 JavaScriptからHTMLInputElementインターフェイスのindeterminateプロパティをtrueにすると、未確定（indeterminate）という状態にできます。こうすると、チェックボックスの現在の状態が表示されなくなります（オンともオフとも異なる見た目になります）。しかし、これが影響するのは見た目だけで、チェック状態や送信される値には影響しません。チェックボックスがチェックされたあとでindeterminateプロパティをtrueに設定しても、チェックが解除されるわけではなく、値がそのまま送信されます。
 
 〓30〓チェックボックスの例
@@ -562,7 +553,6 @@ type=radioは、ラジオボタンを表します。チェックボックスと�
 <label><input type="radio" name="sex" value="9">その他</label>
 <label><input type="radio" name="sex" value="0" checked>回答しない</label>
 
-
 〓34〓〓33〓の表示例
 
 ＜本文＞
@@ -583,7 +573,7 @@ type=radioの場合、デフォルトのARIAロールはradioです。スクリ�
 type=fileは、ファイルアップロードコントロールを表します。ユーザーは、このコントロールを操作してローカルのファイルを指定できます。指定されたファイルは、フォーム送信でサーバーにアップロードされたり、File APIを通じてJavaScriptから読み取られたりします。
 ファイルアップロードを行うフォームでは、form要素のenctype属性値を"multipart/form-data"とします。enctype属性の詳細はform要素を参照してください。最低限のファイルの送信フォームは〓35〓のようになります。表示例は〓36〓となります。
 
-<memo>
+＜memo＞
 MDNのWebアプリケーションからのファイルの使用が参考になります。
 https://developer.mozilla.org/ja/docs/Web/API/File/Using_files_from_web_applications
 
@@ -674,7 +664,6 @@ type=imageはイメージボタン、すなわち、画像によって表現さ�
 type=imageの場合、デフォルトのARIAロールはbuttonです。
 スクリーンリーダーはalt属性の値を読み上げてから「ボタン」と読み上げます。alt属性の値がラベルとして扱われるため、label要素でラベルを与える必要はありません。label要素を関連付けした場合はそのラベルが優先され、alt属性の値は読み上げられなくなります。
 
-
 ＜小見出し＞
 隠しコントロール：hidden
 type=hiddenは、ユーザーに値を提示しない、編集もできないコントロールを表します。システム側では値を受け取る必要があり、しかしユーザーに入力・編集させる必要がないような場合に利用します。〓38〓は、ショッピングサイトで商品をカートに入れる際のフォームの例です。
@@ -726,7 +715,7 @@ minlength属性が指定されていても、それより短い値を入れる�
 
 〓40〓〓39〓の表示例
 
-<memo>
+＜memo＞
 一部の文字を長さ2と数えるのは、JavaScriptで文字列の長さを取得する際と同じ挙動です。JavaScriptの内部では、文字列の文字エンコーディングはUTF-16として扱われており、Unicodeスカラー値がU+10000以上の文字は「サロゲートペア」と呼ばれる2つの文字の組み合わせで表現しています。このため、U+10000以上の文字は2文字とカウントされます。たとえば、JavaScriptで'🍣'.lengthを実行すると2が返ります（？）。
 
 ＜本文＞
@@ -799,7 +788,6 @@ pattern属性を指定すると、テキスト入力コントロールの値を�
 title属性を指定しておくと、エラー時の説明文として表示されることが期待できます〓46〓。pattern属性を指定している場合、どのような値を入力する必要があるのかユーザーに伝わりにくい場合が多いため、title属性を指定しておくべきです。上記の例では、たとえば以下の図のようにエラーが表示されます。
 
 〓46〓pattern属性のエラー表示
-
 
 ＜本文＞
 なお、値が空の場合はpattern属性による検証が行われません。〓47〓は3〜4文字の入力を期待している例です。
@@ -899,7 +887,7 @@ animal%5B%5D=cat&animal%5B%5D=dog
 ＜本文＞
 なお、フォーム送信を受け取る側の処理系によっては、同名の値をひとつにまとめて処理できることもあります。たとえばPHPでは、名前の末尾に[]がついた値を配列として扱うことができます。〓52〓の例で送信された値は、$_POST['animal']として取得でき、その値は["cat", "dog"]という配列になります。
 
-＜丸見出し>
+＜丸見出し＞
 dirname属性
 ＜本文＞
 テキスト入力を行うコントロールにdirname属性を指定すると、テキストの書字方向の情報を送信できます。詳細は仕様を参照してください。
@@ -1010,11 +998,11 @@ https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
 ＜本文＞
 ここまでで説明したように、autocomplete属性を用いることで、どのような入力欄であるかを伝えることができます。これはWCAG 2.1達成基準1.3.5入力目的の特定を満たす方法の1つとなっています。一部のブラウザーは、autocomplete属性を手がかりに、あるフォームで入力した値の記憶を試みます。そして別のフォームで対応するautocomplete属性値を持つ入力欄に対して、記憶に成功した値を自動補完します。これはアクセシビリティの向上だけでなく、ユーザビリティの向上にもつながりますので、積極的に利用するとよいでしょう。
 
-<memo>
+＜memo＞
 5. application/x-www-form-urlencoded
 https://url.spec.whatwg.org/#application/x-www-form-urlencoded
 
-<memo＞
+＜memo＞
 H98: Using HTML 5.2 autocomplete attributes 
 https://www.w3.org/WAI/WCAG21/Techniques/html/H98 
 なお、本書で述べていますが、HTML 5.2は廃止された仕様です。

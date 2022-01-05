@@ -9,10 +9,9 @@ URLとは
 URLは、リソースの場所を特定するための汎用的な識別子です。ネットワーク上の他のコンピューター上のリソースも指すことができ、ハイパーリンクのリンク先を示すのに使われます。URLの仕様は、現在ではWHATWG URL Standardで定義されています。
 〓01〓は、仕様で定義されるURLの例です。
 
-<memo>
+＜memo＞
 WHATWG URL Standard
 https://url.spec.whatwg.org/
-
 
 〓01〓仕様で定義されるURLの例
 ＜コード＞
@@ -38,7 +37,7 @@ URLの書式
 先頭のhttpsの部分は「スキーム（Scheme）」と呼ばれます。スキームはURLの種類や性質そのものを表しており、スキームが異なるとURLの書式も異なります。
 URLのスキームはIANAに登録されており、Uniform Resource Identifier（URI）Schemesで確認することができます。
 
-<memo>
+＜memo＞
 Uniform Resource Identifier（URI）Schemes
 https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml
 
@@ -46,11 +45,11 @@ https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml
 従来、ウェブで最もよく利用されていたのはhttpスキームでした。これはHTTPで通信を行ったリソースを取得するスキームで、ウェブページそのものの場所を指すのに利用するほか、ウェブコンテンツで利用する画像など各種のサブリソースを参照する際にも利用します。
 現在では、httpsスキームがよく利用されています。これはhttpと似ていますが、HTTP通信の際、「TLS（Transport Layer Security）」で保護された通信経路を用いることで、通信相手のなりすましや通信の傍受、改竄を防ぐ仕組みになっています。
 
-<memo>
+＜memo＞
 httpsはRFC 7230で定義されています。
 https://www.rfc-editor.org/rfc/rfc7230#section-2.7.2
 
-<memo>
+＜memo＞
 2021年10月現在、最もよく利用されるのはTLS 1.2で、RFC 5246で定義されています。RFC 8446で定義されるTLS 1.3も用いられています。
 
 ＜小見出し＞
@@ -64,7 +63,7 @@ https://www.rfc-editor.org/rfc/rfc7230#section-2.7.2
 https://example.com/
 https://example.com:443/
 
-<memo>
+＜memo＞
 :（コロン）の前までをスキームと呼ぶこともあれば、スキームであることを明確にするために、:(コロン）まで含めて記述することもあります。本書では、URL Standardに従って、:（コロン）を含めないものをスキームと呼びます。 
 
 ＜小見出し＞
@@ -102,18 +101,17 @@ URLのホストが一致している場合、「同一ドメイン（same domain
 ウェブのセキュリティモデルは、原則としてオリジンの考え方にもとづきます。この考え方を「同一オリジンポリシー（same-origin policy）」といい、オリジンが同一でないリソースの扱いに制限を課すことがあります。同一オリジンポリシーの詳細は、MDNを参照してください。
 ただし、歴史的な理由で、オリジンではなくサイトの考え方を採用しているケースもあります。その典型例は「クッキー（Cookie）」です。同一サイトであればスキームが異なってもクッキーを送信するため、httpsスキームでクッキーを利用する場合は、クッキー側でSecure属性を指定するといった配慮が必要になります。
 
-<memo>
+＜memo＞
 同一オリジンポリシー
 https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy
 
-
 ＜中見出し＞
 クロスオリジンアクセス
-<本文＞
+＜本文＞
 あるリソースが、現在のリソースと異なるオリジンであるとき、これを「クロスオリジン」(cross origin)といいます。クロスオリジンのリソースにアクセスすることを「クロスオリジンアクセス」といいます。
 たとえば、ウェブフォントやJavaScriptのライブラリを外部のサービスから読み込むような場合、「これはクロスオリジンでアクセスしている」といえます〓05〓。
 
-<memo>
+＜memo＞
 同様に、ドメインが異なるもの、サイトが異なるものをそれぞれ「クロスドメイン」「クロスサイト」といいます。ただし、ドメイン、サイト、オリジンを厳密に区別せずに、同じ意味で使われることもあります。
 
 〓05〓クロスオリジンアクセスの例
@@ -126,7 +124,7 @@ https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy
 ただし、HTML側のJavaScriptからは、クロスオリジンで取得したサブリソースの内容を読み取ることができないようになっています。これは、たとえ悪意あるコンテンツを表示しても、他のオリジンのリソースを読み取られないようにするためです。
 クロスオリジンで取得したリソースを読み取る必要がある場合は、CORS（Cross-Origin Resource Sharing）と呼ばれる仕組みを利用することができます。CORSの詳しい説明はMDNを参照してください。
 
-<memo>
+＜memo＞
 オリジン間リソース共有（CORS）
 https://developer.mozilla.org/ja/docs/Web/HTTP/CORS
 

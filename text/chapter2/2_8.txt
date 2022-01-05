@@ -8,7 +8,7 @@ HTMLの細かい文法
 ＜本文＞
 HTMLパーサー（HTMLを解釈するプログラム）のルールは仕様で明確に定められています。仕様のParsing HTML documentsのセクションでは、ある状況で特定の文字が出現した場合にどのように解釈するのか、というレベルまで挙動が規定されています。「このような書き方は可能か？」「このように書いた場合にどのように解釈されるのか？」という疑問は、ほとんどの場合、仕様をつぶさに読むことで解決できます。
 
-＜memo>
+＜memo＞
 Parsing HTML documents
 https://html.spec.whatwg.org/multipage/parsing.html
 
@@ -17,7 +17,7 @@ https://html.spec.whatwg.org/multipage/parsing.html
 ＜本文＞
 Chapter2-7でも触れましたが、HTMLのタグ名はASCII英字で始まる必要があり、数字で始まることは許されません。つまり、〓01〓のようなこのようなマークアップはエラーとなり、タグではなくテキストとして解釈されます〓02〓。
 
-<memo>
+＜memo＞
 この場合、「invalid-first-character-of-tag-name parse error」となります。
 
 〓01〓開始タグを誤った記述例
@@ -56,11 +56,11 @@ Chapter2-7でも触れましたが、HTMLのタグ名はASCII英字で始まる�
 セキュリティの観点からは、/の扱いについて注意が必要です。〓05〓のようなマークアップは、HTMLの仕様としては不正です。
 これはエラーとなりますがが、<の場合と異なり、/はタグ名の一部とはみなされません。エラー処理の際は、/の後が属性名とみなされます。結果として、これは〓06〓のようなマークアップと等価になり、まり、onmouseover属性が有効に機能することになります。タグ内に空白を挿入できなくても、属性を挿入できる点に注意が必要です。
 
-<word＞
+＜word＞
 Well-formed（整形式）
 XML構文の基本的な形式が押さえられているXML文書のこと。
 
-<memo＞
+＜memo＞
 この場合、unexpected-solidus-in-tag parse errorとなります。
 
 〓05〓開始タグを間違えた記述
@@ -71,7 +71,6 @@ XML構文の基本的な形式が押さえられているXML文書のこと。
 ＜コード＞
 <span onmouseover="alert(1);">test</span>
 
-
 ＜中見出し＞
 終了タグに属性は書けない
 ＜本文＞
@@ -81,9 +80,8 @@ XML構文の基本的な形式が押さえられているXML文書のこと。
 ＜コード＞
 <p>foo</p class="foo">
 
-<memo＞
+＜memo＞
 この場合、end-tag-with-attributes parse errorとなります。
-
 
 ＜中見出し＞
 終了タグ末尾の/
@@ -94,7 +92,7 @@ XML構文の基本的な形式が押さえられているXML文書のこと。
 ＜コード＞
 <p>foo</p/>
 
-＜memo>
+＜memo＞
 この場合、end-tag-with-trailing-solidus parse errorとなります。
 
 ＜中見出し＞
@@ -135,7 +133,7 @@ Chapter2-2でも触れましたが、同一の属性は複数指定できませ�
 ＜コード＞
 <body class="type1">
 
-<memo>
+＜memo＞
 この場合、duplicate-attribute parse errorとなります。
 
 ＜本文＞
@@ -167,7 +165,7 @@ Chapter2-3のブール型属性で触れましたが、空の属性値の記述�
 
 属性値を引用符で括った場合、対応する引用符（"もしくは'）で終了するのに対し、括らない場合はさまざまな文字で属性値が終了します。これはクロスサイトスクリプティング（XSS）脆弱性の原因となりやすいため、セキュリティ上の観点からは、属性値を引用符で括ることが強く推奨されています。
 
-<memo>
+＜memo＞
 この場合、unexpected-character-in-unquoted-attribute-value parse errorとなります。
 
 ＜word＞
@@ -180,7 +178,7 @@ plaintext
 HTML4まではplaintext要素が定義されていましたが、HTML Standardでは廃止されています。
 要素としては廃止されているのですが、パーサーのルールには<plaintext>というマークアップの処理が定義されています。plaintextというタグ名の開始タグに遭遇すると、以降をすべてプレーンテキストとして処理し、タグも文字参照も解釈しなくなります。</plaintext>という文字列があってもそのまま表示します。
 
-<memo>
+＜memo＞
 HTML Standardではobsolete feature（廃用にされた特脳）して記載されています。
 
 ＜本文＞
@@ -212,7 +210,6 @@ b要素の終了タグは省略できないため、これはエラーになり�
 ＜コード＞
 <p><b>b開始タグ</b></p>
 <b><p>bのないp</p></b>
-
 
 ＜中見出し＞
 直感に反するエラー処理

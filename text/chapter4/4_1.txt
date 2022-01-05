@@ -9,10 +9,10 @@ HTMLの個々の要素は異なる属性を持ちますが、属性の中には�
 グローバル属性とは、すべてのHTML要素に共通して利用できる属性です。HTML仕様が定義しているもののほかに、他の仕様で定義されているものもあります。WAI-ARIA仕様で規定されているrole属性やaria-*属性（Chapter4-2で詳しく説明します）や、XML仕様で規定されているxml:lang属性やxml:space属性などが典型例です。
 ここでは、グローバル属性のうち代表的なものを紹介します。ここで紹介していない属性については、仕様を参照してください。
 
-<memo>
+＜memo＞
 text/htmlではXML属性は効果を及ぼすものではなく、単に無意味です。
 
-<memo>
+＜memo＞
 3.2.6 Global attributes
 https://html.spec.whatwg.org/multipage/dom.html#global-attributes
 
@@ -28,7 +28,7 @@ title属性
 ウェブアクセシビリティの観点では、title属性の値はユーザーに伝わらない可能性があることに注意してください。ほとんどのブラウザーは、要素にマウスポインターを乗せたときにtitle属性の値をツールチップとして表示します。タッチスクリーンやキーボードで操作している場合、ツールチップを表示できないことがあります。
 スクリーンリーダーでは、状況によって、title属性の値を「アクセシブルな名前（accessible name）」として扱うことがあります。たとえばimg要素の場合、alt属性があればalt属性の値を読み上げますが、alt属性が存在しない場合、title属性の値を読み上げます。input要素にlabel要素が結び付けられていない場合にも、同様にtitle属性の値が読み上げられます。
 
-<memo>
+＜memo＞
 アクセシブルな名前は、HTML Accessibility API Mappings仕様のAccessible Name and Description Computationに基づいて決定されます。 
 https://w3c.github.io/html-aam/#accessible-name-and-description-computation
 
@@ -44,7 +44,7 @@ lang属性は、指定された要素の言語（自然言語）を指定しま�
 
 属性値には、BCP47の「言語タグ（language tag）」を指定します。言語タグの詳しい説明は、W3C文書「HTMLとXMLにおける言語タグ」を参照してください。
 
-<memo>
+＜memo＞
 HTMLとXMLにおける言語タグ
 https://www.w3.org/International/articles/language-tags/
 
@@ -78,18 +78,17 @@ XML構文の場合、XMLの属性であるxml:lang属性も使用できます。
 ＜本文＞
 スクリーンリーダーは、lang属性の値によって音声合成エンジンを切り替えることがあります。適切な言語設定が行われていないと、コンテンツを一切読み上げなかったり、理解不能な読み上げをすることがあります。そのため、html要素にlang属性を用いてページ全体の言語を適切に指定しておくべきです。
 
-<memo>
+＜memo＞
 WCAG 2.1達成基準3.1.1ページの言語で要求されています。 
 Success Criterion 3.1.1 Language of Page
 https://www.w3.org/TR/WCAG21/#language-of-page
-
 
 ＜中見出し＞
 style属性
 ＜本文＞
 要素にstyle属性を指定すると、その要素に対してCSSのスタイルを設定できます。属性値にはCSSの「宣言（declaration）」を記述します。セミコロンで区切って複数の宣言を記述できます。
 
-<memo>
+＜memo＞
 仕様としてはCSS Style Attributesで規定されます。
 CSS Style Attributes
 https://www.w3.org/TR/css-style-attr/
@@ -97,16 +96,16 @@ https://www.w3.org/TR/css-style-attr/
 ＜本文＞
 style属性で指定したスタイルは、原則としてその要素のみに適用されます。複数の要素に対してまとめてスタイルを指定したい場合、style要素を使用するか、link要素で外部スタイルシートを参照するほうがよいでしょう。
 
-<memo>
+＜memo＞
 継承が行われるスタイルは、子孫要素に継承されます。
 
-<memo>
+＜memo＞
 メンテナンス性の観点から、外部スタイルシートによる指定のほうがより望ましいでしょう。
 
 ＜本文＞
 なお、style属性で指定した宣言の「詳細度（specificity）」はもっとも高くなり、他のあらゆるセレクターよりも優先されます。古いCSS仕様ではIDセレクターと同一の詳細度とされていましたが、現在ではstyle属性が最優先となっています。
 
-<memo>
+＜memo＞
 CSS Cascading and Inheritance Level 4 - Specificity 
 https://www.w3.org/TR/css-cascade/#cascade-specificity
 
@@ -123,8 +122,7 @@ class属性
 class属性を利用すると、要素のクラス名を指定できます。値はスペース区切りのトークンで、複数の値をASCII空白文字で区切って指定できます。また、空の値（class=""）も指定可能です。
 クラス名はセマンティクス上の特定の意味を持つものではなく、コンテンツ制作者が自由に命名して指定できます。
 
-
-<memo>
+＜memo＞
 空の値を指定した場合、クラス名が指定されていないものとみなされます。意味はありませんが構文エラーにもなりません。
 CSS Cascading and Inheritance Level 4 - Specificity 
 https://www.w3.org/TR/css-cascade/#cascade-specificity
@@ -259,7 +257,7 @@ id属性
 ＜本文＞
 id属性を利用すると、要素に対して「ユニークID（unique identifier）」を付与できます。ユニークIDは単に「ID」と略して呼ぶこともあります。IDは文書内において唯一でなければなりません。同一のIDを持つ要素が同じ文書内に存在すると、構文エラーとなります。
 
-<memo>
+＜memo＞
 IDは俗称ではなく、仕様で使われている略称です。
 An element can have an associated unique identifier (ID)
 https://dom.spec.whatwg.org/#concept-id
@@ -342,11 +340,11 @@ IDの命名
 IDにはほとんどすべての文字が利用できますが、ASCII空白文字を含めることはできません。ASCII空白文字が含まれている場合、構文エラーとなります。class属性と異なり、複数のIDを列挙する指定はできないので注意してください。また、空のID（id=""）も指定できず、構文エラーとなります。
 大文字小文字は区別されることに注意してください。たとえば、"Test"と"test"は異なるIDとみなされます。これは古いHTML仕様とは異なるルールです。
 
-<memo>
+＜memo＞
 古いHTMLでは、IDで使用できる文字列に制限がありましたが、現在のHTML仕様にはそのような制限はありません。
 HTML4では、ASCII英数字、-（ハイフン）、_（アンダースコア）、.（ピリオド）、:（コロン）のみが利用でき、かつ、先頭がASCII英字でなければなりませんでした。
 
-<memo>
+＜memo＞
 HTML4の仕様では大文字・小文字を区別しませんでした。正確には、SGMLの処理ルール上、小文字を大文字に変換して解釈することになっていました。
 
 〓08〓IDの命名例
@@ -391,7 +389,7 @@ tabindex属性が指定されていない場合、その要素がフォーカス
 キーボード操作時には、Tabキーを押すことで、一定の順序でフォーカスを移動させることができます。このときのフォーカス移動を「シーケンシャルフォーカスナビゲーション（sequential focus navigation）」と呼びます。
 tabindex属性が指定されていない場合、シーケンシャルフォーカスナビゲーションではDOMツリー順（HTMLソースコード中の要素の出現順）にフォーカスが遷移します。
 
-<memo>
+＜memo＞
 Tabキーは順方向に、Shift+Tabキーは逆方向にフォーカスを移動できます。
 
 ＜小見出し＞
@@ -406,9 +404,8 @@ tabindex=0を指定した場合、その要素がフォーカス可能と分類�
 ＜本文＞
 tabindex=-1など、負の値を指定した場合、要素はフォーカス可能になりますが、シーケンシャルフォーカスナビゲーションの対象になりません。クリック操作やJavaScriptのfocus()メソッドではフォーカスを受け取りますが、キーボード操作ではフォーカスを移すことができません。これは、主にJavaScriptでフォーカスを制御する場合に使用します。
 
-<memo>
+＜memo＞
 負の数であればどの値でも扱いは同じですが、慣習的にtabindex=-1を使用します。
-
 
 ＜小見出し＞
 正の数を指定した場合
@@ -417,8 +414,7 @@ tabindex=-1など、負の値を指定した場合、要素はフォーカス可
 それに加えて、シーケンシャルフォーカスナビゲーションのフォーカス順序に影響を与える場合があります。正の値のtabindex属性が指定されている場合、その要素には優先的にフォーカスが移るようになります。複数の要素に正の値のtabindex属性が指定されていると、数値の小さいものが優先され、小さいものから大きいものへと順にフォーカスが移ります（同値の場合は出現順になります）。
 正の値を使用すると、見た目とはまったく異なるフォーカス順序も設定できますが、十分な配慮をせずに使用するとアクセシビリティの問題を起こすことがあります。アクセシビリティ上の注意点も参照してください。
 
-
-<memo>
+＜memo＞
 フォーカスに関する挙動の厳密な定義は、仕様の6.5 Focusに記載されています。 
 6.6 Focus
 https://html.spec.whatwg.org/multipage/interaction.html#focus 
@@ -428,7 +424,7 @@ https://html.spec.whatwg.org/multipage/interaction.html#focus
 ＜本文＞
 キーボード操作時は、Tabキーを押すことで、一定の順序でフォーカスを移動させることができます。通常はDOMツリー順（HTMLソースコード中の要素の出現順）にフォーカスが遷移します。
 
-<memo>
+＜memo＞
 Tabキーは順方向に、Shift+Tabキーは逆方向にフォーカスを移動できます。
 
 ＜本文＞
@@ -436,7 +432,7 @@ tabindex属性に正の値を指定すると、フォーカス順序が変化し
 
 tabindex属性は、特にキーボード操作をするユーザーに対して大きな影響を与えます。WAI-ARIAと組み合わせて、キーボード操作を改善するために利用することもあります。Chapter4-4を参照してください。
 
-<memo>
+＜memo＞
 Success Criterion 2.4.3 Focus Order
 https://www.w3.org/TR/WCAG21/#focus-order
 
@@ -450,7 +446,6 @@ tabindex属性と組み合わせると、通常はインタラクティブでな
 〓09〓autofocus属性とtabindex属性を組み合わせた記述例
 ＜コード＞
 <div tabindex="0" autofocus>autofocusでフォーカスがページ読み込み時に移動します</div>
-
 
 ＜小見出し＞
 アクセシビリティ上の注意点
@@ -470,18 +465,17 @@ tabindex属性と組み合わせると、通常はインタラクティブでな
 HTML仕様では60以上のイベントが定義されており、キーボード操作やマウス操作、フォーカスの受け取りやフォーカス移動、ページの読み込み、エラー発生などさまざまなものをトリガーにできます。MDNのイベントリファレンスも参考になります。
 こういったイベントの発生を監視する仕組みを「イベントリスナー（event listener）」と呼びます。イベントリスナーはイベントを監視し、イベントが発生したときに処理を行います。また、イベントリスナーと、イベント時に実行するコードを組み合わせたものを「イベントハンドラー（event handler）」と呼んでいます。
 
-<memo>
+＜memo＞
 イベントリファレンス | MDN 
 https://developer.mozilla.org/ja/docs/Web/Events
 
-<memo>
+＜memo＞
 HTML仕様の用語定義では、ハンドラーは、値とリスナーという2つの項目から構成されるとされています。 
 8.1.7.1 Event handlers
 https://html.spec.whatwg.org/multipage/webappapis.html#event-handlers
 
-<memo＞
+＜memo＞
 「イベントリスナー」と「イベントハンドラー」の用語は厳密には使い分けられず、同じ意味で使われることもあります。
-
 
 ＜小見出し＞
 イベントハンドラー属性
@@ -493,7 +487,7 @@ https://html.spec.whatwg.org/multipage/webappapis.html#event-handlers
 ＜コード＞
 <button type="button" onclick="alert(event.offsetX)">このボタンのどこかをクリック</button>
 
-<memo＞
+＜memo＞
 なお、CSP（Content-Security-Policy）でインラインのコードを禁止する設定にしている場合、イベントハンドラー属性に記述されたJavaScriptもブロックされます。
 コンテンツセキュリティポリシー (CSP)
 https://developer.mozilla.org/ja/docs/Web/HTTP/CSP
@@ -557,7 +551,6 @@ return falseを指定しているのは、フォーム送信を抑制するた�
   button.addEventListener('click', sayHello, false);
 </script>
 
-
 ＜中見出し＞
 accesskey属性
 ＜本文＞
@@ -571,7 +564,7 @@ accesskey属性を指定すると、要素のショートカットキーのヒ�
 多くのブラウザーでは、ショートカットを利用する際に修飾キーとの同時押しが必要です。〓12〓の例に示したボタンは、alt+1やControl+Option+1といった操作で反応します。
 デバイスによっては、使用できるキーの数が少ない場合もあります。HTML仕様はフォールバックの仕組みも用意しており、複数のキーを空白類文字で区切って指定できることになっています〓13〓。
 
-<memo>
+＜memo＞
 モバイル端末、特にフィーチャーフォンには、修飾キーとの同時押しを必要としないものもあります。古いフィーチャーフォン端末向けのサイトでは、accesskey属性を積極的に利用するものが多く見られました。
 
 〓13〓複数のキーを指定する記述例
@@ -588,15 +581,13 @@ accesskey属性は、ブラウザーの対応が良好ではなく、OSやブラ
 また、OSやブラウザーが持つ既存のキーボードショートカットと競合することがあります。特にスクリーンリーダーなどの支援技術では、AltキーやCtrlキーなども操作に利用することがあるため、より深刻な結果を引き起こす可能性があります。
 こういった問題のため、通常のウェブサイトやウェブアプリの多くでは、accesskey属性を使用しないよう一般にアドバイスされます。
 
-
-<memo＞
+＜memo＞
 accesskey
 https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/accesskey
 
-<memo>
+＜memo＞
 WebAIM: Keyboard Accessibility - Accesskey 
 https://webaim.org/techniques/keyboard/accesskey
-
 
 ＜中見出し＞
 hidden属性
@@ -618,7 +609,7 @@ hidden属性が指定されていない要素から、hidden属性が指定さ�
 ただし、他の方法による参照は可能です。たとえば、JavaScriptからはhidden属性の指定された要素に対する読み書きが可能です。これを利用して、hidden属性を指定した非表示のcanvas要素に内容を描き込んでおき、あとで表示する、といった処理を行うことができます。
 なお、フォームコントロールにhidden属性を指定しても、フォーム送信時には値が送信されることに注意してください。
 
-<memo>
+＜memo＞
 入力途中の選択肢によって入力欄の表示・非表示が変化するようなフォームを実装する場合、hidden属性で隠した入力項目も送信されます。値が送信されないようにしたい場合は、disabled属性と併用するとよいでしょう。
 
 ＜小見出し＞
@@ -628,11 +619,11 @@ HTML仕様では、ユーザーエージェントスタイルシートに[hidden
 しかし、このスタイル指定の優先度は高くないため、コンテンツ制作者がCSSでdisplayプロパティを指定すると、打ち消されることがあります。
 〓15〓は見出しにhidden属性を指定している例です。
 
-<memo>
+＜memo＞
 仕様の15.3.1 Hidden elementsを参照してください
 https://html.spec.whatwg.org/multipage/rendering.html#hidden-elements
 
-<memo>
+＜memo＞
 スタイルシートのカスケーディング順序はCSS Cascading and Inheritance仕様の§6. Cascadingで定義されているとおりです。
 https://www.w3.org/TR/css-cascade/#cascading
 
@@ -655,7 +646,6 @@ https://www.w3.org/TR/css-cascade/#cascading
 ＜本文＞
 この例では2番目の見出しにhidden属性を指定していますが、これは非表示になりません。style要素内でdisplay: inline-blockが指定されており、hidden属性に対するdisplay: noneが上書きされるためです。
 
-
 ＜小見出し＞
 アクセシビリティ上の注意点
 ＜本文＞
@@ -667,7 +657,6 @@ hidden属性を指定すると、ブラウザーで視覚的に非表示にな�
 ＜コード＞
 <input aria-labelledby="label">
 <p id="label" hidden>秘密の合言葉</p>
-
 
 ＜小見出し＞
 カスタムデータ属性: data-*属性
@@ -705,7 +694,7 @@ JavaScriptからは、HtmlElementインターフェイスのdatasetプロパテ�
 前述の*部分の名前はコンテンツ制作者が自由に設定できます。ただし、HTMLの属性名に利用できない文字は使えません。
 これらの文字が出現すると、その前で属性名が終わったものとみなされます。また、XMLとの互換性の兼ね合いで、:も使用できません。これはXMLの名前空間接頭辞の区切りとみなされます。
 
-<memo>
+＜memo＞
 具体的には、ASCII空白文字と、/、>、=、"、'、<が該当します。
 
 ＜本文＞
@@ -745,7 +734,6 @@ JavaScriptからは、HtmlElementインターフェイスのdatasetプロパテ�
   alert(element.dataset.htmlBook); // undefined
   alert(element.dataset.htmlbook); // データにアクセスできました
 </script>
-
 
 ＜小見出し＞
 その他のグローバル属性

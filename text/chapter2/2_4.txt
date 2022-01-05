@@ -17,7 +17,6 @@
 ＜コード＞
 <mark>この<p>キーワード</p>はこの文章で重要なものを表します。</mark>
 
-
 ＜本文＞
 これは、p要素がmark要素の子要素になれないためです。ある要素の内容に何を入れることができるか、つまりどの要素を子要素にできるかというルールは、仕様で定義されています。このルールを「内容モデル（Content model）」と呼びます。
 内容モデルに従っていないマークアップは語彙的ルールに違反し、エラーとなります。ただし、実際にそのようマークアップが出現してもエラー補正は行われず、そのままDOMツリーに追加されます。想定外の構造となるために、意図したスタイルが適用されないといった問題が起きることもあります。
@@ -30,11 +29,11 @@ HTML仕様の各要素の説明には、Content Modelの項目があり、そこ
 ・Content model:
 ・Phrasing content.
 
-<memo>
+＜memo＞
 4.4.1 The p element
 https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element
 
-<memo>
+＜memo＞
 4.5.23 The mark element
 https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element
 
@@ -56,7 +55,7 @@ Phrasing contentというのは、要素の「カテゴリー（categories）の
 ・Embedded content
 ・Interactive content
 
-＜memo>
+＜memo＞
 3.2.5.2 Kinds of content
 https://html.spec.whatwg.org/multipage/dom.html#kinds-of-content
 
@@ -76,7 +75,7 @@ HTML文書のコンテンツ内で自由に使える要素のほとんどはFlow
 flowは「流れ」という意味ですが、ここでは「本文として流し込むことができるもの」というイメージです。CSSに通じている読者は、CSSのNormal Flowでレイアウトできる要素と捉えるとイメージしやすいでしょう。
 Flowにはテキストも属しています。内容モデルがFlowと定義されている場合、要素の内容にテキストを直接入れることもできます。
 
-<丸見出し＞
+＜丸見出し＞
 Phrasing
 ＜本文＞
 Flowに属する要素のうち、特に文章のパラグラフで使用される要素がPhrasingに属します。HTML4の知識がある読者は、HTML4での「インライン要素」に対応する要素と考えるとわかりやすいでしょう。Phrasingにはa、em、img、span、mark要素などが属します。また、テキストも属します。
@@ -105,7 +104,6 @@ HTML4の知識があると、「ブロックレベル要素」に相当する言
 基本的にul要素の直下にはli要素以外のものは入れられません。この例では「テキスト1」というテキストが入っているため、不正となります。
 一方、〓05〓ではul要素の直下に改行とスペースによるインデントが入っています。このように、要素の内容の先頭と末尾に出現するASCII空白文字を「inter-element whitespace」と呼びます。
 
-
 〓05〓改行とスペースを入れた例
 ＜コード＞
 <ul>
@@ -128,7 +126,6 @@ document.querySelector('ul').childNodes[0].length;
 
 ＜本文＞
 しかし、内容モデルの考慮においては、inter-element whitespaceは無視することになっています。つまり、タグの前後の改行やインデントは、内容モデルに影響しません。前述のインデントされたli要素のマークアップ例も内容モデルに違反せず、問題ないということになります。
-
 
 ＜中見出し＞
 特殊な内容モデルの定義
@@ -262,6 +259,4 @@ Inside menu elements.
 
 li要素がol、ul、menu要素の子になれることがわかります。このように、要素によっては逆引きが便利なこともあるので、活用するとよいでしょう。
 ただし、これは規範情報ではなく参考情報であり、あくまで利便性のために書かれているものです。仕様での正確な定義については、内容モデルを確認する必要があります。
-
-
 
