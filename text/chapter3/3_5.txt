@@ -1,0 +1,790 @@
+＜タイトル＞
+リンク関連要素
+＜本文＞
+HTMLの根幹となる重要な機能の1つがハイパーリンクです。HTMLでは、a要素やarea要素、link要素、form要素を使って外部リソースへのリンクを表現できます。ここでは、主にa要素とlink要素の2つの要素を取り上げ、リンクに関連する要素で使える属性について紹介します。
+
+＜中見出し＞
+a要素
+＜本文＞
+a要素は、「アンカー（anchor）」を表現する要素です。href属性を指定することで、ハイパーリンクとして機能します。ユーザーがハイパーリンクをクリックしたり、フォーカスを当ててEnterキーを押すと、指定されたURLへのナビゲーションが行われ、リンク先のコンテンツが表示されます。
+
+<memo>
+URLのスキームや、リンク先リソースのMIMEタイプの値によって異なる挙動になる場合もあります。Chapter2-3「リソースを取得できないスキームの例」、Chapter1-6「MIMEタイプ」の項を参照してください。 
+
+＜本文＞
+このように、href属性を持つa要素はユーザーの操作を受け付けるインタラクティブコンテンツとなります。
+多くのブラウザーデフォルトスタイルでは、ハイパーリンクとなっているテキストを下線の付いた青文字のスタイルで表現し、どの箇所がハイパーリンクかわかるようにします〓01〓。このスタイルはCSSで変更可能です。
+
+〓01〓a要素の表示例
+
+＜コラム＞
+href属性を持たないa要素
+＜コラム本文＞
+典型的なa要素はhref属性を持ちますが、href属性は必須の属性ではありません。〓01〓のような、href属性のないa要素も許可されています。
+
+〓01〓href属性のないa要素
+＜コード＞
+<a>リンクになるかもしれないテキスト</a>
+
+＜コラム本文＞
+この場合、a要素はインタラクティブにはならず、ハイパーリンクとしては機能しません。JavaScriptであとからhref属性を付与すると、ハイパーリンクとして利用できるようになります。
+また、〓02〓のようにid属性を指定し、リンク先として機能させる使い方もあります。
+
+〓02〓id属性を指定
+＜コード＞
+<h1><a id="midashi">見出し</a></h1>
+
+＜コラム本文＞
+この書き方は古いHTMLの名残であり、現在では利用する必要はありません。「廃止された属性：name属性」の項を参照してください。
+
+＜小見出し＞
+内容モデル
+＜本文＞
+a要素の内容モデルはTransparentで、親要素の内容モデルを引き継ぎます。ただし、a要素をはじめとするinteractiveに属する要素は入れ子にできません。また、tabindex属性を持つ要素も入れられません。おおまかには、a要素の中にキーボード操作が可能な要素を含むことができないと捉えるとよいでしょう。
+古いHTMLでは、a要素はdiv、p、h1要素などを子要素にできませんでしたが、現在のHTMLでは可能で、見出しや段落などをまるごとリンクにできます〓02〓。
+ハイパーリンクとなっているa要素の内容に含まれるテキストを「リンクテキスト（link text）」と呼びます。子孫要素に複数の要素が含まれている場合、それらの含むテキストすべてをつなぎ合わせたものがリンクテキストになります。〓02〓の例では、リンクテキストは「商品名 説明文」となります。
+
+〓02〓見出しや段落をリンクにした記述例
+＜コード＞
+<div>
+  <a href="/product/01">
+    <h1>商品名</h1>
+    <p>説明文</p>
+  </a>
+</div>
+
+＜小見出し＞
+属性
+＜本文＞
+a要素には多数の属性があります。多くの場合はhref属性を指定して利用し、その場合にはハイパーリンクとして機能します。a要素の属性の詳細については、後述の「リンク関連要素の属性」を参照してください。
+
+＜丸見出し＞
+廃止された属性: name属性
+＜本文＞
+Chapter1-5で説明したように、URLはフラグメントを含むことが可能で、ページ内の特定の箇所を参照できます。古いHTMLでは、このフラグメントを指定するためにa要素のname属性を利用していました〓03〓。
+
+〓03〓a要素のname属性
+＜コード＞
+<h1><a name="midashi">見出し</a></h1>
+
+＜本文＞
+現在でも、フラグメントIDへのリンクを俗に「アンカーリンク」と呼ぶことがありますが、それは当時a要素（アンカー）が使われていた頃の名残です。
+HTML4ではid属性が利用できるようになり、任意の要素にid属性を指定することでフラグメントIDとして利用できるようになりましたが、互換性のために引き続きa要素が利用され、id属性と併用されることもありました〓04〓。
+
+〓04〓a要素のid属性
+＜コード＞
+<h1><a id="midashi" name="midashi">見出し</a></h1>
+
+＜本文＞
+現在のHTMLでは、a要素のname属性は廃止されています。ブラウザーは互換性のためにname属性を解釈しますが、コンテンツ制作者は原則としてname属性を使用してはなりません。単に〓05〓のように記述すれば十分です。
+
+〓05〓現在の記述
+＜コード＞
+<h1 id="midashi">見出し</h1>
+
+<memo＞
+16.1 Obsolete but conforming features
+https://html.spec.whatwg.org/multipage/obsolete.html#obsolete-but-conforming-features
+
+＜小見出し＞
+アクセシビリティ上の注意点
+＜本文＞
+href属性を持つa要素のデフォルトのARIAロールはlinkです。
+ほとんどのスクリーンリーダーは、リンクテキストをすべて読み上げたあとに「リンク」と読み上げます。前述のように、現在のHTMLではa要素に見出しなどを含むさまざまな要素を入れられますが、リンクテキストが長くなりすぎると、リンクであることが伝わりにくくなります。
+ウェブにおいて、ハイパーリンクは極めて重要です。リンクが利用できないと、ウェブサイトをまったく利用できなくなることもあります。そのため、a要素のアクセシビリティも重要であり、注意点も多数あります。
+
+＜丸見出し＞
+リンク先を理解できるようにする
+＜本文＞
+ユーザーがハイパーリンクを発見したとき、そのリンクを辿るかどうか判断するためには、リンク先の内容を推測する必要があります。WCAG 2.1達成基準2.4.4リンクの目的 (コンテキスト内)では、リンクテキスト単独か、リンクテキストの前後のコンテキスト（文脈）とあわせてリンクの目的を理解できるようにすることを求めています。
+〓06〓は望ましくない例で、俗に「here症候群」と呼ばれるものです。
+
+〓06〓here症候群
+＜コード＞
+<p>
+<a href="wcag.html">こちら</a>をご覧ください。
+</p>
+
+<memo>
+Success Criterion 2.4.4 Link Purpose (In Context)
+https://www.w3.org/TR/WCAG21/#link-purpose-in-context
+
+この例では前後のコンテキストもなく、リンク先がどのような内容か推測できません。〓07〓のように、リンク先に関する情報がa要素の外に書かれていることもあります。
+
+〓07〓リンク先の情報が要素外に記述された例
+＜コード＞
+<p>
+WCAGの関連資料は<a href="wcag.html">こちら</a>
+</p>
+
+この例では、a要素の直前のテキストを読むとリンク先の内容がわかり、前後のコンテキストからリンク先を推測できます。そのため、最低限のアクセシビリティは担保できているといえます。
+より高度なアクセシビリティ基準として、WCAG 2.1達成基準2.4.9リンクの目的 (リンクのみ)があります。こちらでは、コンテキストに頼らず、リンクテキストのみでリンク先を理解できるようにすることを求めています。スクリーンリーダーをはじめとする多くの支援技術は、次のリンクに飛ぶ機能やリンクだけを読み上げる機能を持ち、前後の文とは切り離されてリンクテキストだけが読み上げられることがあるためです。
+
+＜memo>
+Success Criterion 2.4.9 Link Purpose (Link Only)
+https://www.w3.org/TR/WCAG21/#link-purpose-link-only
+
+＜本文＞
+この場合、たとえばリンク先のコンテンツのタイトル（title要素の内容）をそのままリンクテキストにすることで、要件を満たすことができます〓08〓。
+
+〓08〓リンクテキストをタイトルにした記述例
+＜コード＞
+<p>
+<a href="wcag.html">WCAGの関連資料</a>をご覧ください。
+</p>
+
+また、画像をリンクにする場合、代替テキスト（alt属性の値）がリンクテキストになります。このとき、リンクテキストが空にならないように注意してください。〓09〓は望ましくない例です。
+
+〓09〓リンクテキストが空の状態
+＜コード＞
+<a href="pr.html"><img src="banner.png" alt=""></a>
+
+＜本文＞
+この場合、a要素の内容にはテキストが存在しないため、リンクテキストは空になってしまいます。スクリーンリーダーはリンク先のURLを読み上げてしまうことがありますが、ユーザーにはリンク先の内容が伝わりません。
+
+＜丸見出し＞
+a要素をボタンとして用いる
+＜本文＞
+a要素を利用して擬似的なボタンを作成することがあります。a要素の見た目をボタンのように変更し、clickイベントを定義して、クリックしたときにJavaScriptを実行させることが可能です〓10〓。
+
+〓10〓a要素にclickイベントを定義
+＜コード＞
+<p><a href="#" onclick="...">実行</a></p>
+<p><a href="javascript:void(0)" onclick="...">実行</a></p>
+
+＜本文＞
+しかし、href属性のあるa要素はデフォルトでlinkロールを持つため、スクリーンリーダーはこれをリンクとして扱います。〓10〓の例では「実行 ボタン」ではなく「実行 リンク」と読み上げられます。スクリーンリーダーのユーザーにはボタンであることは伝わりません。
+Chapter4で紹介するWAI-ARIAを使用する方法もありますが、ボタンにはbutton要素を使用するほうがよいでしょう。
+
+＜丸見出し＞
+target属性の注意点
+＜本文＞
+後述するtarget属性について、属性値に"_blank"を指定すると、多くの場合、リンク先を新しいブラウザータブで開く挙動になります。
+ほとんどのブラウザーはtarget="_blank"を指定した場合に特別な通知をすることはありません。また、この挙動がユーザーに伝わりにくいことがあります。特にスクリーンリーダーのユーザーや画面を拡大しているユーザーの場合、状況によっては新しいタブで開いたことに気づかず、混乱することもあります。そのため、target="_blank"を指定する場合は、リンクテキスト内に新しいタブで開くことがわかる説明を検討しましょう。
+また、ユーザーによってはブラウザータブを閉じるのが容易でない場合や、わずらわしいと感じることがあります。target="_blank"がそのリンクに対して本当に必要かどうかもあわせて吟味したほうがよいでしょう。WCAG 2.1達成基準3.2.5要求による変化の観点でも配慮が必要とされています。
+
+＜memo>
+多くの場合、新しく開いたタブでブラウザーの「戻る」機能が動作せず、これが混乱の原因となります。ただし、macOS/iOSのSafariでは別タブで開いた場合でも「戻る」が機能するようです。
+
+<memo>
+Success Criterion 3.2.5 Change on Request
+https://www.w3.org/TR/WCAG21/#change-on-request
+
+＜丸見出し＞
+スキップリンク
+＜本文＞
+ウェブページの冒頭に大きなヘッダーがある場合、スクリーンリーダーのユーザーやキーボードユーザーは、メインコンテンツに辿り着くまでの多大な労力が必要になることがあります。そのため、WCAG 2.1達成基準2.4.1ブロックスキップでは、ブロックをスキップする機能を提供するように求めています。
+この機能を実現する方法の1つとして、ページの冒頭に、メインコンテンツに飛ぶリンクを設けるというものがあります。このテクニックは「スキップリンク」と呼ばれます。
+
+〓11〓スキップリンクの記述例
+＜コード＞
+<body>
+  <a href="#content">メインコンテンツへ</a>
+  <header>
+    ...
+  </header>
+  <main id="content">
+    ...
+  </main>
+</body>
+
+<memo＞
+Success Criterion 2.4.1 Bypass Blocks
+https://www.w3.org/TR/WCAG21/#bypass-blocks
+
+＜本文＞
+スキップリンクを設ける場合、スクリーンリーダーを利用していないキーボードユーザーへの配慮が必要です。スキップリンクを視覚的に不可視にした場合、視覚情報を利用するキーボードユーザーはフォーカスを見失うことがあります。
+達成基準2.4.1は、メインコンテンツの位置に見出しを配置する、メインコンテンツをmain要素としてマークアップする方法で満たすことができます。スキップリンクも達成基準2.4.1を満たす方法の1つですが、あくまで方法の1つにすぎません。ウェブアクセシビリティの観点からスキップリンクの導入は必須ではないことに注意してください。
+
+＜中見出し＞
+link要素
+＜本文＞
+link要素は、このHTML文書自身とリンク先のリソースとの関係性を表現します。
+通常link要素は、head要素内に記述します。ただし、rel属性でbody-okであるキーワードを指定した場合、もしくはitemprop属性を指定した場合にはbody要素内でも有効です。
+たとえば、rel="stylesheet"はbody-okとされているので、スタイルシートを参照するlink要素はbody要素内でも適切に解釈されます。
+
+＜memo＞
+body-ok
+https://html.spec.whatwg.org/multipage/links.html#body-ok
+
+＜小見出し＞
+内容モデル
+＜本文＞
+link要素の内容モデルはNothingで、内容を持つことはできません。また、終了タグを書くこともできません。
+
+＜小見出し＞
+属性
+＜本文＞
+link要素では、href属性は必須であり、属性値にリンクの対象リソースのURLを指定します。また、あわせてrel属性かitemprop属性のいずれかを指定しなければなりません。ほとんどの場合、rel属性を使用します。各属性の説明については、「リンク関連要素の属性」および「rel属性とリンクタイプ」を参照してください。
+
+＜中見出し＞
+リンク関連要素の属性
+＜本文＞
+リンクを扱うa要素やarea要素、link要素、form要素は、外部リソースの扱いに関連する、これら複数の要素にわたって利用できる属性を持っています。ここでは、それらの属性を紹介します。
+
+＜小見出し＞
+href属性
+＜本文＞
+href属性は、冒頭でも述べたようにハイパーリンクを機能させるための属性です。
+link要素では、href属性は必須です。a要素では前述のように省略可能ですが、ほとんどの場合はhref属性を指定します。
+href属性には、リンクの対象リソースのURLを指定します。指定できる値は、「潜在的にスペースで囲まれた妥当なURL（valid URL potentially surrounded by spaces）」です。先頭と末尾のASCII空白文字は、ブラウザーがHTMLを解析するときに取り除かれます。たとえば、〓12〓の2つのa要素は同一のものとして処理されます。
+
+〓12〓href属性の記述例
+＜コード＞
+<a href="https://www.example.com/">Example Domain</a>
+<a href="
+    https://www.example.com/
+">Example Domain</a>
+
+＜本文＞
+コードの可読性の観点から、通常はスペースを入れずに書きます。
+また、a要素のhref属性値に#で始まるURLフラグメントを指定した場合、該当するフラグメントIDを持つ要素の場所までページをスクロールします。フラグメントについては、Chapter1-5を参照してください。なお、#topを指定していて、かつtopというフラグメントIDがページ内に存在しない場合は、ページの最上部へスクロールします。これは仕様に定められた挙動です。
+
+<memo>
+7.11.9 Navigating to a fragment
+https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-fragid
+
+＜小見出し＞
+rel属性
+＜本文＞
+rel属性は、リンクの種類、つまりリンク先とこの文書との関連性を示します。属性値は「リンクタイプ（link types）」です。リンクタイプについては、後述の「rel属性とリンクタイプ」で詳しく説明します。
+link要素では多くの場合、href属性とともに使用し、href属性で指定したURLが何であるのかを示します。
+
+＜小見出し＞
+target属性
+＜本文＞
+a要素とarea要素、form要素にtarget属性を利用すると、リンク先をどのフレームやタブ、ウィンドウに表示するかを制御できます。〓13〓はiframe要素と組み合わせた例です。
+
+〓13〓iframe要素と組み合わせたtarget属性の記述例
+＜コード＞
+<iframe src="a.html" name="iframe01"></iframe>
+<a href="b.html" target="iframe01">Bを表示</a>
+
+＜本文＞
+iframe要素にはa.htmlの内容が表示されています。このように、ユーザーに対してHTML文書を表示するウィンドウやフレームのような枠を「ブラウジングコンテキスト（browsing context）」と呼びます。iframe要素もブラウジングコンテキストとなり、name属性でブラウジングコンテキストの名前を付けられます（id属性ではないことに注意してください）。
+この例では、a要素のtarget属性でiframe要素の名前を指定しています。このリンクを辿ると、リンク先はこのiframe要素の中に表示され、iframe要素の中身が切り替わるような形になります。
+ブラウジングコンテキストは、別のウィンドウや別のタブである場合もあります。target属性に指定された名前が存在しない場合、ブラウザーは新たにタブやウィンドウを開き、そこで新たなブラウジングコンテキストを開始します。
+〓14〓の例では、window01という名前のブラウジングコンテキストを参照しています。
+
+〓14〓ブラウジングコンテキストを参照する記述例
+＜コード＞
+<a href="a.html" target="window01">Aを表示</a>
+<a href="b.html" target="window01">Bを表示</a>
+<a href="c.html" target="window01">Cを表示</a>
+
+＜本文＞
+この場合、まずwindow01という名前のブラウジングコンテキストを探し、それが存在すればそこでリンク先を開きます。存在しない場合、ブラウザーは新たにタブやウィンドウを開き、そのブラウジングコンテキストにwindow01という名前を付けます。この例でリンクを上から順にクリックしていった場合、まず新しいタブが開いてa.htmlが表示され、その同じタブ内にb.htmlとc.htmlが表示されることになります。
+ブラウジングコンテキストの名前は、_（U+005F、アンダースコア）で始めることができません。_で始まる文字列は名前ではなく、定義されたキーワードとみなされます。以下の4つのキーワードが定義されています。
+
+・_self：現在のブラウジングコンテキストを指します。デフォルト値です。
+・_blank：新しいブラウジングコンテキストを作成します。タブを持つブラウザーの場合は新しいタブで開きます。
+・_parent：親のブラウジングコンテキストを指します。親がない場合は、_selfと同じ挙動になります。
+・_top：祖先となる最上位のブラウジングコンテキストを指します。親がない場合は、_selfと同じ挙動になります。
+
+新しいブラウジングコンテキストで他のHTMLを開いた場合、window.openerを参照することで元のブラウジングコンテキストを参照できます。古いブラウザーでは、このブラウジングコンテキストの参照がクロスドメインで行える場合があり、セキュリティ上の重大な注意点とされていました。現在のブラウザーではクロスドメインの参照はできなくなっています。
+ところで、target属性は古いHTML4の仕様では廃止される見込みがありましたが、現在のHTMLでは廃止されることなく、引き続き定義されています。
+target属性は、かつてはフレーム文書を制御する属性として定義されていました。フレーム関連の要素としては、フレーム文書の集合を表すframeset要素と、フレームを表すframe要素、そしてインラインフレームを表すiframe要素がHTML4で定義されていました。これらの要素はいずれも廃止される見込みであったため、それに伴ってtarget属性も廃止される可能性がありました。しかし、iframe要素は現在でも使われています。また、リンク先を別タブで開く場合の制御にも用いられています。こういった事情から、target属性は現在でも引き続き利用可能となっています。
+
+＜小見出し＞
+download属性
+＜本文＞
+a要素、area要素にdownload属性を指定すると、URLへのリンクではなく、URLで示されたリソースのダウンロードを促します。
+download属性に空でない値を指定した場合、ダウンロードファイルを保存するときのファイル名のヒントとなります。ファイル名に使用できない文字が含まれていた場合、ブラウザーは必要に応じて文字を削除したり、ユーザーに訂正を促したりすることがあります〓15〓。
+
+〓15〓download属性の記述例
+＜コード＞
+<a href="sample.png" download>サンプル画像をダウンロード</a>
+<a href="sample.png" download="download.png">download.pngとして画像をダウンロードして保存</a>
+
+＜本文＞
+なお、実際にダウンロードするときにHTTPレスポンスヘッダーでファイル名が指定されていた場合は、レスポンスヘッダーの指定が優先されます。
+リンク先のリソースが同一オリジンでない場合、ブラウザーはdownload属性を無視することがあります。これは悪用を防ぐためです。仕様では注記が記載されているだけであり、クロスオリジンのdownload属性を無視する動作が規定されているわけではありませんが、多くのブラウザーはこの注記に従っています。
+
+＜memo＞
+4.6.5 Downloading resources
+https://html.spec.whatwg.org/multipage/links.html#downloading-resources
+
+
+＜小見出し＞
+hreflang属性
+＜本文＞
+hreflang属性は、リンク先の言語を示します。lang属性が現在のコンテンツの言語を指定するのに対し、hreflang属性はhref属性で指定されたリンク先の言語を示します。属性値は言語タグで、これはlang属性と同様です。値の詳細はChapter4-1のlang属性を参照してください。
+a要素では、hreflang属性は単なるアドバイスとして扱われます。リンク先のコンテンツでlang属性などによって言語が指定されていれば、そちらが優先されます。
+link要素では、rel=alternateと組み合わせることで、別言語バージョンのページを示すことができます。用例はリンクタイプalternateを参照してください。
+
+＜小見出し＞
+referrerpolicy属性
+＜本文＞
+a要素とarea要素、link要素でreferrerpolicy属性を利用すると、リンク先に送信するHTTP Refererを制御できます。rel=nofollowを指定することでもRefererの送信を抑制できますが、referrerpolicy属性ではさらに細かい制御が可能です。
+詳細はReferrer Policy仕様を参照してください。
+
+<memo＞
+Referrer Policy
+https://w3c.github.io/webappsec-referrer-policy/
+
+＜小見出し＞
+ping属性
+＜本文＞
+リンク先へ遷移するときに、ping属性で指定したURLにリンク元とリンク先を伝えます。例として、https://example.net/link-from/というURLに〓16〓のようなリンクがあるとします。
+この場合、/trackerに対して次のようなHTTP POSTリクエストを送信します。〓17〓のように、Ping-Fromヘッダーにリンク元のURL、Ping-Toヘッダーにリンク先のURLの情報が記録されます。
+
+
+
+〓16〓ping属性の記述例
+＜コード＞
+<a href="https://example.com/link-to/" ping="/tracker">example.com</a>
+
+〓17〓送信するHTTP POSTリクエスト
+＜本文＞
+POST /tracker HTTP/1.1
+Content-Type: text/ping
+Ping-From: https://example.net/link-from/
+Ping-To: https://example.com/link-to/
+
+＜本文＞
+どこからどこへページ遷移したのかを知る方法としては、HTTPリダイレクトやJavaScriptなどの既存の技術を用いる方法が知られています。しかし、ping属性を用いることで、ユーザーがリンク先を正確に知ることができる、ユーザーエージェントが情報を送信するかどうかを制御できる、追加の処理が発生しないためにパフォーマンスの向上が見込まれるといった利点があります。HTTP仕様でもこの属性を用いることをアドバイスしています。
+ただし、2021年10月現在で、Firefoxはping属性をデフォルトで無効にしている点に注意が必要です。
+
+<memo＞
+https://caniuse.com/ping
+
+＜小見出し＞
+itemprop属性
+＜本文＞
+itemprop属性はMicrodataを示すための属性です。link要素にitemprop属性を使用すると、メタデータとして外部リソースを参照できます。〓18〓は、作者を示すURLを参照する例です。
+
+〓18〓URLを参照する例
+＜コード＞
+<link itemprop="creator" href="https://example.com/author" />
+
+＜小見出し＞
+title属性
+＜本文＞
+title属性はグローバル属性ですが、link要素で代替スタイルシートを指定する場合、title属性でスタイルシートの名前を指定する、特別なセマンティックスを持ちます。詳しくは代替スタイルシートを参照してください。
+
+＜小見出し＞
+廃止された属性：rev属性
+＜本文＞
+古いHTMLではrel属性と逆向きのリンクを示すrev属性が定義されていました。よく使われていた例に〓19〓のようなものがあります。
+
+〓19〓rev属性の記述例
+＜コード＞
+<link rev="made" href="mailto:me@example.com">
+
+＜本文＞
+現在のHTML仕様ではrev属性は廃止されており、rev属性は逆向きのrel属性に書き換えることができます。
+〓19〓の場合、rev="made"の代わりにrel="author"として表現できます。なお、互換性のために、ブラウザーはrev="made"をrel="author"と同じ意味に解釈します。
+
+＜中見出し＞
+rel属性とリンクタイプ
+＜本文＞
+リンクタイプは、現在の文書とリンク先のリソースとの関係を表すキーワードで、HTML仕様の4.6.6 Link typesにて定義されています。また、後述の「その他リンクタイプ」で記載しているように、拡張リンクタイプを誰でも登録できます。
+リンクタイプのキーワードは別に指示がない限り、1つのrel属性に1つのみを指定します。複数指定する場合は、（たとえば、 rel="alternate stylesheet" のように）ASCII空白文字で区切って指定します。
+互換性のために、キーワードには同義語が定義されることがあります。たとえば、キーワードlicenseに対して、copyrightが同義語として定義されています。コンテンツ制作者はcopyrightを指定してはなりませんが、ユーザーエージェントはどちらも同じように扱います。
+キーワードは大文字小文字を区別しません。たとえば、stylesheetとStyleSheetとSTYLESHEETは同じ意味になります。
+本書では代表的なリンクタイプをいくつか紹介します。リンクタイプの対応状況はブラウザーによって異なります。MDNを参照してください。
+
+<memo>
+4.6.7 Link types
+https://html.spec.whatwg.org/multipage/links.html#linkTypes
+
+<memo>
+ブラウザーの互換性
+https://developer.mozilla.org/ja/docs/Web/HTML/Link_types#browser_compatibility
+
+＜小見出し＞
+リンクタイプalternate
+＜本文＞
+リンクタイプalternateは、リンク先が現在の文書の代替表現であることを示します。このキーワードの意味は、属性値として列挙された他のリンクタイプに依存して変化します。
+
+＜丸見出し＞
+代替スタイルシート
+link要素でstylesheetキーワードとともにalternateが指定される場合、代替スタイルシートとして扱われます。たとえば〓20〓のように指定します。
+
+〓20〓link要素でalternateが指定された記述例
+＜コード＞
+<!-- 固定スタイルシート -->
+<link rel="stylesheet" href="base.css">
+
+<!-- 優先スタイルシート -->
+<link rel="stylesheet" href="default.css" title="基本スタイル">
+
+<!-- 代替スタイルシート -->
+<link rel="alternate stylesheet" href="simple.css" title="シンプル">
+<link rel="alternate stylesheet" href="highcontrast.css" title="ハイコントラスト">
+
+＜本文＞
+代替スタイルシートが提供されていると、ブラウザーはスタイルシートを切り替える機能を提供することがあります。title属性でスタイルに名前を与えておくと、切り替え時に表示されることが期待されます。〓21〓はFirefoxの例です。
+
+〓21〓Firefoxにおける表示例
+
+＜本文＞
+この例の場合、初期状態は「基本スタイル」で、base.cssとdefault.cssが適用されています。「シンプル」に切り替えるとdefault.cssは適用されなくなり、base.cssとsimple.cssが適用されるようになります。細かい挙動の詳細は、CSS Object Model (CSSOM)仕様を参照してください。
+残念なことに、このような切り替え機能を持たないブラウザーもあり、代替スタイルシートを利用するには拡張機能の導入が必要となる場合があります。また、標準対応しているブラウザーでも使い方がわかりにくく、ユーザーが代替スタイルシートを活用することは難しいでしょう。
+
+<memo＞
+6.2. CSS Style Sheet Collections
+https://drafts.csswg.org/cssom/#css-style-sheet-collections
+
+＜丸見出し＞
+フィードの指定
+＜本文＞
+type属性がapplication/rss+xmlかapplication/atom+xmlのいずれかである場合、alternateキーワードは、このHTML文書に対応するフィードとして扱われます。link要素にこれらを指定すると、ブラウザーにフィードの自動検出を促します。
+フィードとは、ウェブサイトが直近の更新情報や概要などをまとめたデータです。RSSやAtomといったXMLベースのマークアップ言語が主に用いられることから、RSSフィードやAtomフィードと呼ばれることもあります〓22〓。
+
+〓22〓フィードの指定
+＜コード＞
+<link rel="alternate" type="application/rss+xml" href="posts.xml" title="ブログの新着投稿RSSフィード">
+<link rel="alternate" type="application/rss+xml" href="posts.xml?category=cat" title="ブログの猫に関する新着投稿RSSフィード">
+<link rel="alternate" type="application/rss+xml" href="comments.xml" title="ブログの新着コメントRSSフィード">
+
+＜丸見出し＞
+文書の代替表現
+＜本文＞
+alternateキーワードが指定され、かつ代替スタイルシートにもフィードにも当てはまらない場合には、このHTML文書の代替表現であるものと解釈されます。
+hreflang属性が指定されており、かつ現在のページと異なる言語が指定される場合は、この文書の翻訳であることを示します。
+type属性が指定されている場合は、現在の文書の異なるフォーマットであることを示します。
+これらを組み合わせての指定も可能です。たとえば〓23〓のようになります。
+
+〓23〓文書の代替表現
+＜コード＞
+<link rel="alternate" href="/en/html"
+ hreflang="en" type="text/html" title="英語版">
+<link rel="alternate" href="/fr/html"
+ hreflang="fr" type="text/html" title="フランス語版">
+<link rel="alternate" href="/en/pdf" 
+ hreflang="en" type="application/pdf" title="英語版PDF">
+<link rel="alternate" href="/fr/pdf"
+ hreflang="fr" type="application/pdf" title="フランス語版PDF">
+ 
+ ＜本文＞
+ media属性も併用できます。media属性の値にはメディアクエリーを指定でき、文書が特定のメディアタイプ向けであることを示します〓24〓。
+ 
+ 〓24〓media属性の値にはメディアクエリーを指定
+ ＜コード＞
+ <link rel="alternate" href="/en/html/print"
+ hreflang="en" type="text/html" media="print" title="英語版（印刷用）">
+<link rel="alternate" href="/fr/html/print"
+ hreflang="fr" type="text/html" media="print" title="フランス語版（印刷用）">
+ 
+ ＜本文＞
+メディアクエリーのメディア特性の指定により、モバイル向け、パソコン向けといった表現も可能です〓25〓。検索エンジンのクローラーがこのような指定を認識し、モバイル向けの別コンテンツがあるかどうかを判断することもあります。
+
+〓25〓デバイスを指定
+＜コード＞
+<link rel="alternate" href="https://m.example.com/" 
+ media="only screen and (max-width: 640px)" title="モバイル向けページ">
+ 
+ ＜memo＞
+ Media Queries Level 4
+ https://www.w3.org/TR/mediaqueries/
+ 
+ <memo＞
+Google検索セントラル 別々の URL
+https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls?hl=ja
+
+＜小見出し＞
+リンクタイプauthor
+＜本文＞
+リンクタイプauthorは、リンク先が著作者に関連する情報であることを示します。mailto:スキームのURLを使用して、著作者の電子メールアドレスを示すことが一般的です。link要素で用いた場合、このHTML文書全体の著作者を指します〓26〓。
+
+〓26〓authorの記述例
+＜コード＞
+<link rel="author" href="mailto:me@example.com">
+
+＜本文＞
+このリンクタイプをa要素、area要素で用いた場合は、最も近い祖先のarticle要素の著作者を指すものと解釈されます。article要素の外で用いられているときは、HTML文書全体の著作者を指します。
+古いブラウザーの中には、これを解釈し、文書の著作者へ即座に電子メールを送信できるものがありました。現在のブラウザーはそのような機能をほとんどサポートしていませんので、無理に指定する必要はないでしょう。
+
+
+＜小見出し＞
+リンクタイプbookmark
+＜本文＞
+リンクタイプbookmarkはa要素、area要素で使用でき、リンク先が「パーマリンク（permalink）」であることを示します。パーマリンクは、文書中に記事が列挙されている場合などに、個々の記事を指すリンク先です。「固定リンク」と呼ばれることもあります。
+このリンクタイプがarticle要素の中で用いられた場合、最も近い祖先のarticle要素のパーマリンクと解釈されます。article要素の外で用いられているときは、HTML文書自体のパーマリンクと解釈します〓27〓。
+
+〓27〓bookmarkの記述例
+＜コード＞
+<article>
+  <a href="a.html" rel="bookmark">ブログ記事のパーマリンク</a>
+  <h1>ブログ記事のタイトル</h1>
+  <p>ブログ記事の中身</p>
+  <article>
+    <h2 id="comment-1">コメント1</h2>
+    <p>コメントの中身</p>
+    <p><a href="a.html#comment-1" rel="bookmark">コメント1のパーマリンク</a></p>
+  </article>
+</article>
+
+＜小見出し＞
+リンクタイプexternal
+＜本文＞
+リンクタイプexternalはa要素、area要素、form要素で使用でき、リンク先が外部サイトであることを示します〓28〓。
+
+〓28〓externalの記述例
+＜コード＞
+<a href="https://example.com/" rel="external">example (外部サイト)</a>
+
+＜小見出し＞
+リンクタイプhelp
+＜本文＞
+リンクタイプhelpは、リンク先がヘルプ情報であることを示します。a要素、area要素に指定した場合、親要素や兄弟要素に関連するコンテキストヘルプ情報であると期待されます〓29〓。
+
+〓29〓helpの記述例
+＜コード＞
+<p><label>トピックを入力: <input name="topic">
+<a href="help/topic.html" rel="help">(ヘルプ)</a></label></p>
+
+＜本文＞
+この例では、入力すべき「トピック」についてのヘルプ情報が期待されます。form要素にも同様に指定できます。
+link要素に指定した場合は、このページ全体のヘルプ情報とみなされます。古いブラウザーの中には、ヘルプへのリンクを提供する機能を持つものもありました。
+
+＜小見出し＞
+リンクタイプicon
+＜本文＞
+link要素でリンクタイプiconを使用すると、リンク先がアイコンであることを示します。現在の文書を表現するアイコン、いわゆるファビコン（favicon）を指定するために使われます〓30〓。
+
+〓30〓iconの記述例
+＜コード＞
+<link rel="icon" href="/assets/favicon.ico">
+
+＜本文＞
+互換性の理由から、shortcut iconと書くことも認められており、iconと同一視されます。この場合、rel属性の値全体がshortcut iconでなければならず、逆順にしたり、他のキーワードを追加したりはできません。
+link要素によるアイコンの指定がない場合、ブラウザーは/favicon.icoというURLにアクセスしてアイコンの取得を試みます。この挙動はHTML仕様4.6.6.8 Link type "icon"で明確に定義されています。逆に言えば、/favicon.icoにアイコンが置いてあり、それを使えばよい場合は指定不要といえます。
+ブラウザーの種類や端末の種類によって、アイコンの大きさやフォーマットを変えたい場合もあるでしょう。その場合は、type属性、sizes属性、media属性と組み合わせて、さまざまなバージョンのアイコンが指定できます。〓31〓はHTML仕様で紹介されている例です。
+
+<memo＞
+4.6.7.8 Link type "icon"
+https://html.spec.whatwg.org/multipage/links.html#rel-icon
+
+〓31〓さまざまなバージョンのアイコンを指定
+＜本文＞
+<link rel="icon" href="favicon.png" sizes="16x16" type="image/png">
+<link rel="icon" href="windows.ico" sizes="32x32 48x48" type="image/vnd.microsoft.icon">
+<link rel="icon" href="mac.icns" sizes="128x128 512x512 8192x8192 32768x32768">
+<link rel="icon" href="iphone.png" sizes="57x57" type="image/png">
+<link rel="icon" href="gnome.svg" sizes="any" type="image/svg+xml">
+
+＜本文＞
+また、主にiOSやAndroidといったモバイル端末向けに、拡張キーワードapple-touch-iconとともにアイコンを指定するという方法があります。
+
+<memo>
+Configuring Web Applications
+https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
+
+＜小見出し＞
+リンクタイプlicense
+＜本文＞
+リンクタイプlicenseは、リンク先が著作権情報、ライセンス情報であることを示します。link要素で使用した場合、文書全体の著作権情報を表します〓32〓。
+
+〓32〓licenseの記述例
+＜コード＞
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ja">
+
+＜本文＞
+この例では、文書が『クリエイティブ・コモンズ 表示 4.0 ライセンス』で提供されることを表します。
+a要素で使うこともできますが、この場合、文書のどの部分の著作権情報なのかは明示されません。文書全体のライセンスかもしれず、段落や引用部のライセンスかもしれません。リンクタイプhelpやbookmarkと異なり、親要素や祖先要素のライセンスを表すというような決まりはないため、ユーザーは設置されている場所やスタイルなどが手掛かりに、文脈から判断することになります。
+なお、ブラウザーは互換性のため、copyrightというキーワードをlicenseと同じように解釈します。
+
+＜小見出し＞
+リンクタイプcanonical
+＜本文＞
+link要素でリンクタイプcanonicalを使用すると、リンク先が正規のURLであることを示します。これはCanonical Linkとして機能します。詳細はRFC 6596 The Canonical Link Relationを参照してください。
+Canonical Linkは、あるリソースが複数のURLで示されるとき、正規のURLを示すものです。たとえば以下のように、同一のリソースに異なるドメインでアクセスできる場合があります。
+
+・https://www.example.com/
+・https://example.com/
+
+また、主にユーザー追跡のために、リソースの本質と関係のないクエリー文字列がURLに付与されることもあります。
+
+・https://www.example.com/?sessionid=1234567
+・https://www.example.com/?linkfrom=twitter
+・https://www.example.com/?trackingid=abcdef
+
+このような場合に、rel="canonical"を使用すると、どれが正規のURLなのか示すことができます。これにより、検索エンジンが検索結果に出すURLが1つに絞られる、といった効果が期待できます〓33〓。href属性値には相対URLでの指定も可能ですが、絶対URLを使用するのが一般的です。
+
+〓33〓rel="canonical"を使用した記述例
+＜コード＞
+<link rel="canonical" href="https://www.example.com/">
+
+
+<memo>
+https://datatracker.ietf.org/doc/html/rfc6596
+
+
+＜小見出し＞
+リンクタイプnofollow
+＜本文＞
+a要素やarea要素でリンクタイプnofollowを使用すると、ページの制作者がリンク先を推奨しないことを示します。
+訪問者がコメント欄にリンクを書き込める場合や、広告配信のスクリプトによってリンクが自動的に挿入される場合などは、コンテンツ制作者がリンク先のコンテンツの品質を保証できません。このような機能を悪用され、スパムリンクが大量に生成されることもあります。
+このようなリンクは、検索エンジンにそのまま評価させると、ランキング評価に悪影響を与える懸念があります。リンクタイプnofollowを使用することで、関連付けたくないリンクを明確にできます〓34〓。検索エンジンはこれを読み取り、ランキングへの悪影響を抑止するでしょう。
+
+〓34〓nofollowの記述例
+＜コード＞
+<a href="http://example.net/untrusted.html" rel="nofollow">品質が信頼できないページ</a>
+
+<memo＞
+Googleはこれらの目的のために、キーワードsponsoredやucgをサポートします。
+https://developers.google.com/search/docs/advanced/appearance/qualify-outbound-links?hl=ja
+
+＜小見出し＞
+リンクタイプnoopener
+＜本文＞
+a要素でリンクタイプnoopenerを使用すると、リンク先からリンク元のブラウジングコンテキストへアクセスできないようにします。ブラウジングコンテキストとは、タブやウィンドウ、iframe要素のフレームなどを指します。詳しくはtarget属性を参照してください。
+target=_blankなどで新しいブラウジングコンテキストを開始した場合、リンク先となっている側のコンテンツからJavaScriptを用いて、リンク元のブラウジングコンテキストにアクセスできる場合があります。リンク先のコンテンツが信頼できない場合、これはセキュリティ上の問題につながります。
+このようなとき、rel=noopenerを利用します〓35〓。
+
+〓35〓noopenerの記述例
+＜コード＞
+<a href="http://example.net/fishy.cgi" rel="noopener" target="_blank">信頼できるかどうか不明なページ</a>
+
+＜本文＞
+こうすることで、リンク先から元のブラウジングコンテキストを参照でなきなくなります。たとえば、JavaScriptでwindow.openerを参照するとnullが返ります。
+なお、モダンなブラウザーの多くは、noopenerがなくてもクロスオリジンのブラウジングコンテキストは参照できないようになっています。このリンクタイプの必要性は低下していますが、古いブラウザーでの安全性を確保したい場合には役立つことがあります。
+
+＜小見出し＞
+リンクタイプnoreferrer
+＜本文＞
+a要素でリンクタイプnoreferrerを使用すると、リンク先に参照元情報を送信しないように促します。具体的には、リンク元ページのアドレスを、ブラウザーがReferer HTTPヘッダーでリファラーとして送信しないようにします〓36〓。
+
+〓36〓noreferrerの記述例
+＜コード＞
+<a href="https://example.com/" rel="noreferrer">リファラーを送信しないリンク</a>
+
+＜本文＞
+さらに、noopenerと同様にブラウジングコンテキストを参照させない効果もあります。ブラウジングコンテキストが参照できると、結局リンク元のURLを知ることができてしまうためです。詳しくはnoopenerを参照してください。
+より細かくリファラーを制御したい場合は、referrerpolicy属性を用いてリファラーポリシーの設定もできます。また、ページ全体のリンクについてリファラーポリシーを制御したい場合は、<meta name=referrer>を使用することで実現できます。
+
+＜小見出し＞
+リンクタイプdns-prefetch
+＜本文＞
+link要素でリンクタイプdns-prefetchを指定すると、指定されたドメインの名前解決をしておくことが期待されます。あとでアクセスする予定のURLがある場合、そのドメインの名前解決を事前にしておくことで、読み込み時間の短縮が期待できます〓37〓。詳細な挙動はResource Hints仕様で定義されています。
+
+〓37〓dns-prefetchの記述例
+＜コード＞
+<link rel="dns-prefetch" href="https://example.com">
+
+＜memo >
+Resource Hints
+https://w3c.github.io/resource-hints/
+2021年10月時点ではW3C文書ですが、WHATWGに移管される予定です。
+
+＜小見出し＞
+リンクタイプpreconnect
+＜本文＞
+link要素でリンクタイプpreconnectを指定すると、事前に接続を確立しておくことが期待されます。dns-prefetchでは名前解決しか行いませんが、こちらはTCPコネクションの確立、TLSのネゴシエーションまで行います〓38〓。
+
+〓38〓preconnectの記述例
+＜コード＞
+<link rel="preconnect" href="https://example.com">
+
+＜本文＞
+リンク先URLのスキームはhttpもしくはhttpsでなければなりません。そうでなければこの指定は無視されます。
+
+＜小見出し＞
+リンクタイプpreload
+＜本文＞
+link要素でリンクタイプpreloadを指定すると、現在のページで使用する予定のサブリソースを事前に読み込んでおくことが期待できます。prefetchの対象は現在のページとは異なるページなどで利用する予定のリソースですが、preloadの対象は現在のページで使用する予定のサブリソースです。
+サブリソースの多くはimg要素のsrc属性などで記述されており、HTMLを読み込んだ時点で必要性を判断できます。しかし、中にはCSSから読み込まれるもの、JavaScriptで挿入されるものなどもあり、これらの必要性はHTMLを読み込んだ時点では判断できません。preloadは、こういったサブリソースの必要性を事前に伝えておくことで、動作を高速化するものです。詳細はPreload仕様を参照してください。
+〓39〓の例では、スタイルシートで利用する画像を事前に読み込んでいます。
+
+<memo＞
+Preload
+https://w3c.github.io/preload/
+2021年10月時点ではW3C文書ですが、WHATWGに移管される予定です。
+
+〓39〓preloadの記述例
+＜コード＞
+<link rel="preload" href="bgimage.png" as="image">
+<style>
+div.hoge {background-image: url: ("bgimage.png");
+</style>
+
+＜本文＞
+rel=preloadを用いる場合、as属性を指定する必要があります。as属性はリソースの用途を指定するは列挙型属性で、指定できる値はFetch Standardのdestinationに定められています。具体的には、以下のいずれかの値を指定できます。
+
+"audio", "audioworklet", "document", "embed", "font", "frame", "iframe", "image", "manifest", "object", "paintworklet", "report", "script", "serviceworker", "sharedworker", "style", "track", "video", "worker", "xslt"
+
+前述の例では、画像として利用するためas=imageを指定しています。Webフォントであれば"font"、JavaScriptであれば"script"など、それぞれ対応する適切な値を指定する必要があります。この指定により、ブラウザーはリソースの優先順位を判断したり、Content Security Policyを適切に処理できます。
+integrity属性を指定して、プリロードする外部リソースの完全性が担保できます。これはscript要素のintegrity属性と同じものです。Chapter3-11のscript要素を参照してください。
+
+<memo>
+https://fetch.spec.whatwg.org/#concept-request-destination
+
+＜小見出し＞
+リンクタイプmodulepreload
+＜本文＞
+link要素でリンクタイプmodulepreloadを使用すると、モジュールスクリプトをプリロードできます。リンクタイプpreloadと似ていますが、モジュールスクリプトに固有のCORSの処理、依存関係の処理などを適切に行うことができます。クラシックスクリプトとモジュールスクリプトについてはChapter3-11を参照してください〓40〓。
+as属性、integrity属性については、リンクタイプpreloadと同様です。リンクタイプpreloadを参照してください。
+
+〓40〓modulepreloadの記述例
+＜コード＞
+<link rel="modulepreload" href="critical.mjs">
+
+＜小見出し＞
+リンクタイプprerender
+＜本文＞」
+link要素でリンクタイプprerenderを指定すると、リソースを事前にダウンロードした上で、バックグラウンドでレンダリングしておくことが期待できます。
+ユーザーが次にどのページに遷移するか明確な場合、次ページのレンダリング処理をあらかじめ行っておくことで、表示の高速化が期待できます〓41〓。
+
+〓41〓prerenderの記述例
+＜コード＞
+<link rel="prerender" href="https://example.com/next-page.html">
+
+＜小見出し＞
+リンクタイプstylesheet
+＜本文＞
+link要素にリンクタイプstylesheetを指定すると、外部スタイルシートを読み込みます〓42〓。
+
+〓42〓stylesheetの記述例
+＜コード＞
+<link rel="stylesheet" href="basic.css">
+
+＜本文＞
+古いHTMLではtype=text/cssもあわせて指定していましたが、現在のHTML仕様はCSS以外のスタイルシート言語を想定しておらず、デフォルトでtext/cssとみなされるため、type属性は省略することが推奨されています。type属性があり、かつtext/css以外の値だった場合、そのスタイルシートは無視されます。
+media属性にはメディアクエリーを指定できます。media属性を併用することで、特定のデバイスに向けたスタイルシートであることを宣言できます。〓43〓の例では、印刷用のスタイルシートを定義しています。
+
+
+〓43〓印刷用のスタイルシートを定義
+＜コード＞
+<link rel="stylesheet" href="print.css" media="print">
+
+＜本文＞
+また、メディアクエリーのメディア特性を記述することにより、デバイスの画面幅に応じてスタイルを変更する、いわゆるレスポンシブデザインを実現できます〓44〓。
+
+〓44〓メディア特性を定義
+＜コード＞
+<link rel="stylesheet" href="mobile.css" media="screen and (max-width: 420px)">
+<link rel="stylesheet" href="tablet.css" media="screen and (max-width: 768px)">
+
+＜本文＞
+リンクタイプalternateと組み合わせると、代替スタイルシートを定義できます。詳しくはリンクタイプalternateを参照してください。
+disabled属性を指定すると、スタイルシートを無効にできます。JavaScriptから操作してスタイルの有効・無効を切り替えるために利用できます。
+integrity属性を指定すると、外部スタイルシートの完全性を担保できます。これはscript要素のintegrity属性と同様です。Chapter3-11のscript要素を参照してください。
+古いHTMLではcharset属性でスタイルシートの文字エンコーディングを指定できましたが、link要素のcharset属性は廃止されました。外部スタイルシートの文字エンコーディングは、HTTPレスポンスヘッダーなどに基づいて決定されます。
+
+＜小見出し＞
+シーケンシャルリンクタイプprev/next
+＜本文＞
+リンクタイプprev/nextは、リンク先が現在のページと一続きのコンテンツであることを示します。リンクタイプnextは次のページ、リンクタイプprevは前のページであることをそれぞれ示します。
+たとえば、3つに分割された記事で、2つめのページがarticle-part2.htmlとすると、前後のページを次のように表すことができます〓45〓。
+
+〓45〓prev/nextの記述例
+＜コード＞
+<link rel="prev" href="article-part1.html">
+<link rel="next" href="article-part3.html">
+
+＜本文＞
+古いブラウザーには、このようなlink要素の指定を解釈して、前後のページに移動するナビゲーションを提供するものもありました。現在ではそのような機能はほとんど提供されていませんが、検索エンジンのクローラーに前後ページの情報を与えるために用いられることがあります。また、ブラウザーはnextで指定されたリソースを先読みし、リンクタイプdns-prefetch、preconnect、prefetch、prerenderのいずれかの処理を行う場合があります。処理の詳細は各リンクタイプを参照してください。
+link要素だけでなくa要素にも使用できるので、ページナビゲーションに含まれるa要素で指定してもよいでしょう。
+互換性のため、previousキーワードはprevと同一視されます。
+
+＜小見出し＞
+その他のリンクタイプ
+＜本文＞
+HTML仕様に示されたキーワード以外にも、microformats wikiのexisting-rel-valuesページに登録されたものを使用できます。このページは誰でも登録できるため、事実上、自由に拡張可能です。
+
+
+＜memo＞
+HTML5 link type extensions（保護されれていない）
+http://microformats.org/wiki/existing-rel-values#HTML5_link_type_extensions
