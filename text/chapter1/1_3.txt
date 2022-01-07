@@ -34,7 +34,7 @@ ISO規格の規格番号は「ISO」で始まり、その後ろに番号と発�
 規格は更新されると、発行年の部分が更新されます。発行年が重要でない場合は、単純に発行年を省略することもあります。
 ウェブに関連する規格としては、コンピューターで扱う文字に関する規格（ISO/IEC 10646など）、日付の表記（ISO 8601）などがあります。HTMLのもとになった汎用マークアップ言語SGMLもISO規格になっています（ISO 8879）。
 
-＜WORD＞
+＜word＞
 SGML
 マニュアルを電子化するために策定されたマークアップ言語でstandard generalized markup languageの略。
 
@@ -127,11 +127,17 @@ https://www.w3.org/Consortium/Process/
 W3Cの仕様にはほかにもステータスが存在します。
 
 ・Superseded Recommendation（SPSD）：後続となる別の勧告文書が存在することを示すステータス。事実上の廃止を意味する
-・Working Group Note（NOTE）：W3Cノートとも呼ばれる。有益な参考情報、勧告を説明する付属文書など。以前のW3Cプロセス文書では勧告化を断念した場合もこのステータスで示されていた
+・Group Note（NOTE）：有益な参考情報、勧告を説明する付属文書など
 ・Discontinued Draft：2021年のプロセス文書で新設された、勧告化を断念した仕様のステータス
 ・Editor's Draft（ED）：編集者草案と訳されるが、そのままエディターズドラフトと呼ぶことが多い。WDやNOTEと異なり、ワーキンググループの合意を得たものではない。編集者によって適宜更新される文書
 
-Editor's Draftは、かつては限られた人しか見ることができませんでしたが、後述の「WHATWG Living Standard」の影響を受け、今日では多くのW3Cワーキンググループで公開されています。
+Editor's Draftは、かつては限られた人しか見ることができませんでしたが、後述の「WHATWG Living Standard」の影響を受け、今日では多くのW3Cの「ワーキンググループ（Working Group）」で公開されています。
+
+＜memo＞
+NOTEは以前のW3Cプロセス文書ではWorking Group Noteとされ、勧告化を断念した場合もこのステータスで示されていました。
+
+＜memo＞
+W3Cの勧告は、ワーキンググループで議論して作成されます。
 
 ＜小見出し＞
 現在のHTML仕様-WHATWGとLiving Standard
