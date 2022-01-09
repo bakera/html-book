@@ -144,7 +144,7 @@ HTTPレスポンス
 〓07〓はHTTPレスポンスの例です。
 
 〓07〓HTTPレスポンスの例
-（コード）
+＜コード＞
 Status: HTTP/1.1 200 OK
 Content-Type: text/html; charset=utf-8
 Content-Length: 7887
