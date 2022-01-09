@@ -258,12 +258,6 @@ image/png、image/jpeg、image/gifは、それぞれPNG画像、JPEG画像、GIF
 a要素のhref属性で参照したり、画像のURLを直接ブラウザーのアドレスバーに入れた場合、ブラウザーのウィンドウで画像を直接表示します（俗に「画像直リンク」と呼ばれます）。この場合、代替テキストの情報が提供できないため、アクセシビリティ上の問題につながる場合があります。
 
 ＜丸見出し＞
-image/svg+xml
-＜本文＞
-image/svg+xmlは、XML形式で配信されるSVG画像を表します。PNG画像などと異なり、SVGデータ自体にtitle要素による代替となるタイトルや、desc要素による説明文のテキストを含んでいることがあります。script要素によるJavaScriptのデータを含むこともあります。
-img要素のsrc属性で参照すると、画像として埋め込むことができます。この場合、タイトルや説明文などの情報は利用されず、JavaScriptも実行されません。代替テキストはHTML側で用意する必要があります。
-
-＜丸見出し＞
 application/javascript
 ＜本文＞
 application/javascriptは、JavaScriptのスクリプトファイルを表します。text/javascriptが利用されることもあります。推奨されていませんが、歴史的経緯によりtext/x-javascriptなどが利用されていることもあります。
