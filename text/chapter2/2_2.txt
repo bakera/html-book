@@ -32,7 +32,7 @@ a要素の範囲がわかるようになりましたが、肝心のリンク先�
 ＜コード＞
 <abbr title="accessibility">a11y</abbr>
 
-〓04〓属性値に引用符を含める記述
+〓04〓属性値に引用符を含める記述例
 ＜コード＞
 <span title="Murphy's law">Anything that can possibly go wrong, does.</span>
 
@@ -41,7 +41,7 @@ a要素の範囲がわかるようになりましたが、肝心のリンク先�
 ＜本文＞
 1つの要素に複数の属性を同時に指定できます〓05〓。
 
-〓05〓複数の属性を記述
+〓05〓複数の属性の記述例
 ＜コード＞
 <a rel="external" href="https://html.spec.whatwg.org/">HTML Living Standard</a>
 
@@ -173,10 +173,10 @@ https://zenn.dev/dmikurube/articles/curse-of-timezones-common-ja ↩
 URL
 ＜本文＞
 属性値としてURLを指定する属性も多数あります。代表例は、最初に示したような、a要素のhref属性でリンク先を指定するものです。img要素やscript要素のsrc属性など、読み込み先のリソースを指定する際にもURLを使用します。
-属性値としてURLを指定する場合、基本的には絶対URLと相対URLのどちらも利用できます〓15〓。
+属性値としてURLを指定する場合、基本的には絶対URLと相対URLのどちらも利用できます〓13〓。
 URLの詳細な書式はChapter2-3で説明します。
 
-〓15〓URLの指定
+〓13〓URLの指定例
 ＜コード＞
 <!-- 絶対URL -->
 <a href="https://example.com/corporate/about">example社の会社概要</a>
