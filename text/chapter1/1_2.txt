@@ -150,7 +150,7 @@ HTMLは、「支援技術（assistive technology）」によって扱われる�
 
 ＜word＞
 アクセシビリティAPI
-OSが提供する、読み上げるべきテキストやユーザーの操作を支援技術に伝えるインターフェイス、「API（Application Programming Interface）」のこと。
+OSが支援技術に対して情報を伝えたり、支援技術からユーザーの操作を受け付けたりするために利用するインターフェイス。「API」はApplication Programming Interfaceの略。
 
 ＜本文＞
 HTMLから支援技術を通して、支援技術のユーザーに情報が伝わるイメージは〓06〓のようになります。
