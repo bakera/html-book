@@ -1,13 +1,13 @@
 ＜タイトル＞
 要素の入れ子と内容モデル
 ＜リード＞
-要素は入れ子にすることができます。しかし、要素はどこにでも入れることができるわけではありません。ここではそのルールの概要と、確認の仕方を説明します。
+要素は入れ子にできます。しかし、要素はどこにでも入れることができるわけではありません。ここではそのルールの概要と、確認の仕方を説明します。
 
 ＜中見出し＞
 要素の入れ子のルール
 ＜本文＞
 〓01〓にあるマークアップでは、p要素の子要素としてmark要素が出現し、入れ子になっています。これはルール上問題ありません。
-しかし、この入れ子の関係を逆にすることはできません。つまり〓02〓にあるようなマークアップは不正となります。
+しかし、この入れ子の関係を逆にはできません。つまり〓02〓にあるようなマークアップは不正となります。
 
 〓01〓正しい入れ子
 ＜コード＞
@@ -18,13 +18,13 @@
 <mark>この<p>キーワード</p>はこの文章で重要なものを表します。</mark>
 
 ＜本文＞
-これは、p要素がmark要素の子要素になれないためです。ある要素の内容に何を入れることができるか、つまりどの要素を子要素にできるかというルールは、仕様で定義されています。このルールを「内容モデル（Content model）」と呼びます。
+これは、p要素がmark要素の子要素になれないためです。ある要素の内容に何を入れることができるか、つまりどの要素を子要素にできるかというルールは、仕様で定義されています。このルールを「内容モデル（content model）」と呼びます。
 内容モデルに従っていないマークアップは語彙的ルールに違反し、エラーとなります。ただし、実際にそのようマークアップが出現してもエラー補正は行われず、そのままDOMツリーに追加されます。想定外の構造となるために、意図したスタイルが適用されないといった問題が起きることもあります。
 
 ＜中見出し＞
 内容モデルの定義
 ＜本文＞
-HTML仕様の各要素の説明には、Content Modelの項目があり、そこで内容モデルが定義されています。前述のp要素やmark要素は、いずれも〓03〓のようになっています。
+HTML仕様の各要素の説明には、content modelの項目があり、そこで内容モデルが定義されています。前述のp要素やmark要素は、いずれも〓03〓のようになっています。
 
 ・Content model:
 ・Phrasing content.
@@ -39,7 +39,7 @@ https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-elemen
 
 ＜本文＞
 どちらの要素も子としてPhrasing contentを持つことができると定義されます。
-Phrasing contentというのは、要素の「カテゴリー（categories）の1つです。Phrasing contentには、mark要素をはじめとする多数の要素が属していますが、p要素は属していません。
+Phrasing contentというのは、要素の「カテゴリー（categories）」の1つです。Phrasing contentには、mark要素をはじめとする多数の要素が属していますが、p要素は属していません。
 そのため、p要素はPhrasing contentであるmark要素を子にできる一方で、mark要素はPhrasing contentではないp要素を子にできないことがわかります。このように仕様の内容モデルを調べると、ある要素がどの要素を子要素にできるかを確認できます。
 
 ＜小見出し＞
@@ -137,25 +137,25 @@ document.querySelector('ul').childNodes[0].length;
 ＜本文＞
 要素のカテゴリーに属さない要素を子要素とする場合、内容モデルは文章で説明されます。たとえば、ol要素の場合は以下のようになっています。
 
-＜囲み＞
+＜引用囲み＞
 Zero or more li and script-supporting elements.
-＜/囲み＞
+＜/引用囲み＞
 
-0個以上のli要素、もしくはscript-supporting elementsを子要素にしなければならないことがわかります。なお、「script-supporting elements」はscript要素とtemplate要素を指すもので、ほぼどこにでも書くことができます。この定義では0個以上ですので、内容モデルの観点からは内容を空にもできます。
+0個以上のli要素、もしくは「script-supporting elements」を子要素にしなければならないことがわかります。なお、script-supporting elementsとはscript要素とtemplate要素を指すもので、ほぼどこにでも書くことができます。この定義では0個以上ですので、内容モデルの観点からは内容を空にもできます。
 複雑な説明が長文で書かれていることもあります。たとえばtable要素では、以下のように要素の出現順序を定義しています。
 
-＜囲み＞
+＜引用囲み＞
 In this order: optionally a caption element, followed by zero or more colgroup elements, followed optionally by a thead element, followed by either zero or more tbody elements or one or more tr elements, followed optionally by a tfoot element, optionally intermixed with one or more script-supporting elements.
-＜/囲み＞
+＜/引用囲み＞
 
 ＜小見出し＞
 他の要素を子要素にできない場合
 ＜本文＞
 他の要素を子要素にできない要素も存在し、同様に文章で説明されます。たとえばtitle要素の内容モデルは以下のようになっています。
 
-＜囲み＞
+＜引用囲み＞
 Text that is not inter-element whitespace.
-＜/囲み＞
+＜/引用囲み＞
 
 inter-element whitespaceでないテキスト、という説明です。この場合、先頭と末尾のASCII空白文字を除いたテキストが要素の内容となり、他の要素は入れられません。
 
@@ -164,9 +164,9 @@ inter-element whitespaceでないテキスト、という説明です。この�
 ＜本文＞
 特定のカテゴリーに属する要素を子要素にするものの、特筆すべき制限が書かれているケースもあります。たとえばbutton要素では以下のようになっています。
 
-＜囲み＞
+＜引用囲み＞
 Phrasing content, but there must be no interactive content descendant and no descendant with the tabindex attribute specified.
-＜/囲み＞
+＜/引用囲み＞
 
 この場合、Phrasingに属する要素を子要素にできますが、interactive contentに属する要素やtabindex属性を持つ要素を子孫にできないという制限があります。
 
@@ -243,19 +243,19 @@ Chpater1-3で説明したように、HTML5はSGMLではなくなりました。�
 ＜本文＞
 仕様では、内容モデルの逆引きもできるように、「Contexts in which this element can be used」という記述もあります。たとえば、p要素では以下のように書かれています。
 
-＜囲み＞
+＜引用囲み＞
 Contexts in which this element can be used:
 Where flow content is expected.
-＜/囲み＞
+＜/引用囲み＞
 
 Flowが許可される場所で使えることがわかります。これはp要素がFlowカテゴリーに属するためで、当然といえば当然です。ただし、要素によってはこの記述が便利なこともあり、たとえばli要素では以下のようになっています。
 
-＜囲み＞
+＜引用囲み＞
 Contexts in which this element can be used:
 Inside ol elements.
 Inside ul elements.
 Inside menu elements.
-＜/囲み＞
+＜/引用囲み＞
 
 li要素がol、ul、menu要素の子になれることがわかります。このように、要素によっては逆引きが便利なこともあるので、活用するとよいでしょう。
 ただし、これは規範情報ではなく参考情報であり、あくまで利便性のために書かれているものです。仕様での正確な定義については、内容モデルを確認する必要があります。
