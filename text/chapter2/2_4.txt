@@ -19,7 +19,7 @@
 
 ＜本文＞
 これは、p要素がmark要素の子要素になれないためです。ある要素の内容に何を入れることができるか、つまりどの要素を子要素にできるかというルールは、仕様で定義されています。このルールを「内容モデル（content model）」と呼びます。
-内容モデルに従っていないマークアップは語彙的ルールに違反し、エラーとなります。ただし、実際にそのようマークアップが出現してもエラー補正は行われず、そのままDOMツリーに追加されます。想定外の構造となるために、意図したスタイルが適用されないといった問題が起きることもあります。
+内容モデルに反したマークアップは語彙的ルールに違反し、エラーとなります。実際にそのようマークアップが出現してもエラー補正は行われず、そのままDOMツリーに追加されます。想定外の構造となるために、意図したスタイルが適用されないといった問題が起きることもあります。
 
 ＜中見出し＞
 内容モデルの定義
@@ -63,7 +63,7 @@ https://html.spec.whatwg.org/multipage/dom.html#kinds-of-content
 
 ＜本文＞
 カテゴリーと要素は必ずしも1対1で対応するわけではなく、ある要素が複数のカテゴリーに属することもあります。また、上記のカテゴリーのいずれにも属さない要素もあります。
-内容モデルの定義に登場するのは、主にMetadata、Flow、Phrasingの3つです。
+内容モデルの定義には、Metadata、Flow、Phrasingの3つが頻出します。
 
 ＜丸見出し＞
 Metadata
@@ -73,8 +73,10 @@ HTML文書のメタデータを扱う要素が属するグループです。原�
 ＜丸見出し＞
 Flow
 ＜本文＞
-HTML文書のコンテンツ内で自由に使える要素のほとんどはFlowに属します。要素の内容モデルがFlowと定義されている場合、ほぼ任意の要素を子要素にできると考えて構いません。ただし、前述のMetadata contentや、tr要素、li要素など、特定の要素を親に持つ必要があるものを除きます。
-flowは「流れ」という意味ですが、ここでは「本文として流し込むことができるもの」というイメージです。CSSに通じている読者は、CSSのNormal Flowでレイアウトできる要素と捉えるとイメージしやすいでしょう。
+HTML文書のコンテンツ内で使える要素のほとんどはFlowに属します。要素の内容モデルがFlowと定義されている場合、ほぼ任意の要素を子要素にできると考えて構いません。ただし、前述のMetadataや、tr要素、li要素など、特定の要素を親に持つ必要があるものを除きます。
+＜memo＞
+flowは「流れ」という意味ですが、ここでは「本文として流し込むことができるもの」というイメージです。CSSに通じている読者は、CSSのNormal Flowでレイアウトできる要素と捉えると想像しやすいでしょう。
+＜本文＞
 Flowにはテキストも属しています。内容モデルがFlowと定義されている場合、要素の内容にテキストを直接入れることもできます。
 
 ＜丸見出し＞
@@ -140,6 +142,10 @@ Zero or more li and script-supporting elements.
 0個以上のli要素、もしくは「script-supporting elements」を子要素にしなければならないことがわかります。なお、script-supporting elementsとはscript要素とtemplate要素を指すもので、ほぼどこにでも書くことができます。この定義では0個以上ですので、内容モデルの観点からは内容を空にもできます。
 複雑な説明が長文で書かれていることもあります。たとえばtable要素では、以下のように要素の出現順序を定義しています。
 
+＜memo＞
+3.2.5.2.9 Script-supporting elements
+https://html.spec.whatwg.org/multipage/dom.html#script-supporting-elements
+
 ＜引用囲み＞
 In this order: optionally a caption element, followed by zero or more colgroup elements, followed optionally by a thead element, followed by either zero or more tbody elements or one or more tr elements, followed optionally by a tfoot element, optionally intermixed with one or more script-supporting elements.
 ＜/引用囲み＞
@@ -153,7 +159,7 @@ In this order: optionally a caption element, followed by zero or more colgroup e
 Text that is not inter-element whitespace.
 ＜/引用囲み＞
 
-inter-element whitespaceでないテキスト、という説明です。この場合、先頭と末尾のASCII空白文字を除いたテキストが要素の内容となり、他の要素は入れられません。
+inter-element whitespaceでないテキストという説明です。この場合、先頭と末尾のASCII空白文字を除いたテキストが要素の内容となり、他の要素は入れられません。
 
 ＜小見出し＞
 制限がある場合
@@ -169,8 +175,16 @@ Phrasing content, but there must be no interactive content descendant and no des
 ＜小見出し＞
 transparent内容モデル
 ＜本文＞
-内容モデルがtransparentとされている要素もあります。transparentは透明、透過といった意味で、親要素の内容モデルをそのまま透過的に適用します。a要素やins要素、del要素などが該当します。
-内容モデルがtransparentである要素は、親要素の内容モデルを受け継ぎます。つまり、この要素の内容モデルは、親要素が何であるかによって変化します。たとえば、ins要素をp要素の中で使用すると〓06〓のようになります。
+内容モデルがtransparentとされている要素もあります。これは、親要素の内容モデルをそのまま透過的に適用するもので、a要素やins要素、del要素などが該当します。
+
+＜memo＞
+transparentは「透明、透過」といった意味です。
+
+内容モデルがtransparentである要素は、親要素の内容モデルを受け継ぎます。つまり、その要素の内容モデルは、親要素に依存して変化します。たとえば、ins要素をp要素の中で使用すると〓06〓のようになります。
+
+＜memo＞
+3.2.5.3 Transparent content models
+https://html.spec.whatwg.org/multipage/dom.html#transparent-content-models
 
 〓06〓ins要素の使用例
 ＜コード＞
@@ -191,8 +205,8 @@ ins要素の親となっているp要素の内容モデルはPhrasingです。�
 </body>
 
 ＜本文＞
-ここでは、ins要素の親となっているのがbody要素であり、内容モデルはFlowです。この場合はins要素の内容モデルもFlowとなり、p要素を入れることができます。
-要素の内容モデルがtransparentだからといって、この要素がどこでも使えるわけではありません。〓08〓は正しくない例です。ul要素の直下にins要素を入れようとしていますが、ul要素の子要素になれるのはli要素だけです。ins要素自体は、他の多くの要素と同様にFlowとPhrasingに属しているため、それらが許可される場所でしか使えません。その一方で、li要素の内容モデルはFlowであるため、ins要素をli要素の子にできます。これは〓09〓のように書き直すことが可能です。
+〓07〓では、ins要素の親となっているのがbody要素であり、内容モデルはFlowです。この場合はins要素の内容モデルもFlowとなり、p要素を入れることができます。
+要素の内容モデルがtransparentだからといって、この要素がどこでも使えるわけではありません。〓08〓は正しくない例です。ul要素の直下にins要素を入れようとしていますが、ul要素の子要素になれるのはli要素だけです。ins要素自体は、他の多くの要素と同様にFlowとPhrasingに属しているため、それらが許可される場所でしか使えません。その一方で、li要素の内容モデルはFlowであるため、ins要素をli要素の子にできます。〓08〓は〓09〓のように書き直すことが可能です。
 
 〓08〓ul要素の子にins要素を入れた誤った例
 ＜コード＞
@@ -230,7 +244,7 @@ Contexts in which this element can be used:
 Where flow content is expected.
 ＜/引用囲み＞
 
-Flowが許可される場所で使えることがわかります。これはp要素がFlowカテゴリーに属するためで、当然といえば当然です。ただし、要素によってはこの記述が便利なこともあり、たとえばli要素では以下のようになっています。
+Flowが許可される場所で使えることがわかります。これはp要素がFlowカテゴリーに属するためで、当然ではあります。要素によってはこの記述が便利なこともあり、たとえばli要素では以下のようになっています。
 
 ＜引用囲み＞
 Contexts in which this element can be used:
