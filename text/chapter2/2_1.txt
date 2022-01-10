@@ -218,16 +218,6 @@ DOCTYPEは、文書がHTML5であることを識別するためのものです�
 quirks modeは、日本語では互換モードや奇癖モードなどと呼ばれるものです。詳細はMDNの後方互換モードと標準準拠モードに譲ります。 
 https://developer.mozilla.org/ja/docs/Web/HTML/Quirks_Mode_and_Standards_Mode 
 
-＜コラム＞
-DOCTYPEの互換性と文書型宣言
-＜本文＞
-DOCTYPEは「文書型宣言（Document type declaration）」と呼ばれることもあります。文書型宣言はSGMLの概念です。古いHTMLはSGMLのルールに従っていたため、文書型宣言が必須でした。HTML5はSGMLではなくなり、文書型宣言も不要となりましたが、ブラウザーの互換性のためにDOCTYPEを書くことになっています。
-HTML5のDOCTYPEは、SGMLの文書型宣言として妥当な形式ではありません。しかし、SGMLやXMLを出力するプログラム（XSLTプロセッサーなど）でHTMLを生成する場合、文書型宣言を省略や変形ができないこともあります。そのような場合、SGMLの文書型宣言として妥当な形式となる、〓01〓のような記述も許されています。
-
-〓01〓SGMLの文書型宣言として妥当な形式
-＜コード＞
-<!DOCTYPE html system "about:legacy-compat">
-
 ＜小見出し＞
 最低限のHTML文書
 ＜本文＞
