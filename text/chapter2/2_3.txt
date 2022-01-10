@@ -24,9 +24,9 @@ HTMLの属性には、属性値としてURLを指定するものが多数あり�
 相対URLは、「基準URL（base URL）」からの相対位置を示すものです。基準URLはbase要素で指定できますが、base要素による指定がない場合は現在のURLが基準URLとなります。
 相対URLは、さらに以下のような種類があります。
 
-・スキーム相対URL（scheme relative URL)
-・パス絶対URL（path absolute URL）
-・パス相対URL（path relative URL）
+・「スキーム相対URL（scheme relative URL）」
+・「パス絶対URL（path absolute URL）」
+・「パス相対URL（path relative URL）」
 
 ＜小見出し＞
 スキーム相対URL
@@ -81,7 +81,7 @@ URLに使える文字は、「URLコードポイント（URL code points）」�
 
 ・ASCII英数字
 ・記号類：!、$、&、'、(、)、*、+、,、-、.、/、:、;、=、?、@、_、~
-・U+00A0〜U+10FFFDのUnicode文字。ただし、「サロゲート」(surrogates)と「非文字」(noncharacters)を除く
+・U+00A0〜U+10FFFDのUnicode文字。ただし、「サロゲート(surrogates)」と「非文字(noncharacters)」を除く
 
 ＜本文＞
 括弧「(および)」が使えることに注意してください。メールなどで文中のURLがリンクになるような仕組みがありますが、「(https://example.com)」と書くと、末尾の)がURLの一部とみなされることがあります。不等号「<および>」はURLに使用できないため、URLを囲みたい場合は<https://example.com>のように不等号を使うと誤認識を防げます。
@@ -93,7 +93,9 @@ URLに使用できない文字や、特別な意味に解釈される文字は�
 パーセントエンコードバイトは、%に続いて2桁の16進数で文字コードを表記したものです。たとえば、<は%3C、>は%3Eとなります。%文字そのものを書きたい場合は、%25と記述します。
 非ASCII文字をパーセントエンコードする際には、原則としてUTF-8で符号化して扱います。たとえば、「日本語」という文字列の場合、UTF-8で符号化すると以下のようになります。
 
-・「日」(U+65E5) → E6 97 A5 -「本」(U+672C) → E6 9C AC -「語」(U+8A9E) → E8 AA 9E
+・「日」(U+65E5) → E6 97 A5
+・「本」(U+672C) → E6 9C AC
+・「語」(U+8A9E) → E8 AA 9E
 
 これをパーセントエンコードすると〓06〓のようになります。
 
@@ -194,5 +196,3 @@ Fetchスキーム以外のURLのスキームは、リソースを取得できな
 <a href="javascript:alert(1)">alert</a>
 <img src="mailto:foo@example.com" alt="foo@example.com">
 <img src="javascript:alert(1)" alt="alert">
-
-＜本文＞
