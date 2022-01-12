@@ -168,7 +168,7 @@ RFC 1886「Hypertext Markup Language-2.0」
 https://datatracker.ietf.org/doc/html/rfc1866
 
 ＜本文＞
-ただし、この仕様は、厳密にいえば日本語の文字が使えないものでした。仕様上で日本語が使えるHTMLは、国際化が検討された1997年のRFC 2070を待たなければなりませんでした。
+ただし、この仕様は、厳密にいえば日本語の文字が使えないものでした。仕様上で日本語が使えると規定されたHTMLは、国際化が検討された1997年のRFC 2070を待たなければなりませんでした。
 
 ＜memo＞
 RFC 2070「Internationalization of the Hypertext Markup Language」
