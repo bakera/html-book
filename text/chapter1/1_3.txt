@@ -118,7 +118,7 @@ W3Cの仕様にはほかにもステータスが存在します。
 Editor's Draftは、かつては限られた人しか見ることができませんでしたが、後述の「WHATWG Living Standard」の影響を受け、今日では多くのW3Cの「ワーキンググループ（Working Group）」で公開されています。
 
 ＜memo＞
-NOTEは以前のW3Cプロセス文書ではWorking Group Noteとされ、勧告化を断念した場合もこのステータスで示されていました。2021年のプロセス文書では、勧告化を断念した仕様に対してDiscontinued Draftというステータスが新設されました。
+NOTEは、以前のW3Cプロセス文書ではWorking Group Noteとされ、勧告化を断念した場合もこのステータスで示されていました。2021年のプロセス文書では、勧告化を断念した仕様に対してDiscontinued Draftというステータスが新設されました。
 
 ＜小見出し＞
 現在のHTML仕様-WHATWGとLiving Standard
