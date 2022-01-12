@@ -329,6 +329,9 @@ https://www.w3.org/TR/2021/SPSD-html52-20210128/
 W3C Strategic Highlights - October 2018
 https://www.w3.org/2018/10/w3c-highlights/
 
+＜memo＞
+HTML仕様の一本化の模索の中で、W3Cが発行したHTML5とそれ以前の仕様は、2018年3月にSuperseded Recommendationに変更、廃止されました。
+
 ＜本文＞
 そして2019年5月に、W3CとWHATWGの間に覚書が取り交わされました。この覚書では、両者のHTML仕様について以下のような取り決めがなされました。
 
