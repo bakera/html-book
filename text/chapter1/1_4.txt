@@ -154,7 +154,7 @@ https://www.w3.org/TR/UNDERSTANDING-WCAG20/
 ＜丸見出し＞
 Techniques for WCAG 2.0
 ＜本文＞
-Techniques for WCAG 2.0は、達成基準を満たす具体的な方法を紹介しています。HTMLのコード例も示され、実際の実装時の参考として利用できます。ただし、これらはあくまで参考情報であり、必ずこの方法を採用しなければならないものではありません。
+Techniques for WCAG 2.0は、達成基準を満たす具体的な方法を紹介しています。HTMLのコード例も示され、実際の実装時の参考として利用できます。ただし、これはあくまで参考情報であり、必ずこの方法を採用しなければならないものではありません。
 
 ＜memo＞
 Techniques for WCAG 2.0
