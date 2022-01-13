@@ -142,7 +142,7 @@ URLという言葉は混乱を乗り越えてきた歴史があります。
 バーナーズ＝リーが最初に提唱したURLは、「Universal Resource Locator」の略称でした。後に、「Uniform Resource Locator」の略称とされ、最初期にはRFC 1630、次にRFC 1738として標準化されました。
 その後、リソースを場所ではなく名前で特定する「URN（Uniform Resource Name）」という方式が提唱され、RFC 2141で規定されます。
 そして、URLとURNをあわせたものを「URI（Uniform Resource Identifier）」と呼ぶようになりました。URIは最初にRFC 2396、その後にRFC 3986として標準化されました。古いHTML4の仕様ではURIという表記が使われています。
-その後、URIの国際化表記である「IRI（Internationalized Resource Identifier）」がRFC 3987として標準化されます。
+また、RFC 3986と同時に、URIの国際化表記である「IRI（Internationalized Resource Identifier）」がRFC 3987として標準化されます。
 こうして、URL、URI、IRIという3種類の表記が生まれました。URLはURIの一種であり、URIはIRIの一種です。URLという言葉が使える文脈では、3つのどれを使っても意味が通じます。さまざまな技術仕様で、URIやIRIという用語が用いられましたが、その使われ方も一定ではなく、技術的な内容としても混乱していました。
 その一方で、世間一般ではURIやIRIはそこまで知られておらず、URLという言葉が使われ続けてきたのです。
 そこでWHATWGは、URL、URI、IRIの概念を統合・整理し、あらためて再度「URL」と名付けることにしました。このURLはUniform Resource Locatorの略ではなく、単にURLという名前のものであるとされました。名前がURL→URI→IRIと変遷した上で、一周してURLに戻ってきたことになります。
