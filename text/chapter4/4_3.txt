@@ -10,7 +10,7 @@ ARIA利用時の基本的な注意点
 WAI-ARIAは便利ですが、むやみに使っても効果がなかったり、かえって混乱を招いたりすることがあります。WAI-ARIAの関連文書には、「No ARIA is better than Bad ARIA.」といった、誤用や使いすぎに関する警句がいくつかあります。
 ここでは、WAI-ARIAを利用する際の基本的な注意点を3つ紹介します。
 
-<meom>
+＜memo＞
 2.1 No ARIA is better than Bad ARIA
 https://www.w3.org/TR/wai-aria-practices/#no_aria_better_bad_aria
 
@@ -55,7 +55,7 @@ HTMLのネイティブセマンティクスとWAI-ARIAのセマンティクス�
 特に害はありませんが、冗長であり、やはり望ましくありません。
 ARIAの機能とまったく同一の機能がネイティブで利用できる場合は、ネイティブの機能だけを使用し、ARIAを使わないようにすることがARIA in HTML仕様で推奨されています。
 
-＜MEMO＞
+＜memo＞
 2.2 Don't add redundant roles
 https://www.w3.org/TR/html-aria/#don-t-add-redundant-roles
 
@@ -63,11 +63,9 @@ https://www.w3.org/TR/html-aria/#don-t-add-redundant-roles
 かつてのHTML 5.0仕様では、main要素にrole="main"もあわせて指定するようアドバイスされていたことがあります。しかし、これは当時のブラウザーの互換性のためのもので、現在ではこのような指定は必要ありません。
 プロパティやステートも同様です。インタラクティブな要素に冗長なステートを設定すると、有害なこともあります。たとえば、チェックボックスが「チェックされている」という状態は、HTMLのchecked属性とWAI-ARIAのaria-checked属性で表現できます。〓04〓は、その両方を指定した例です。
 
-＜MEMO＞
+＜memo＞
 4.4.14 The main element
 https://www.w3.org/TR/2018/SPSD-html5-20180327/grouping-content.html#the-main-element
-
-
 
 〓04〓不適切なaria-checked属性の使用例
 ＜コード＞
@@ -132,7 +130,7 @@ const pushed = () =>{
 つまり、このボタンはキーボード操作ができません。
 ユーザーがクリック、タップ、ドラッグ、ドロップ、スライド、スクロールといった各種の操作を行えるとき、キーボードのみの環境でも同等の操作を実現できるようにする必要があります。これは、WCAG 2.1達成基準2.1.1キーボードの要請であり、アクセシビリティ上の重要事項でもあります。
 
-＜MEMO＞
+＜memo＞
 Success Criterion 2.1.1 Keyboard
 https://www.w3.org/TR/WCAG21/#keyboard
 
@@ -140,7 +138,7 @@ https://www.w3.org/TR/WCAG21/#keyboard
 スマートフォンなど、典型的にはタップ操作を行う環境でも、キーボード操作への対応は必要です。スクリーンリーダーを利用する場合はキーボード操作に準じた操作が必要となります。また、実際にBluetoothキーボードを利用することも考えられます。
 ARIAを併用したキーボード操作の考え方については、WAI-ARIA Authoring PracticesのDeveloping a Keyboard Interfaceが参考になります。
 
-＜MEMO＞
+＜memo＞
 6. Developing a Keyboard Interface
 https://www.w3.org/TR/wai-aria-practices-1.2/#keyboard
 
@@ -180,7 +178,7 @@ https://www.w3.org/TR/wai-aria-practices-1.2/#keyboard
 操作可能な要素には、アクセシブルな名前を与える必要があります。ARIA 1.2のRoles Supporting Name from Authorでは名前を与えられるロールを定めていますが、この一覧で「(name required)」とされているロールには、必ず名前を与えなければなりません。
 名前を与える方法は、後述の「アクセシブルな名前を与える方法」を参照してください。
 
-＜MEMO＞
+＜memo＞
 5.2.8.4 Roles Supporting Name from Author
 https://www.w3.org/TR/wai-aria-1.2/#namefromauthor
 
@@ -196,7 +194,7 @@ https://www.w3.org/TR/wai-aria-1.2/#namefromauthor
 また、ラベル付け可能要素を利用している場合は、label要素で名前を与えることができます。Chapter3-9のlabel要素を参照してください。
 要素のロールによっては、内容のテキストがアクセシブルな名前となる場合があります。前述の例で利用していたbutton要素もその例に含まれます。button要素の内容にテキストを入れれば、アクセシブルな名前を与えることができます。〓12〓の例は「メニュー ボタン」と読み上げることが期待できます。画像の代替テキストもアクセシブルな名前となります〓13〓。
 
-＜MEMO＞
+＜memo＞
 内容がアクセシブルな名前となる要素の一覧は、WAI-ARIA仕様の5.2.7.5 Roles Supporting Name from Contentで確認できます。
 https://www.w3.org/TR/wai-aria/#namefromcontent
 
@@ -226,11 +224,11 @@ CSSの::before擬似要素や::after擬似要素で追加したテキストも�
 複数の方法でアクセシブルな名前を与えた場合、どれか1つが採用されます。算出方法についてはAccessible Name and Description Computation仕様を参照してください。
 実際に何がアクセシブルな名前として認識されているかは、ブラウザーの開発者ツールで確認できる場合があります。たとえばChromeでは、要素を「検証」して開発者ツールを開き、"Accessibility"パネルを開くと確認できます〓14〓。
 
-＜MEMO＞
+＜memo＞
 Accessible Name and Description Computation 1.1
 https://www.w3.org/TR/accname/
 
-＜MEMO＞
+＜memo＞
 Accessibilityパネルは環境によって「ユーザー補助」と訳されている場合もあります。 
 
 〓14〓Accessibilityパネル
@@ -240,7 +238,7 @@ Accessibilityパネルは環境によって「ユーザー補助」と訳され�
 ＜本文＞
 インタラクティブではない要素にも、アクセシブルな名前を付けられる場合があります。先にも紹介したARIA 1.2のRoles Supporting Name from Authorでは、どのロールが名前付け可能かを定義しています。
 
-＜MEMO＞
+＜memo＞
 5.2.8.4 Roles Supporting Name from Author
 https://www.w3.org/TR/wai-aria-1.2/#namefromauthor
 
@@ -288,7 +286,7 @@ ARIA実装の基本テクニック
 ＜本文＞
 WAI-ARIAを利用した実装には、さまざまなテクニックがあります。WAI-ARIA Authoring Practicesでは、コード例とともに多数のテクニックを学ぶことができます。
 
-＜MEMO＞
+＜memo＞
 WAI-ARIA Authoring Practices 1.1
 https://www.w3.org/TR/wai-aria-practices/
 
@@ -307,7 +305,7 @@ WAI-ARIAのテクニックの中には、さまざまな局面で利用でき、
 ・（title属性やplaceholder属性などによる）ブラウザーのフォールバックに頼ることは避ける
 ・簡潔で有用な名前を付ける
 
-＜MEMO＞
+＜memo＞
 5.3.1 Cardinal Rules of Naming
 https://www.w3.org/TR/wai-aria-practices-1.2/#naming_cardinal_rules
 
@@ -315,7 +313,7 @@ https://www.w3.org/TR/wai-aria-practices-1.2/#naming_cardinal_rules
 筆者が特に重要だと考えるのは、「可視のテキストを使う」こと、「HTMLのネイティブ機能を使う」ことです。コントロールにlabel要素で名前を付けることは、その両方を満たす方法であり、ベストな方法といえます。
 ビジュアルデザインの制約などでラベルを設けるスペースがない場合でも、たとえばフローティングラベル（floating label）と呼ばれる手法を用いると、可視のラベルテキストを確保できます。
 
-＜MEMO＞
+＜memo＞
 実際のクラス名はフレームワークによって異なります。ほかにはsr-onlyなどが使われることもあります。
 
 ＜本文＞
@@ -346,7 +344,7 @@ https://www.w3.org/TR/wai-aria-practices-1.2/#naming_cardinal_rules
 ＜本文＞
 visually-hiddenは、視覚環境で表示されず、かつスクリーンリーダーでは読み上げられるようなスタイルを定義したクラスです。CSSフレームワークは、このようなクラスをあらかじめ用意していることがあります13。たとえば、Bootstrap 5.0のvisually-hiddenには、〓18〓のようなスタイルが定義されています。
 
-＜MEMO＞
+＜memo＞
 Bootstrap 5.0のvisually-hidden
 https://github.com/twbs/bootstrap/blob/main/scss/mixins/_visually-hidden.scss
 
@@ -397,15 +395,13 @@ tabindex="0"を指定すると、ユーザーがフォーカスを移動して�
 tabindex="-1"を指定した場合、ユーザーがフォーカスを当てることはできませんが、JavaScriptのfocus()メソッドでフォーカスを移せるようになります。たとえば、ユーザーがボタンを押した際に別の場所にフォーカスを移動したい場合などに利用します。
 ただし、予想外のフォーカス移動が行われるとユーザーは混乱します。基本的には、ユーザーの何らかの操作をトリガーとするようにしてください。
 
-
 ＜中見出し＞
 動作検証とアクセシビリティサポーテッド
 ＜本文＞
 最後に、筆者が重要だと考えている動作検証についてお伝えします。
 アクセシビリティに関する技術や機能が、ブラウザーや支援技術によって十分に対応されて、意図どおりに動作するとき、その状態のことを「アクセシビリティサポーテッド（Accessibility supported）」であるといいます。
 
-
-＜MEMO＞
+＜memo＞
 逆に、ブラウザーや支援技術によるサポートが十分でない場合、アクセシビリティサポーテッドでないということになります。
 
 ＜本文＞
@@ -413,7 +409,7 @@ tabindex="-1"を指定した場合、ユーザーがフォーカスを当てる�
 また、ARIAのルールにはかなり複雑な部分があります。これまで説明してきたように、特定の要素に適用できないロールがある、ロールとARIA属性との組み合わせを許可しない場合がある、他のARIA属性が効果を上書きする場合があるなど、さまざまな注意点があります。正直なところ、これらすべてを正確に把握するのはかなり難しく、正しい効果が予想しにくい場合もあるでしょう。
 そこで重要になるのが、動作検証です。検証といっても、大掛かりなものである必要はありません。最近では多くのOSにスクリーンリーダーの機能が組み込まれており、追加のスクリーンリーダーを導入することなく検証できます。ARIA属性を利用するときには、実際にスクリーンリーダーを利用してアクセスし、動作検証を行うようにしましょう。
 
-<MEMO＞
+＜memo＞
 可能であれば、普段から支援技術を利用しているユーザーにアクセスしてもらって、その意見を聞くとよいでしょう。ARIAの使いすぎや、説明が冗長であるという意見は、コンテンツの実装者からはなかなか出てこないものです。
 
 ＜本文＞
