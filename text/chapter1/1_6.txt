@@ -18,7 +18,7 @@ HTTP/0.9
 https://www.w3.org/Protocols/HTTP/AsImplemented.html
 
 ＜本文＞
-その後、1996に発行されたRFC 1945でHTTP/1.0が正式に標準化され、ステータス、HTTPヘッダーといった基本的な機能が揃いました。
+その後、1996年に発行されたRFC 1945でHTTP/1.0が正式に標準化され、ステータス、HTTPヘッダーといった基本的な機能が揃いました。
 
 ＜小見出し＞
 HTTP/1.1
