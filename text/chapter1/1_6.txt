@@ -93,7 +93,7 @@ User-Agent: curl/7.16.3
 ・OPTIONS：リクエストターゲットに対し、どのようなリクエストが可能か問い合わせる。従来は利用頻度の少ないメソッドだったが、現在ではCORSのプリフライトリクエストとして用いられる
 
 ＜memo＞
-「プリフライトリクエスト（Preflight request）」は、CORSの通信に先立ち、通信を許可して良いか問い合わせる機能です。詳細はMDNを参照してください。
+「プリフライトリクエスト（preflight request）」は、CORSの通信に先立ち、通信を許可して良いか問い合わせる機能です。詳細はMDNを参照してください。
 https://developer.mozilla.org/ja/docs/Glossary/Preflight_request
 
 ＜丸見出し＞
