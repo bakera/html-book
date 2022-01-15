@@ -1,7 +1,7 @@
 ＜タイトル＞
 ルート要素と文書のメタデータ
 ＜リード＞
-ここでは、HTML文書で最も上位となるルート要素と、HTML文書自身の情報を表すメタデータについて見ていきます。
+ここでは、HTML文書でもっとも上位となるルート要素と、HTML文書自身の情報を表すメタデータについて見ていきます。
 
 ＜中見出し＞
 html要素
@@ -42,7 +42,7 @@ Success Criterion 3.1.1 Language of Page
 https://www.w3.org/TR/WCAG21/#language-of-page
 
 このようにページ全体の言語を明示することで、日本語で書かれた文章を持つHTML文書としてユーザーエージェントに認識させることができます。ユーザーエージェントが適切なフォントを選択したり、スクリーンリーダーが適切な音声合成エンジンを選択したりすることが可能になります。
-逆に、誤った言語が指定されていると問題を起こすことがあります。例えばiOSのVoiceOverでは、日本語の文章にlang="en"が指定された場合、うまく読み上げないことがあります。
+逆に、誤った言語が指定されていると問題を起こすことがあります。たとえばiOSのVoiceOverでは、日本語の文章にlang="en"が指定された場合、うまく読み上げないことがあります。
 lang属性の属性値に指定する言語タグの詳細については、Chapter4-1のlang属性を参照してください。
 
 ＜丸見出し＞
@@ -64,8 +64,8 @@ Chapter1-3で触れたように、HTML文書はXML構文としても記述でき
   </svg>
 
 ＜本文＞
-「"http://www.w3.org/1999/xhtml"」はHTMLの名前空間で、この要素と子孫がHTMLの要素であることを表します。
-MIMEタイプtext/htmlで配信される通常のHTML構文では、xmlns属性は不要です。指定自体は可能ですが、属性値として「"http://www.w3.org/1999/xhtml"」以外を指定した場合はエラーになります。
+"http://www.w3.org/1999/xhtml"はHTMLの名前空間で、この要素と子孫がHTMLの要素であることを表します。
+MIMEタイプtext/htmlで配信される通常のHTML構文では、xmlns属性は不要です。指定自体は可能ですが、属性値として"http://www.w3.org/1999/xhtml"以外を指定した場合はエラーになります。
 
 ＜memo＞
 HTML仕様で扱う名前空間はInfra Standardの8. Namespacesで定義されています。通常、これを意識する必要はありません。
@@ -202,7 +202,7 @@ https://wiki.whatwg.org/wiki/MetaExtensions
 ＜丸見出し＞
 文字エンコーディング宣言（charset、http-equiv="content-type"）
 ＜本文＞
-meta要素で最もよく使用されるのが「文字エンコーディング宣言（character encoding declaration）」です。通常、charset属性を用いて〓10〓のように指定します。
+meta要素でもっともよく使用されるのが「文字エンコーディング宣言（character encoding declaration）」です。通常、charset属性を用いて〓10〓のように指定します。
 
 〓10〓charset属性の記述例
 ＜コード＞
