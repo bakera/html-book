@@ -6,7 +6,7 @@ HTTP
 ＜中見出し＞
 HTTPの概要
 ＜本文＞
-HTTP (Hypertext Transfer Protocol)は、ハイパーテキストを転送するための通信プロトコルです。ユーザーエージェントがサーバーに接続し、「メッセージ(message)」をやりとりします。
+HTTP (Hypertext Transfer Protocol)は、ハイパーテキストを転送するための通信プロトコルです。ユーザーエージェントがサーバーに接続し、「メッセージ（message）」をやりとりします。
 
 ＜小見出し＞
 HTTPの黎明期
@@ -18,12 +18,12 @@ HTTP/0.9
 https://www.w3.org/Protocols/HTTP/AsImplemented.html
 
 ＜本文＞
-その後、1996年に発行されたRFC 1945でHTTP/1.0が正式に標準化され、ステータス、HTTPヘッダーといった基本的な機能が揃いました。
+その後、1996に発行されたRFC 1945でHTTP/1.0が正式に標準化され、ステータス、HTTPヘッダーといった基本的な機能が揃いました。
 
 ＜小見出し＞
 HTTP/1.1
 ＜本文＞
-1997年にはRFC 2068が、1999年にはその更新版であるRFC 2616が発行され、HTTP/1.1が標準化されました。このバージョンは広く普及し、HTTPは安定期を迎えます。
+1997年にはRFC 2068が、1999年にその更新版であるRFC 2616が発行され、HTTP/1.1が標準化されました。このバージョンは広く普及し、HTTPは安定期を迎えます。
 
 ＜memo＞
 RFC 1945
@@ -64,7 +64,7 @@ HTTPメッセージ
 HTTPの通信では、ユーザーエージェントとサーバーがメッセージをやりとりします。メッセージの書式はRFC 7230で定義されています。
 
 ＜memo＞
-HTTP/1.1の再編成に伴って、HTTPメッセージに関する用語も整理される予定ですが、本書では2021年現在、RFC 7230に基づいた説明をします。
+2021年現在、HTTP/1.1のHTTPメッセージに関係する用語も再整理が予定されていますが、本書ではRFC 7230に基づく説明を行います。
 
 ＜小見出し＞
 HTTPリクエスト
@@ -93,7 +93,7 @@ User-Agent: curl/7.16.3
 ・OPTIONS：リクエストターゲットに対し、どのようなリクエストが可能か問い合わせる。従来は利用頻度の少ないメソッドだったが、現在ではCORSのプリフライトリクエストとして用いられる
 
 ＜memo＞
-「プリフライトリクエスト（preflight request）」は、CORSの通信に先立ち、通信を許可して良いか問い合わせる機能です。詳細はMDNを参照してください。
+「プリフライトリクエスト（Preflight request）」は、CORSの通信に先立ち、通信を許可してよいか問い合わせる機能です。詳細はMDNを参照してください。
 https://developer.mozilla.org/ja/docs/Glossary/Preflight_request
 
 ＜丸見出し＞
@@ -173,7 +173,7 @@ Last-Modified: Tue, 17 Aug 2021 14:00:11 GMT
 ・500（Internal Server Error）：サーバー側で何らかのエラーが発生した状態。リクエストに問題はないので、再度同じリクエストをすると成功する可能性もある
 
 ＜memo＞
-ステータスコード301と302では、Location:ヘッダフィールドで移動先を指定します。ユーザーエージェントは移動先の取得を試みます。
+ステータスコード301と302では、Location:ヘッダーフィールドで移動先を指定します。ユーザーエージェントは移動先を見に行きます。
 301の場合、次回以降のアクセスでは最初から移動先のURLにアクセスすべきです。302の場合は、次回以降も移動元のURLにアクセスすべきということになります。
 
 ＜丸見出し＞
@@ -209,7 +209,7 @@ Last-Modified: Tue, 17 Aug 2021 14:00:11 GMT
 
 ＜本文＞
 Content-Typeという名前のフィールドに、text/html; charset=utf-8という値が指定されています。これがリソースの種類を示すフィールドです。
-Content-Typeフィールドに指定する値は、「メディアタイプ（media type）」もしくは「MIMEタイプ（MIME Type）」と呼ばれます。メディアタイプという用語はCSSにも存在して紛らわしいため、本書では今後、MIMEタイプと呼びます。
+Content-Typeフィールドに指定する値は、「メディアタイプ（media type）」もしくは「MIMEタイプ（MIME type）」と呼ばれます。メディアタイプという用語はCSSにもあって紛らわしいため、本書では今後、MIMEタイプと呼びます。
 
 ＜memo＞
 MIMEはMultipurpose Internet Mail Extensionsの略称で、元は電子メールのメッセージの種類を示すものでしたが、ウェブでもそのまま利用されています。MIMEタイプの仕様はRFC 2046で定義されています。
@@ -218,11 +218,11 @@ RFC 2046
 https://datatracker.ietf.org/doc/html/rfc2046
 
 ＜memo＞
-メディアタイプと紛らわしい点についてはMIME sniffing Standardでも指摘されています。
+メディアタイプと紛らわしい点についてはMIME Sniffing仕様でも指摘されています。
 https://mimesniff.spec.whatwg.org/#mime-type-representation
 
 ＜本文＞
-MIMEタイプはIANAによって管理されており、IANAのウェブサイトのMedia Typesのページで一覧を見ることができます。
+MIMEタイプはIANAによって管理されており、IANAのMedia Typesのページで一覧を見ることができます。
 
 ＜memo＞
 IANA Media Types
@@ -247,7 +247,10 @@ text/htmlはHTML文書を表します。ウェブコンテンツのほとんど�
 ＜丸見出し＞
 application/xhtml+xml
 ＜本文＞
-application/xhtml+xmlは、XML形式で配信されるXHTML文書を表します。レンダリングと表示はtext/htmlと同様ですが、XML構文とみなされ、XMLパーサーによって構文解析されます。
+application/xhtml+xmlは、XML形式で配信されるいわゆるXHTML文書を表します。レンダリングと表示はtext/htmlと同様ですが、XML構文としてXMLパーサーによって構文解析されます。
+
+＜memo＞
+XHTMLは、 HTML文書のうちXMLの構文規則に適合して書かれたものを指すために歴史的に使用されてきた用語です。
 
 ＜丸見出し＞
 application/pdf
@@ -268,7 +271,7 @@ image/png、image/jpeg、image/gifは、それぞれPNG画像、JPEG画像、GIF
 ＜丸見出し＞
 image/svg+xml
 ＜本文＞
-image/svg+xmlは、XML形式で配信されるSVG画像を表します。PNG 画像などと異なり、SVGデータ自体にtitle要素によるタイトルや、desc要素による説明文のテキストを含んでいることがあります。
+image/svg+xmlは、XML形式で配信されるSVG画像を表します。PNG画像などと異なり、SVGデータ自体にtitle要素によるタイトルや、desc要素による説明文のテキストを含んでいることがあります。
 
 ＜memo＞
 SVG画像は、img要素を用いて、HTMLに埋め込むことができます。この場合、SVGのタイトルや説明文などの情報は利用されず、JavaScriptも実行されません。代替テキストはHTMLで用意する必要があります。
@@ -316,7 +319,7 @@ MIMEタイプが指定されていなかったり、ブラウザーにとって�
 ＜小見出し＞
 MIME sniffing
 ＜本文＞
-状況によっては、コンテンツのContent-Typeが指定されていなかったり、ブラウザーにとって未知の値が指定されていることがあります。この場合、ブラウザーはコンテンツを実際に読み込み、その内容からMIMEタイプを推測します。この処理をMIME sniffingと呼びます。
+状況によっては、コンテンツのContent-Typeが指定されていなかったり、ブラウザーにとって未知の値が指定されていることがあります。この場合、ブラウザーはコンテンツを実際に読み、その内容からMIMEタイプを推測します。この処理をMIME sniffingと呼びます。
 従来、MIME sniffingの挙動はブラウザーの実装に依存していました。一部のブラウザーはURLに含まれる拡張子を手掛かりにしたり、Content-Typeの指定を無視してsniffingの推測結果を優先することがありました。これはセキュリティ上の問題を引き起こすことがあります。
 
 ＜memo＞
@@ -325,7 +328,7 @@ IE8 Security Part VI: Beta 2 Update MIME-Handling: Sniffing Opt-Out
 https://docs.microsoft.com/ja-jp/archive/blogs/ie/ie8-security-part-vi-beta-2-update#mime-handling-sniffing-opt-out
 
 ＜本文＞
-各ウェブブラウザーが独自に異なるMIME sniffingを行う状況では、サーバー側でセキュリティの問題を回避するための十分な対策を施すのが困難でした。そのような背景もあり、現在ではこの挙動はMIME sniffing仕様として文書化され、標準化されています。
+各ウェブブラウザーが独自に異なるMIME sniffingを行う状況では、サーバー側でセキュリティの問題を回避するための十分な対策を施すのが困難でした。そのような背景もあり、現在ではこの挙動はMIME Sniffing仕様として文書化され、標準化されています。
 
 ＜memo＞
 MIME Sniffing
