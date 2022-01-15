@@ -271,7 +271,7 @@ image/svg+xml
 image/svg+xmlは、XML形式で配信されるSVG画像を表します。PNG 画像などと異なり、SVGデータ自体にtitle要素によるタイトルや、desc要素による説明文のテキストを含んでいることがあります。
 
 ＜memo＞
-SVG画像をimg要素のsrc属性で参照すると、画像として埋め込むことができます。この場合、タイトルや説明文などの情報は利用されず、JavaScriptも実行されません。代替テキストは HTML 側で用意する必要があります。
+SVG画像は、img要素を用いて、HTMLに埋め込むことができます。この場合、SVGのタイトルや説明文などの情報は利用されず、JavaScriptも実行されません。代替テキストはHTMLで用意する必要があります。
 
 ＜丸見出し＞
 application/javascript
