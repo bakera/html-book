@@ -209,7 +209,7 @@ Last-Modified: Tue, 17 Aug 2021 14:00:11 GMT
 
 ＜本文＞
 Content-Typeという名前のフィールドに、text/html; charset=utf-8という値が指定されています。これがリソースの種類を示すフィールドです。
-Content-Typeフィールドに指定する値は、「メディアタイプ（media type）」もしくは「MIMEタイプ（MIME Type）」と呼ばれます。メディアタイプという用語はCSSにもあって紛らわしいため、本書では今後、MIMEタイプと呼びます。
+Content-Typeフィールドに指定する値は、「メディアタイプ（media type）」もしくは「MIMEタイプ（MIME Type）」と呼ばれます。メディアタイプという用語はCSSにも存在して紛らわしいため、本書では今後、MIMEタイプと呼びます。
 
 ＜memo＞
 MIMEはMultipurpose Internet Mail Extensionsの略称で、元は電子メールのメッセージの種類を示すものでしたが、ウェブでもそのまま利用されています。MIMEタイプの仕様はRFC 2046で定義されています。
