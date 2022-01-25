@@ -457,7 +457,7 @@ hreflang属性が指定されており、かつ現在のページと異なる言
 type属性が指定されている場合は、現在の文書の異なるフォーマットであることを示します。
 これらを組み合わせての指定も可能です。たとえば〓23〓のようになります。
 
-〓23〓文書の代替表現
+〓23〓文書の代替表現の記述例
 ＜コード＞
 <link rel="alternate" href="/en/html"
  hreflang="en" type="text/html" title="英語版">
@@ -467,53 +467,59 @@ type属性が指定されている場合は、現在の文書の異なるフォ�
  hreflang="en" type="application/pdf" title="英語版PDF">
 <link rel="alternate" href="/fr/pdf"
  hreflang="fr" type="application/pdf" title="フランス語版PDF">
- 
- ＜本文＞
- media属性も併用できます。media属性の値にはメディアクエリーを指定でき、文書が特定のメディアタイプ向けであることを示します〓24〓。
- 
- 〓24〓media属性の値にはメディアクエリーを指定
- ＜コード＞
- <link rel="alternate" href="/en/html/print"
+
+＜本文＞
+media属性も併用できます。media属性の値にはメディアクエリーを指定でき、文書が特定のメディアタイプ向けであることを示します〓24〓。
+
+〓24〓media属性の値にメディアクエリーを指定した例
+＜コード＞
+<link rel="alternate" href="/en/html/print"
  hreflang="en" type="text/html" media="print" title="英語版（印刷用）">
 <link rel="alternate" href="/fr/html/print"
  hreflang="fr" type="text/html" media="print" title="フランス語版（印刷用）">
- 
- ＜本文＞
+
+＜本文＞
 メディアクエリーのメディア特性の指定により、モバイル向け、パソコン向けといった表現も可能です〓25〓。検索エンジンのクローラーがこのような指定を認識し、モバイル向けの別コンテンツがあるかどうかを判断することもあります。
 
-〓25〓デバイスを指定
+〓25〓メディアクエリーによるモバイル向けコンテンツの指定例
 ＜コード＞
 <link rel="alternate" href="https://m.example.com/" 
  media="only screen and (max-width: 640px)" title="モバイル向けページ">
- 
- ＜memo＞
- Media Queries Level 4
- https://www.w3.org/TR/mediaqueries/
- 
- <memo＞
-Google検索セントラル 別々の URL
+
+＜memo＞
+Media Queries Level 4
+https://www.w3.org/TR/mediaqueries/
+
+<memo＞
+Google検索セントラル 別々のURL
 https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls?hl=ja
 
 ＜小見出し＞
 リンクタイプauthor
 ＜本文＞
-リンクタイプauthorは、リンク先が著作者に関連する情報であることを示します。mailto:スキームのURLを使用して、著作者の電子メールアドレスを示すことが一般的です。link要素で用いた場合、このHTML文書全体の著作者を指します〓26〓。
+リンクタイプauthorは、リンク先が著作者に関連する情報であることを示します。典型的には、mailto:スキームのURLを使用して、著作者の電子メールアドレスを指定します。link要素で用いた場合、このHTML文書全体の著作者を指します〓26〓。
 
-〓26〓authorの記述例
+〓26〓リンクタイプauthorの記述例
 ＜コード＞
 <link rel="author" href="mailto:me@example.com">
 
 ＜本文＞
 このリンクタイプをa要素、area要素で用いた場合は、最も近い祖先のarticle要素の著作者を指すものと解釈されます。article要素の外で用いられているときは、HTML文書全体の著作者を指します。
-古いブラウザーの中には、これを解釈し、文書の著作者へ即座に電子メールを送信できるものがありました。現在のブラウザーはそのような機能をほとんどサポートしていませんので、無理に指定する必要はないでしょう。
+古いブラウザーの中には、このリンクタイプを解釈し、文書の著作者へ即座に電子メールを送信できるものがありました。現在のブラウザーはそのような機能をほとんどサポートしていませんので、無理に指定する必要はないでしょう。
 
 ＜小見出し＞
 リンクタイプbookmark
 ＜本文＞
-リンクタイプbookmarkはa要素、area要素で使用でき、リンク先が「パーマリンク（permalink）」であることを示します。パーマリンクは、文書中に記事が列挙されている場合などに、個々の記事を指すリンク先です。「固定リンク」と呼ばれることもあります。
+リンクタイプbookmarkはa要素、area要素で使用でき、リンク先が「パーマリンク（permalink）」であることを示します。
+
+＜word＞
+パーマリンク
+文書中に記事が列挙されている場合などに、個々の記事を指すリンク先です。「固定リンク」と呼ばれることもあります。
+
+＜本文＞
 このリンクタイプがarticle要素の中で用いられた場合、最も近い祖先のarticle要素のパーマリンクと解釈されます。article要素の外で用いられているときは、HTML文書自体のパーマリンクと解釈します〓27〓。
 
-〓27〓bookmarkの記述例
+〓27〓リンクタイプbookmarkの記述例
 ＜コード＞
 <article>
   <a href="a.html" rel="bookmark">ブログ記事のパーマリンク</a>
@@ -531,22 +537,22 @@ https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls?hl=ja
 ＜本文＞
 リンクタイプexternalはa要素、area要素、form要素で使用でき、リンク先が外部サイトであることを示します〓28〓。
 
-〓28〓externalの記述例
+〓28〓リンクタイプexternalの記述例
 ＜コード＞
 <a href="https://example.com/" rel="external">example (外部サイト)</a>
 
 ＜小見出し＞
 リンクタイプhelp
 ＜本文＞
-リンクタイプhelpは、リンク先がヘルプ情報であることを示します。a要素、area要素に指定した場合、親要素や兄弟要素に関連するコンテキストヘルプ情報であると期待されます〓29〓。
+リンクタイプhelpは、リンク先がヘルプ情報であることを示します。a要素、area要素に指定した場合、親要素や兄弟要素に関連するヘルプ情報であると期待されます〓29〓。
 
-〓29〓helpの記述例
+〓29〓リンクタイプhelpの記述例
 ＜コード＞
 <p><label>トピックを入力: <input name="topic">
 <a href="help/topic.html" rel="help">(ヘルプ)</a></label></p>
 
 ＜本文＞
-この例では、入力すべき「トピック」についてのヘルプ情報が期待されます。form要素にも同様に指定できます。
+〓29〓では、入力すべき「トピック」についてのヘルプ情報が期待されます。form要素にも同様に指定できます。
 link要素に指定した場合は、このページ全体のヘルプ情報とみなされます。古いブラウザーの中には、ヘルプへのリンクを提供する機能を持つものもありました。
 
 ＜小見出し＞
@@ -554,20 +560,20 @@ link要素に指定した場合は、このページ全体のヘルプ情報と�
 ＜本文＞
 link要素でリンクタイプiconを使用すると、リンク先がアイコンであることを示します。現在の文書を表現するアイコン、いわゆるファビコン（favicon）を指定するために使われます〓30〓。
 
-〓30〓iconの記述例
+〓30〓リンクタイプiconの記述例
 ＜コード＞
 <link rel="icon" href="/assets/favicon.ico">
 
 ＜本文＞
 互換性の理由から、shortcut iconと書くことも認められており、iconと同一視されます。この場合、rel属性の値全体がshortcut iconでなければならず、逆順にしたり、他のキーワードを追加したりはできません。
-link要素によるアイコンの指定がない場合、ブラウザーは/favicon.icoというURLにアクセスしてアイコンの取得を試みます。この挙動はHTML仕様4.6.6.8 Link type "icon"で明確に定義されています。逆に言えば、/favicon.icoにアイコンが置いてあり、それを使えばよい場合は指定不要といえます。
-ブラウザーの種類や端末の種類によって、アイコンの大きさやフォーマットを変えたい場合もあるでしょう。その場合は、type属性、sizes属性、media属性と組み合わせて、さまざまなバージョンのアイコンが指定できます。〓31〓はHTML仕様で紹介されている例です。
+link要素によるアイコンの指定がない場合、ブラウザーは/favicon.icoというURLにアクセスしてアイコンの取得を試みます。この挙動はHTML仕様4.6.6.8 Link type "icon"で明確に定義されています。逆に言えば、/favicon.icoにアイコンが設置されており、それを使えばよい場合は指定不要といえます。
+ブラウザーの種類や端末の種類によって、アイコンの大きさやフォーマットを変えたい場合もあるでしょう。その場合は、type属性、sizes属性、media属性と組み合わせることで、さまざまなバージョンのアイコンが指定できます。〓31〓はHTML仕様で紹介されている例です。
 
 ＜memo＞
-4.6.7.8 Link type "icon"
+4.6.6.8 Link type "icon"
 https://html.spec.whatwg.org/multipage/links.html#rel-icon
 
-〓31〓さまざまなバージョンのアイコンを指定
+〓31〓さまざまなバージョンのアイコンの指定例
 ＜本文＞
 <link rel="icon" href="favicon.png" sizes="16x16" type="image/png">
 <link rel="icon" href="windows.ico" sizes="32x32 48x48" type="image/vnd.microsoft.icon">
@@ -587,47 +593,52 @@ https://developer.apple.com/library/archive/documentation/AppleApplications/Refe
 ＜本文＞
 リンクタイプlicenseは、リンク先が著作権情報、ライセンス情報であることを示します。link要素で使用した場合、文書全体の著作権情報を表します〓32〓。
 
-〓32〓licenseの記述例
+〓32〓リンクタイプlicenseの記述例
 ＜コード＞
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ja">
 
 ＜本文＞
-この例では、文書が『クリエイティブ・コモンズ 表示 4.0 ライセンス』で提供されることを表します。
-a要素で使うこともできますが、この場合、文書のどの部分の著作権情報なのかは明示されません。文書全体のライセンスかもしれず、段落や引用部のライセンスかもしれません。リンクタイプhelpやbookmarkと異なり、親要素や祖先要素のライセンスを表すというような決まりはないため、ユーザーは設置されている場所やスタイルなどが手掛かりに、文脈から判断することになります。
-なお、ブラウザーは互換性のため、copyrightというキーワードをlicenseと同じように解釈します。
+この例では、文書が「クリエイティブ・コモンズ 表示 4.0 ライセンス」で提供されることを表します。
+a要素で使うこともできますが、この場合、文書のどの部分の著作権情報なのかは明示されません。文書全体のライセンスかもしれませんし、段落や引用部のライセンスかもしれません。リンクタイプhelpやbookmarkと異なり、親要素や祖先要素のライセンスを表すというような決まりはないため、ユーザーは設置されている場所やスタイルなどが手掛かりに、文脈から判断することになります。
+ブラウザーは互換性のために、copyrightというキーワードをlicenseと同じように解釈します。
 
 ＜小見出し＞
 リンクタイプcanonical
 ＜本文＞
 link要素でリンクタイプcanonicalを使用すると、リンク先が正規のURLであることを示します。これはCanonical Linkとして機能します。詳細はRFC 6596 The Canonical Link Relationを参照してください。
-Canonical Linkは、あるリソースが複数のURLで示されるとき、正規のURLを示すものです。たとえば以下のように、同一のリソースに異なるドメインでアクセスできる場合があります。
-
-・https://www.example.com/
-・https://example.com/
-
-また、主にユーザー追跡のために、リソースの本質と関係のないクエリー文字列がURLに付与されることもあります。
-
-・https://www.example.com/?sessionid=1234567
-・https://www.example.com/?linkfrom=twitter
-・https://www.example.com/?trackingid=abcdef
-
-このような場合に、rel="canonical"を使用すると、どれが正規のURLなのか示すことができます。これにより、検索エンジンが検索結果に出すURLが1つに絞られる、といった効果が期待できます〓33〓。href属性値には相対URLでの指定も可能ですが、絶対URLを使用するのが一般的です。
-
-〓33〓rel="canonical"を使用した記述例
-＜コード＞
-<link rel="canonical" href="https://www.example.com/">
 
 ＜memo＞
+RFC 6596
 https://datatracker.ietf.org/doc/html/rfc6596
+
+＜本文＞
+Canonical Linkは、あるリソースが複数のURLで示されるとき、正規のURLを示すものです。たとえば〓33〓のように、同一のリソースに異なるドメインでアクセスできる場合があります。
+
+〓33〓同一のリソースの、異なるドメインを持つURLの例
+https://www.example.com/
+https://example.com/
+
+また、主にユーザー追跡のために、リソースの本質と関係のないクエリー文字列がURLに付与されることもあります〓34〓。
+
+〓34〓クエリーが付与されたURLの例
+https://www.example.com/?sessionid=1234567
+https://www.example.com/?linkfrom=twitter
+https://www.example.com/?trackingid=abcdef
+
+このような場合に、rel="canonical"を使用すると、どれが正規のURLなのか示すことができます。これにより、検索エンジンが検索結果に出すURLが1つに絞られる、といった効果が期待できます〓35〓。href属性値には相対URLでの指定も可能ですが、絶対URLを使用するのが一般的です。
+
+〓35〓rel="canonical"を使用した正規URLの記述例
+＜コード＞
+<link rel="canonical" href="https://www.example.com/">
 
 ＜小見出し＞
 リンクタイプnofollow
 ＜本文＞
 a要素やarea要素でリンクタイプnofollowを使用すると、ページの制作者がリンク先を推奨しないことを示します。
-訪問者がコメント欄にリンクを書き込める場合や、広告配信のスクリプトによってリンクが自動的に挿入される場合などは、コンテンツ制作者がリンク先のコンテンツの品質を保証できません。このような機能を悪用され、スパムリンクが大量に生成されることもあります。
-このようなリンクは、検索エンジンにそのまま評価させると、ランキング評価に悪影響を与える懸念があります。リンクタイプnofollowを使用することで、関連付けたくないリンクを明確にできます〓34〓。検索エンジンはこれを読み取り、ランキングへの悪影響を抑止するでしょう。
+訪問者がコメント欄にリンクを書き込める場合や、広告配信のスクリプトによってリンクが自動的に挿入されるなどの場合、コンテンツ制作者がリンク先のコンテンツの品質を保証できません。このような機能を悪用され、スパムリンクが大量に生成されることもあります。
+このようなリンクは、検索エンジンにそのまま評価させると、ランキング評価に悪影響を与える懸念があります。リンクタイプnofollowを使用することで、関連付けたくないリンクを明確にできます〓36〓。検索エンジンはこれを読み取り、ランキングへの悪影響を抑止するでしょう。
 
-〓34〓nofollowの記述例
+〓36〓リンクタイプnofollowの記述例
 ＜コード＞
 <a href="http://example.net/untrusted.html" rel="nofollow">品質が信頼できないページ</a>
 
@@ -638,11 +649,11 @@ https://developers.google.com/search/docs/advanced/appearance/qualify-outbound-l
 ＜小見出し＞
 リンクタイプnoopener
 ＜本文＞
-a要素でリンクタイプnoopenerを使用すると、リンク先からリンク元のブラウジングコンテキストへアクセスできないようにします。ブラウジングコンテキストとは、タブやウィンドウ、iframe要素のフレームなどを指します。詳しくはtarget属性を参照してください。
+a要素でリンクタイプnoopenerを使用すると、リンク先からリンク元のブラウジングコンテキストへアクセスできないようにします。ブラウジングコンテキストについてはtarget属性を参照してください。
 target=_blankなどで新しいブラウジングコンテキストを開始した場合、リンク先となっている側のコンテンツからJavaScriptを用いて、リンク元のブラウジングコンテキストにアクセスできる場合があります。リンク先のコンテンツが信頼できない場合、これはセキュリティ上の問題につながります。
-このようなとき、rel=noopenerを利用します〓35〓。
+このようなとき、rel=noopenerを利用します〓37〓。
 
-〓35〓noopenerの記述例
+〓37〓リンクタイプnoopenerの記述例
 ＜コード＞
 <a href="http://example.net/fishy.cgi" rel="noopener" target="_blank">信頼できるかどうか不明なページ</a>
 
@@ -653,22 +664,22 @@ target=_blankなどで新しいブラウジングコンテキストを開始し�
 ＜小見出し＞
 リンクタイプnoreferrer
 ＜本文＞
-a要素でリンクタイプnoreferrerを使用すると、リンク先に参照元情報を送信しないように促します。具体的には、リンク元ページのアドレスを、ブラウザーがReferer HTTPヘッダーでリファラーとして送信しないようにします〓36〓。
+a要素でリンクタイプnoreferrerを使用すると、リンク先に参照元情報を送信しないように促します。具体的には、リンク元ページのアドレスを、ブラウザーがReferer HTTPヘッダーでリファラーとして送信しないようにします〓38〓。
 
-〓36〓noreferrerの記述例
+〓38〓リンクタイプnoreferrerの記述例
 ＜コード＞
 <a href="https://example.com/" rel="noreferrer">リファラーを送信しないリンク</a>
 
 ＜本文＞
 さらに、noopenerと同様にブラウジングコンテキストを参照させない効果もあります。ブラウジングコンテキストが参照できると、結局リンク元のURLを知ることができてしまうためです。詳しくはnoopenerを参照してください。
-より細かくリファラーを制御したい場合は、referrerpolicy属性を用いてリファラーポリシーの設定もできます。また、ページ全体のリンクについてリファラーポリシーを制御したい場合は、<meta name=referrer>を使用することで実現できます。
+より細かくリファラーを制御したい場合は、referrerpolicy属性を用いたリファラーポリシーの設定もできます。また、ページ全体のリンクについてリファラーポリシーを制御したい場合は、<meta name=referrer>を使用することで実現できます。
 
 ＜小見出し＞
 リンクタイプdns-prefetch
 ＜本文＞
-link要素でリンクタイプdns-prefetchを指定すると、指定されたドメインの名前解決をしておくことが期待されます。あとでアクセスする予定のURLがある場合、そのドメインの名前解決を事前にしておくことで、読み込み時間の短縮が期待できます〓37〓。詳細な挙動はResource Hints仕様で定義されています。
+link要素でリンクタイプdns-prefetchを指定すると、指定されたドメインの名前解決をしておくことが期待されます。あとでアクセスする予定のURLがある場合、そのドメインの名前解決を事前にしておくことで、読み込み時間の短縮が期待できます〓39〓。詳細な挙動はResource Hints仕様で定義されています。
 
-〓37〓dns-prefetchの記述例
+〓39〓リンクタイプdns-prefetchの記述例
 ＜コード＞
 <link rel="dns-prefetch" href="https://example.com">
 
@@ -680,9 +691,9 @@ https://w3c.github.io/resource-hints/
 ＜小見出し＞
 リンクタイプpreconnect
 ＜本文＞
-link要素でリンクタイプpreconnectを指定すると、事前に接続を確立しておくことが期待されます。dns-prefetchでは名前解決しか行いませんが、こちらはTCPコネクションの確立、TLSのネゴシエーションまで行います〓38〓。
+link要素でリンクタイプpreconnectを指定すると、事前に接続を確立しておくことが期待されます。dns-prefetchでは名前解決しか行いませんが、preconnectはTCPコネクションの確立、TLSのネゴシエーションまで行います〓40〓。
 
-〓38〓preconnectの記述例
+〓40〓リンクタイプpreconnectの記述例
 ＜コード＞
 <link rel="preconnect" href="https://example.com">
 
@@ -693,15 +704,15 @@ link要素でリンクタイプpreconnectを指定すると、事前に接続を
 リンクタイプpreload
 ＜本文＞
 link要素でリンクタイプpreloadを指定すると、現在のページで使用する予定のサブリソースを事前に読み込んでおくことが期待できます。prefetchの対象は現在のページとは異なるページなどで利用する予定のリソースですが、preloadの対象は現在のページで使用する予定のサブリソースです。
-サブリソースの多くはimg要素のsrc属性などで記述されており、HTMLを読み込んだ時点で必要性を判断できます。しかし、中にはCSSから読み込まれるもの、JavaScriptで挿入されるものなどもあり、これらの必要性はHTMLを読み込んだ時点では判断できません。preloadは、こういったサブリソースの必要性を事前に伝えておくことで、動作を高速化するものです。詳細はPreload仕様を参照してください。
-〓39〓の例では、スタイルシートで利用する画像を事前に読み込んでいます。
+サブリソースの多くはimg要素のsrc属性などで記述されており、HTMLを読み込んだ時点で必要性を判断できます。しかし、中にはCSSから読み込まれるもの、JavaScriptで挿入されるものなどもあり、これらの必要性はHTMLを読み込んだ時点では判断できません。preloadは、そのようなサブリソースの必要性を事前に伝えておくことで、動作を高速化するものです。詳細はPreload仕様を参照してください。
+〓41〓の例では、スタイルシートで利用する画像を事前に読み込んでいます。
 
 ＜memo＞
 Preload
 https://w3c.github.io/preload/
 2021年時点ではW3C文書ですが、WHATWGに移管される予定です。
 
-〓39〓preloadの記述例
+〓41〓リンクタイプpreloadの記述例
 ＜コード＞
 <link rel="preload" href="bgimage.png" as="image">
 <style>
@@ -713,7 +724,7 @@ rel=preloadを用いる場合、as属性を指定する必要があります。a
 
 "audio", "audioworklet", "document", "embed", "font", "frame", "iframe", "image", "manifest", "object", "paintworklet", "report", "script", "serviceworker", "sharedworker", "style", "track", "video", "worker", "xslt"
 
-前述の例では、画像として利用するためas=imageを指定しています。Webフォントであれば"font"、JavaScriptであれば"script"など、それぞれ対応する適切な値を指定する必要があります。この指定により、ブラウザーはリソースの優先順位を判断したり、Content Security Policyを適切に処理できます。
+〓41〓では、画像として利用するためas=imageを指定しています。Webフォントであれば"font"、JavaScriptであれば"script"など、それぞれ対応する適切な値を指定する必要があります。この指定により、ブラウザーはリソースの優先順位を判断したり、Content Security Policyを適切に処理できます。
 integrity属性を指定して、プリロードする外部リソースの完全性が担保できます。これはscript要素のintegrity属性と同じものです。Chapter3-11のscript要素を参照してください。
 
 ＜memo＞
@@ -722,10 +733,10 @@ https://fetch.spec.whatwg.org/#concept-request-destination
 ＜小見出し＞
 リンクタイプmodulepreload
 ＜本文＞
-link要素でリンクタイプmodulepreloadを使用すると、モジュールスクリプトをプリロードできます。リンクタイプpreloadと似ていますが、モジュールスクリプトに固有のCORSの処理、依存関係の処理などを適切に行うことができます。クラシックスクリプトとモジュールスクリプトについてはChapter3-11を参照してください〓40〓。
+link要素でリンクタイプmodulepreloadを使用すると、モジュールスクリプトをプリロードできます〓42〓。リンクタイプpreloadと似ていますが、モジュールスクリプトに固有のCORSの処理、依存関係の処理などを適切に行うことができます。モジュールスクリプトについてはChapter3-11を参照してください。
 as属性、integrity属性については、リンクタイプpreloadと同様です。リンクタイプpreloadを参照してください。
 
-〓40〓modulepreloadの記述例
+〓42〓リンクタイプmodulepreloadの記述例
 ＜コード＞
 <link rel="modulepreload" href="critical.mjs">
 
@@ -733,33 +744,33 @@ as属性、integrity属性については、リンクタイプpreloadと同様�
 リンクタイプprerender
 ＜本文＞」
 link要素でリンクタイプprerenderを指定すると、リソースを事前にダウンロードした上で、バックグラウンドでレンダリングしておくことが期待できます。
-ユーザーが次にどのページに遷移するか明確な場合、次ページのレンダリング処理をあらかじめ行っておくことで、表示の高速化が期待できます〓41〓。
+ユーザーが次にどのページに遷移するか明確な場合、次ページのレンダリング処理をあらかじめ行っておくことで、表示の高速化が期待できます〓43〓。
 
-〓41〓prerenderの記述例
+〓43〓リンクタイプprerenderの記述例
 ＜コード＞
 <link rel="prerender" href="https://example.com/next-page.html">
 
 ＜小見出し＞
 リンクタイプstylesheet
 ＜本文＞
-link要素にリンクタイプstylesheetを指定すると、外部スタイルシートを読み込みます〓42〓。
+link要素にリンクタイプstylesheetを指定すると、外部スタイルシートを読み込みます〓44〓。
 
-〓42〓stylesheetの記述例
+〓44〓リンクタイプstylesheetの記述例
 ＜コード＞
 <link rel="stylesheet" href="basic.css">
 
 ＜本文＞
 古いHTMLではtype=text/cssもあわせて指定していましたが、現在のHTML仕様はCSS以外のスタイルシート言語を想定しておらず、デフォルトでtext/cssとみなされるため、type属性は省略することが推奨されています。type属性があり、かつtext/css以外の値だった場合、そのスタイルシートは無視されます。
-media属性にはメディアクエリーを指定できます。media属性を併用することで、特定のデバイスに向けたスタイルシートであることを宣言できます。〓43〓の例では、印刷用のスタイルシートを定義しています。
+media属性にはメディアクエリーを指定できます。media属性を併用することで、特定のデバイスに向けたスタイルシートであることを宣言できます。〓45〓の例では、印刷用のスタイルシートを設定しています。
 
-〓43〓印刷用のスタイルシートを定義
+〓45〓印刷用スタイルシートの設定例
 ＜コード＞
 <link rel="stylesheet" href="print.css" media="print">
 
 ＜本文＞
-また、メディアクエリーのメディア特性を記述することにより、デバイスの画面幅に応じてスタイルを変更する、いわゆるレスポンシブデザインを実現できます〓44〓。
+また、メディアクエリーのメディア特性を記述することにより、デバイスの画面幅に応じてスタイルを変更する、いわゆるレスポンシブデザインを実現できます〓46〓。
 
-〓44〓メディア特性を定義
+〓46〓メディアクエリーを用いたスタイルシートの切り替え例
 ＜コード＞
 <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 420px)">
 <link rel="stylesheet" href="tablet.css" media="screen and (max-width: 768px)">
@@ -774,15 +785,16 @@ integrity属性を指定すると、外部スタイルシートの完全性を�
 シーケンシャルリンクタイプprev/next
 ＜本文＞
 リンクタイプprev/nextは、リンク先が現在のページと一続きのコンテンツであることを示します。リンクタイプnextは次のページ、リンクタイプprevは前のページであることをそれぞれ示します。
-たとえば、3つに分割された記事で、2つめのページがarticle-part2.htmlとすると、前後のページを次のように表すことができます〓45〓。
+たとえば、3つに分割された記事で、2つめのページがarticle-part2.htmlとすると、前後のページを次のように表すことができます〓47〓。
 
-〓45〓prev/nextの記述例
+〓47〓リンクタイプprev/nextの記述例
 ＜コード＞
 <link rel="prev" href="article-part1.html">
 <link rel="next" href="article-part3.html">
 
 ＜本文＞
-古いブラウザーには、このようなlink要素の指定を解釈して、前後のページに移動するナビゲーションを提供するものもありました。現在ではそのような機能はほとんど提供されていませんが、検索エンジンのクローラーに前後ページの情報を与えるために用いられることがあります。また、ブラウザーはnextで指定されたリソースを先読みし、リンクタイプdns-prefetch、preconnect、prefetch、prerenderのいずれかの処理を行う場合があります。処理の詳細は各リンクタイプを参照してください。
+古いブラウザーには、このようなlink要素の指定を解釈して、前後のページに移動するナビゲーションを提供するものもありました。現在ではそのような機能はほとんど提供されていませんが、検索エンジンのクローラーに前後ページの情報を与えるために用いられることがあります。
+また、ブラウザーはnextで指定されたリソースを先読みし、リンクタイプdns-prefetch、preconnect、prefetch、prerenderのいずれかの処理を行う場合があります。処理の詳細は各リンクタイプを参照してください。
 link要素だけでなくa要素にも使用できるので、ページナビゲーションに含まれるa要素で指定してもよいでしょう。
 互換性のため、previousキーワードはprevと同一視されます。
 
@@ -792,5 +804,5 @@ link要素だけでなくa要素にも使用できるので、ページナビゲ
 HTML仕様に示されたキーワード以外にも、microformats wikiのexisting-rel-valuesページに登録されたものを使用できます。このページは誰でも登録できるため、事実上、自由に拡張可能です。
 
 ＜memo＞
-HTML5 link type extensions（保護されれていない）
+HTML5 link type extensions
 http://microformats.org/wiki/existing-rel-values#HTML5_link_type_extensions
