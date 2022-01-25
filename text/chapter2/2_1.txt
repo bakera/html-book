@@ -221,10 +221,10 @@ HTML文書を完成させるためには、文書の先頭に〓10〓のよう�
 <!DOCTYPE html>
 
 ＜本文＞
-DOCTYPEは、歴史的な理由により、ブラウザーがquirks modeでHTML文書を処理するのを防ぐためのものです。それ以上の意味ではありません。
+歴史的な理由により、ブラウザーは、DOCTYPEがないHTML文書を古いものとみなし、特殊な扱いをします。DOCTYPEを記述するのは、その処理を防ぐためで、それ以上の意味はありません。
 
 ＜memo＞
-quirks modeは、日本語では互換モードや奇癖モードなどと呼ばれるものです。詳細はMDNの後方互換モードと標準準拠モードに譲ります。 
+この特殊な扱いはquirks modeと呼ばれます。互換モード、奇癖モードと呼ばれることもあります。詳細はMDNの「後方互換モードと標準準拠モード」を参照してください。。 
 https://developer.mozilla.org/ja/docs/Web/HTML/Quirks_Mode_and_Standards_Mode 
 
 ＜コラム＞
