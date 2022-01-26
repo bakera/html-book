@@ -205,7 +205,7 @@ UTCの場合は+0000となりますが、同じ意味を表すZの1文字でも�
 
 ＜memo＞
 アルファベット1文字での記述は、タイムゾーンを表すMilitary time zonesと呼ばれるものです。タイムゾーンについては、タイムゾーン呪いの書（知識編）が非常に詳しいです。
-https://zenn.dev/dmikurube/articles/curse-of-timezones-common-ja ↩
+https://zenn.dev/dmikurube/articles/curse-of-timezones-common-ja
 
 ＜小見出し＞
 URL
