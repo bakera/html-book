@@ -12,6 +12,7 @@ details要素には子要素として必ずsummary要素を含まなければな
 ＜memo＞
 簡単に言えば、クリックやタップによって開閉する要素です。閉じた状態ではsummary要素の内容だけが表示され、開いた状態になるとdetails要素の内容も表示されます。
 
+＜本文＞
 〓01〓はdetails要素とsummary要素を使用した例です。表示例は〓02〓のようになります。
 
 〓01〓details要素とsummary要素を使用した記述例
@@ -98,7 +99,7 @@ dialog要素は、ユーザーがタスクを実行するときのインタラ�
 dialog要素はまだ十分にサポートされておらず、ブラウザーによっては動作しないことに注意してください。2021年時点で、FirefoxとSafariはこの要素をサポートしていません。
 
 ＜memo＞
-Firefox 98、Safari 15.4で実装の予定があり、近い将来、十分にサポートされていると言える状況になる。
+Firefox 98、Safari 15.4で実装の予定があり、近い将来、十分にサポートされている状況になるでしょう。
 https://bugzilla.mozilla.org/show_bug.cgi?id=1733536
 https://webkit.org/blog/12209/introducing-the-dialog-element/
 
