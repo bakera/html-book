@@ -505,7 +505,7 @@ noscript要素を利用できるのは、HTML構文の場合のみです。XML�
 <noscript><img src="target.jpg" alt=""></noscript>
 
 ＜本文＞
-フォールバックコンテンツの表現には、必ずしもnoscript要素は必要ありません。たとえば〓18〓のように、JavaScript無効時のコンテンツをHTMLに書いておき、JavaScriptによるDOM操作で書き換えることで、HTMLに書いたメッセージはフォールバックとして機能します。
+フォールバックコンテンツの表現には、必ずしもnoscript要素は必要ありません。たとえば〓18〓のように、JavaScript無効時のコンテンツをHTMLに書いておき、JavaScriptによるDOM操作で書き換える方法があります。このようにすると、HTMLに書いたメッセージがフォールバックとして機能します。
 
 〓18〓noscript要素を使用せずにフォールバックコンテンツを記述する例
 ＜コード＞
