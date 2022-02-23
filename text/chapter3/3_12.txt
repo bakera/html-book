@@ -13,7 +13,7 @@ scriptという英単語は、Unicodeの用字（たとえば、漢字、平仮�
 
 ＜本文＞
 ブラウザー上ではJavaScriptと呼ばれるスクリプト言語が動作します。JavaScriptを利用することで、ユーザーの操作に応じてウェブページの内容を動的に変化させる、コンテンツを動的に読み込んで表示するなど、さまざまな処理が可能になります。
-以前のHTML仕様では、利用できるスクリプト言語の種類までは規定しておらず、たとえばかつてのInternet ExplorerではJavaScriptの他にVBScriptも動作していました。しかし、現在のHTML仕様はJavaScriptのみを想定しており、ブラウザー上で動作するスクリプト言語は事実上、JavaScriptのみとなっています。
+以前のHTML仕様では、利用できるスクリプト言語の種類までは規定しておらず、たとえばかつてのInternet ExplorerではJavaScriptのほかにVBScriptも動作していました。しかし、現在のHTML仕様はJavaScriptのみを想定しており、ブラウザー上で動作するスクリプト言語は事実上、JavaScriptのみとなっています。
 
 ＜memo＞
 モダンブラウザーではWebAssembly（wasmとも呼ばれる）も動作しますが、このコンパイル前の言語には特に制限がなく、C++、C#、Rustなどで書いたコードを動作させることも可能になります。WebAssemblyの詳細はMDNを参照してください。
@@ -23,12 +23,12 @@ https://developer.mozilla.org/ja/docs/WebAssembly
 JavaScriptによるプログラミングについては本書の範囲外となるため、その詳細は扱いません。
 
 ＜memo＞
-JavaScriptの言語仕様は、Ecma InternationalのTechnical Committee 39 (TC39)が中心になって策定されており、ECMA-262の仕様がコアとなっています。必要に応じて参照してください。
+JavaScriptの言語仕様は、Ecma InternationalのTechnical Committee 39 (TC39)が中心になって策定されており、ECMA-262がコアの仕様となっています。必要に応じて参照してください。
 ECMA-262
 https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
 
 ＜本文＞
-また、このChapterのJavaScriptのサンプルコードは要素説明のための便宜的なものであり、実用性はありません。
+また、ここでのJavaScriptのサンプルコードは要素説明のための便宜的なものであり、実用性はありません。
 
 ＜memo＞
 特に、サンプルコードではdocument.write()メソッドを利用していることがありますが、仕様ではこのメソッドの利用を推奨していないことに注意してください。
@@ -80,9 +80,9 @@ script要素の内容の挙動は、後述するように、過去との互換�
 ＜丸見出し＞
 script要素の終了タグの扱い
 ＜本文＞
-script要素内に</scriptという文字列が出現した場合、script要素の終了タグとみなされることがあります。〓02〓は構文エラーとなる例です。
+script要素内に</scriptという文字列が出現した場合、script要素の終了タグとみなされることがあります。〓02〓はJavaScriptの構文エラーとなる例です。
 
-〓02〓構文エラーとなるscript要素の例
+〓02〓JavaScriptの構文エラーとなるscript要素の例
 ＜コード＞
 <script>
   document.write('<script>alert(1)</script>');
@@ -95,7 +95,7 @@ script要素内に</scriptという文字列が出現した場合、script要素
 〓02〓の例はHTMLの構文エラーにもなります。最後の</script>に対応する開始タグがないとみなされるためです。
 
 ＜本文＞
-これを避けるためには、script要素内に</という文字列が出現しないようにエスケープする必要があります。</という文字列さえ出現しなければ書き方は問いません。たとえば〓03〓のような書き方ができます。
+この構文エラーを避けるためには、script要素内に</という文字列が出現しないようにエスケープする必要があります。</という文字列さえ出現しなければ書き方は問いません。たとえば〓03〓のような書き方ができます。
 
 〓03〓文字列</をエスケープした記述例
 ＜コード＞
@@ -112,13 +112,13 @@ script要素内に</scriptという文字列が出現した場合、script要素
 ＜丸見出し＞
 要素内容におけるHTMLコメントの扱い
 ＜本文＞
-script要素内にHTMLのコメント形式の文字列が挿入されるケースを見かけることがあります。〓05〓は、script要素内に文字列<!--と-->が含まれる例です。
+script要素内にHTMLのコメント形式の文字列が挿入されるケースを見かけることがあります。〓04〓は、script要素内に文字列<!--と-->が含まれる例です。
 
 ＜memo＞
-きわめて古いブラウザーではscript要素が解釈できず、中身をそのまま表示することがあったため、互換性のために〓05〓のような書き方をすることがありました。
+きわめて古いブラウザーではscript要素が解釈できず、中身をそのまま表示することがあったため、互換性のために〓04〓のような書き方をすることがありました。
 
 ＜本文＞
-〓05〓script要素内に文字列<!--と-->が出現する例
+〓04〓script要素内に文字列<!--と-->が出現する例
 ＜コード＞
 <script>
 <!--
@@ -128,7 +128,7 @@ script要素内にHTMLのコメント形式の文字列が挿入されるケー�
 
 ＜本文＞
 HTML構文の場合、script要素内に<!--という文字列があっても、HTMLのコメントとしては扱わず、内容の一部として扱われます。<!--や-->はそのままスクリプトエンジンに渡され、スクリプトエンジンの側でJavaScriptの1行コメントとして扱われます。
-データブロックの場合にも、単なる文字列として扱われ、そのまま渡されます。〓06〓は、JavaScriptの実行結果として、<!---->という文字列が表示されます。
+データブロックの場合にも、単なる文字列として扱われ、そのまま渡されます。〓05〓は、JavaScriptの実行結果として、<!---->という文字列が表示されます。
 
 ＜memo＞
 XML構文の場合にはXMLのコメントとみなされ、内容がスクリプトエンジンに渡りません。
@@ -137,7 +137,7 @@ XML構文の場合にはXMLのコメントとみなされ、内容がスクリ�
 ECMAScript 2015では、互換性のためのHTML-likeコメントが正式に仕様に追加され、HTMLのコメント区切り子（<!--および-->）をECMAScriptの1行コメントして解釈するよう定めています。つまり、これらは//と同じ効力を持つことになります。
 https://262.ecma-international.org/6.0/#sec-html-like-comments 
 
-〓06〓データブロックとなるscript要素内に<!--と-->を記述した例
+〓05〓データブロックとなるscript要素内に<!--と-->を記述した例
 ＜本文＞
 <script id="data" type="text/x-data">
 <!---->
@@ -149,10 +149,10 @@ https://262.ecma-international.org/6.0/#sec-html-like-comments
 ＜丸見出し＞
 HTMLコメントの構文解析への影響
 ＜本文＞
-script要素内の<!--という文字列は、HTMLの構文解析ルールにも影響を与えます。〓07〓は、構文エラーとなる〓02〓の例に対して、文字列<!--と-->を追加しただけのものです。〓02〓と同様にエラーになると予想されるかもしれませんが、〓07〓は問題なく動作します。
-〓07〓のようにscript要素内に<!--が出現し、さらに<scriptが出現した場合、</scriptが出現してもscript要素の終了タグとみなさない処理が行われます。そのため、〓07〓はscript要素中に</script>を含んでいるにもかかわらず、問題なく動作します。
+script要素内の<!--という文字列は、HTMLの構文解析ルールにも影響を与えます。〓06〓は、HTMLの構文エラーとなる〓02〓の例に対して、文字列<!--と-->を追加しただけのものです。〓02〓と同様にHTMLの構文エラーになると予想されるかもしれませんが、〓06〓は問題なく動作します。
+〓06〓のようにscript要素内に<!--が出現し、さらに<scriptが出現した場合、</scriptが出現してもscript要素の終了タグとみなさない処理が行われます。そのため、〓06〓はscript要素中に</script>を含んでいるにもかかわらず、問題なく動作します。
 
-〓07〓script要素内に文字列<!--と-->を追加した例（〓05〓の再掲）
+〓06〓〓05〓のscript要素内に文字列<!--と-->を追加した例
 ＜コード＞
 <script>
 <!--
@@ -164,10 +164,10 @@ script要素内の<!--という文字列は、HTMLの構文解析ルールにも
 HTMLパーサーの字句解析器の挙動としては、<!--が出現すると"Script data escaped state"という状態に遷移し、そこで<scriptが出現すると"Script data double escaped state"に遷移します。このときに</scriptが出現しても終了タグとみなさず、単に"Script data escaped state"に戻ります。
 
 ＜本文＞
-逆に、この処理が意図しない挙動を招くこともあります。〓08〓は仕様で挙げられている、意図どおりに解析されない例です。
-〓08〓には<!--および<script>という文字列が含まれているため、その後の</script>はscript要素の終了タグとみなされません。</script>という文字列はscript要素の内容の一部として扱われ、これ以降の内容もscript要素の内容とみなされます。
+逆に、この処理が意図しない挙動を招くこともあります。〓07〓は仕様で挙げられている、意図どおりに解析されない例です。
+〓07〓には<!--および<script>という文字列が含まれているため、その後の</script>はscript要素の終了タグとみなされません。</script>という文字列はscript要素の内容の一部として扱われ、これ以降の内容もscript要素の内容とみなされます。
 
-〓08〓意図どおりに解析されないscript要素の記述例
+〓07〓意図どおりに解析されないscript要素の記述例
 ＜コード＞
 <script>
   var example = 'Consider this string: <!-- <script>';
@@ -195,7 +195,7 @@ type属性を省略した場合や、空の値を指定した場合もクラシ�
 クラシックスクリプトとみなされる値の正確な一覧は、MIME Sniffing Living Standardで定義されています。
 https://mimesniff.spec.whatwg.org/#javascript-mime-type
 
-よく利用されるのは"application/javascript"と"text/javascript"です。RFC 4329では"application/javascript"が推奨されていましたが、その後、逆に"text/javascript"に一本化する提案も出てきています。
+よく利用されるのは"application/javascript"と"text/javascript"です。RFC 4329では"application/javascript"が推奨されていましたが、RFC 4329を廃止して"text/javascript"に一本化する仕様が策定中です。
 RFC 4329 Scripting Media Types
 https://datatracker.ietf.org/doc/html/rfc4329
 ECMAScript Media Types Updates
@@ -210,8 +210,7 @@ type属性の値として"module"を指定すると、モジュールスクリ�
 モジュールはECMAScript 2015で新たに導入されたもので、JavaScriptをモジュールに分割して扱えるようにしたものです。モジュールではexportで必要な機能を公開し、それをimportで読み込んで利用できます。詳細はMDNなどを参照してください。
 JavaScript モジュール - JavaScript | MDN
 https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules
-モジュールの用法については、以下も参考になります。
-JavaScript Primer 
+ECMAScriptモジュール · JavaScript Primer
 https://jsprimer.net/basic/module/
 
 ＜本文＞
@@ -227,12 +226,12 @@ type属性が妥当なMIME typeであり、かつJavaScriptとみなされない
 ブラウザーは、データブロックに対して何の処理も行いません。内容がJavaScriptとして実行されることも、ウェブページに表示されることもありません。script要素の属性のうち、type属性以外の属性は指定できません（idなどのグローバル属性は有効です）。次の7つの属性は、データブロックに指定しても無視されます：src、async、nomodule、defer、crossorigin、integrity、referrerpolicy
 
 ＜本文＞
-内容をJavaScriptから参照できるため、ウェブページに表示したくないデータを埋め込むのに利用できます。また、クローラーによって処理される場合もあります。〓09〓は、データブロックを利用してテキストデータを埋め込んでいる例です。
+内容をJavaScriptから参照できるため、ウェブページに表示したくないデータを埋め込むのに利用できます。また、クローラーによって処理される場合もあります。〓08〓は、データブロックを利用してテキストデータを埋め込んでいる例です。
 
 ＜memo＞
 正確には、クラシックスクリプトにもモジュールスクリプトにも当てはまらない値はすべてデータブロックとみなされます。しかし仕様では、type属性はMIMEタイプでなければならないとされています。これは、将来の仕様でtype属性に"module"以外のキーワードが使えるようになったときに、誤動作しないようにするためです。
 
-〓09〓データブロックを利用してテキストデータを埋め込んだ記述例
+〓08〓データブロックを利用してテキストデータを埋め込んだ記述例
 ＜コード＞
 <script type="text/x-message-data" id="data1">
   Welcome!
@@ -245,11 +244,11 @@ type属性が妥当なMIME typeであり、かつJavaScriptとみなされない
  
 ＜本文＞
 script要素が2つありますが、最初のものがデータブロックです。続くscript要素がクラシックスクリプトで、このJavaScriptによってデータの内容を取得し、表示しています。
-JSONデータを埋め込むこともできます。〓10〓のようにJSON-LDによるメタデータを埋め込むと、検索エンジンのクローラーがこれを認識してメタデータを取得することがあります。
+JSONデータを埋め込むこともできます。〓09〓のようにJSON-LDによるメタデータを埋め込むと、検索エンジンのクローラーがこれを認識してメタデータを取得することがあります。
 
 ＜word＞
 JSON
-JavaScript Object Notationの略で、ジェイソンと発音。RFC 8259/ECMA-404 2nd editionで定義される、JavaScript構造データオブジェクトの表記法をベースにしたフォーマットです。
+JavaScript Object Notationの略で、ジェイソンと発音。RFC 8259/ECMA-404 2nd editionで定義される、JavaScript構造データオブジェクトの表記法をベースにしたフォーマット。
 https://datatracker.ietf.org/doc/html/rfc8259
 https://www.ecma-international.org/publications-and-standards/standards/ecma-404/ 
 
@@ -258,7 +257,7 @@ JSON-LD (JSON for Linked Data)は、メタデータをJSON形式で表現する�
 JSON-LDの仕様は、JSON-LD 1.1としてW3C勧告となっています。
 https://www.w3.org/TR/json-ld11/ 
 
-〓10〓JSON-LDによるメタデータを埋め込んだ記述例
+〓09〓JSON-LDによるメタデータを埋め込んだ記述例
 ＜コード＞
 <script type="application/ld+json">
 {
@@ -306,9 +305,9 @@ https://html.spec.whatwg.org/multipage/scripting.html#inline-documentation-for-e
 script要素がデータブロックとして扱われる条件については、type属性の項を参照してください。
 
 ＜本文＞
-src属性を用いた外部JavaScriptの指定は、たとえば〓11〓のようになります。内容が空であっても、script要素の終了タグが省略できないことに注意してください。
+src属性を用いた外部JavaScriptの指定は、たとえば〓10〓のようになります。内容が空であっても、script要素の終了タグが省略できないことに注意してください。
 
-〓11〓src属性を用いた外部JavaScriptの指定例
+〓10〓src属性を用いた外部JavaScriptの指定例
 ＜コード＞
 <script src="sample.js"></script>
 <script type="module" src="libs.mjs"></script>
@@ -337,9 +336,9 @@ defer属性とasync属性を同時に指定した場合は、async属性の挙�
 
 ＜本文＞
 なお、モジュールスクリプトの場合には、デフォルトで並行読み込みが行われ、HTMLの解析完了を待って実行されます。これはdefer属性が指定されている場合の振る舞いと同様です。言い換えると、モジュールスクリプトではdefer属性は無視され、常にdefer属性があるかのような動作になります。async属性を指定した場合には動作が変わり、HTMLの解析完了を待つことなく実行されるようになります。
-〓12〓はHTML仕様に掲載されている図で、defer属性およびasync属性の動作のタイミングをタイムラインで示したものです。
+〓11〓はHTML仕様に掲載されている図で、defer属性およびasync属性の動作のタイミングをタイムラインで示したものです。＜コメント：仕様から修正した図を掲載予定のはず＞
 
-〓12〓defer属性およびasync属性の動作
+〓11〓defer属性およびasync属性の動作
 ＜SCG形式＞
 
 ＜本文＞
@@ -360,9 +359,9 @@ DOM操作でscript要素を生成した場合、DOMツリーに挿入されてDO
 https://html.spec.whatwg.org/multipage/scripting.html#script-processing-model
 
 ＜本文＞
-ただし、〓13〓のようにcreateElement()メソッドでscript要素を生成した場合、最初からasyncプロパティがtrueになっていることがあります。〓13〓で生成したノードをそのままDOMツリーに挿入すると、非同期で実行されます。
+ただし、〓12〓のようにcreateElement()メソッドでscript要素を生成した場合、最初からasyncプロパティがtrueになっていることがあります。〓12〓で生成したノードをそのままDOMツリーに挿入すると、非同期で実行されます。
 
-〓13〓asyncプロパティがtrueの状態
+〓12〓asyncプロパティがtrueの状態
 ＜コード＞
 <script>
   // 特に属性を指定せずにscript要素を生成
@@ -383,9 +382,9 @@ document.write()メソッドでscript要素を書き込んだ場合は、defer�
 ＜丸見出し＞
 nomodule属性
 ＜本文＞
-nomodule属性を利用すると、モジュールを扱えない古いブラウザーにフォールバックを提供できます。〓14〓は、モジュールスクリプト"app.mjs"と、フォールバック用のクラシックスクリプト"classic-app.js"を扱う例です。
+nomodule属性を利用すると、モジュールを扱えない古いブラウザーにフォールバックを提供できます。〓13〓は、モジュールスクリプト"app.mjs"と、フォールバック用のクラシックスクリプト"classic-app.js"を扱う例です。
 
-〓14〓app.mjsとclassic-app.jsを扱う例
+〓13〓app.mjsとclassic-app.jsを扱う例
 ＜コード＞
 <script type="module" src="app.mjs"></script>
 <script nomodule src="classic-app.js"></script>
@@ -409,7 +408,6 @@ crossorigin属性に指定された値によって、HTTP認証やCookieなど�
 
 ・"anonymous": HTTP認証やCookieなどのクレデンシャル情報は、同一オリジンに対してのみ送信されます。クロスオリジンの場合には送信されません。
 ・"use-credentials": オリジンにかかわらずクレデンシャル情報が常に送信されます。
-・"omit": クレデンシャル情報は送信されません。サーバーからのレスポンスにクレデンシャル情報が含まれていても無視します。
 
 crossorigin=""が指定されている場合、あるいは単にcrossoriginとだけ指定されている場合は、crossorigin="anonymous"と同じ挙動になります。
 なお、この属性はあくまでscript要素のsrc属性で指定したリソースの取得を制御するもので、JavaScript内部からのリクエストには影響しません。JavaScript内部からのCORSリクエストについては、たとえばXmlHttpRequestを用いたJavaScriptでwithCredentialsプロパティを設定するなどの対応が必要です。
@@ -421,18 +419,19 @@ integrity属性
 integrity属性を使用すると、「サブリソース完全性（Subresource Integrity）」の仕様に沿って外部リソースの完全性をチェックできます。これにより、サブリソースとして取得したJavaScriptが改竄されていないことを確認できます。
 
 ＜memo＞
-Subresource Integrity仕様はW3Cの勧告になっています。
-https://www.w3.org/TR/SRI/
+Subresource Integrity
+https://w3c.github.io/webappsec-subresource-integrity/
 
 ＜本文＞
-外部のサイトからJavaScriptを読み込んで実行している場合、そのサイトが攻撃を受けてJavaScriptが改竄されると、読み込んでいる側のサイトまで攻撃の影響を受けてしまいます。サブリソース完全性はこのようなリスクに対応する仕組みで、ハッシュ値の照合によってリソースの改竄チェックを行います。
+外部のサイトから読み込んでJavaScriptを実行している場合、その外部のサイトが攻撃を受けてJavaScriptが改竄されると、読み込んでいる側のサイトまで攻撃の影響を受けてしまいます。サブリソース完全性はこのようなリスクに対応する仕組みで、ハッシュ値の照合によってリソースの改竄チェックを行います。
 integrity属性の値は、ハッシュアルゴリズムを示す接頭辞と、base64でエンコードされたハッシュ値を‐（ハイフン）で繋いだ文字列です。integrity属性が指定されており、指定されたハッシュ値がリソースのハッシュ値と一致しなかった場合、リソースは読み込まれず、ネットワークエラーで取得に失敗した扱いとなります。
-integrity属性には、スペースで区切って複数の値を指定できます。〓15〓はSubresource Integrity仕様で挙げられている例です。
+integrity属性は、スペースで区切って複数の値を指定できます。〓14〓はSubresource Integrity仕様で挙げられている例です。
 
 ＜memo＞
 ハッシュアルゴリズムの接頭辞として現在利用できるものは、sha256、sha384、sha512です。
 
-〓15〓Subresource Integrity仕様で挙げられているintegrity属性の使用例
+＜本文＞
+〓14〓Subresource Integrity仕様で挙げられているintegrity属性の使用例
 ＜コード＞
 <script src="hello_world.js"
   integrity="sha384-H8BRh8j48O9oYatfu5AZzq6A9RINhZO5H16dQZngK7T62em8MUt1FLm52t+eX6xO
@@ -441,9 +440,9 @@ integrity属性には、スペースで区切って複数の値を指定でき�
   
 ＜本文＞
 この例では、SHA384とSHA512という強度の異なるハッシュ値を指定しています。このように強度の異なるハッシュ値を列挙すると、ブラウザーが対応している中で最も強度の高いものが採用されます。
-〓16〓のように強度が同一のハッシュ値を列挙した場合、ブラウザーはその全てを採用します。
+〓15〓のように強度が同一のハッシュ値を列挙した場合、ブラウザーはその全てを採用します。
 
-〓16〓強度が同一のハッシュ値を複数指定した場合の例
+〓15〓強度が同一のハッシュ値を複数指定した場合の例
 ＜コード＞
 <script src="https://example.com/example-framework.js"
   integrity="sha384-Li9vy3DqF8tnTXuiaAJuML3ky+er10rcgNR/VqsVpcw+ThHmYcwiB1pbOxEbzJr7
@@ -463,9 +462,9 @@ integrity属性には、スペースで区切って複数の値を指定でき�
 referrerpolicy属性
 ＜本文＞
 referrerpolicy属性を使用すると、JavaScriptを参照する場合の「リファラポリシー（Referrer Policy）」を指定できます。Chapter3-5を参照してください。
-script要素にreferrerpolicy属性を指定した場合、そのJavaScriptからimportで読み込まれるリソースにもポリシーが適用されます。〓17〓はHTML仕様で挙げられている例です。
+script要素にreferrerpolicy属性を指定した場合、そのJavaScriptからimportで読み込まれるリソースにもポリシーが適用されます。〓16〓はHTML仕様で挙げられている例です。
 
-〓17〓referrerpolicy属性の記述例
+〓16〓referrerpolicy属性の記述例
 ＜コード＞
 <script referrerpolicy="origin">
   fetch('/api/data');
@@ -482,7 +481,7 @@ referrerpolicy属性で指定したポリシーはfetch()メソッドで読み�
 現在のHTMLでは、外部JavaScriptファイルの文字エンコーディングはHTTPレスポンスヘッダーのcharsetパラメーターに依存します。charsetパラメーターがない場合はUTF-8とみなされます。
 
 ＜memo＞
-charset属性の値が"utf-8"の場合（大文字小文字は区別しません）のみ、「旧式だが適合する機能（Obsolete but conforming）」として仕様に適合します。"utf-8"以外の値が指定されている場合は構文エラーですが、ブラウザーは互換性のために、その値をヒントとして利用することがあります。
+charset属性の値が"utf-8"の場合（大文字小文字は区別しません）のみ、「旧式だが適合する機能」として仕様に適合します。"utf-8"以外の値が指定されている場合は構文エラーですが、ブラウザーは互換性のために、その値をヒントとして利用することがあります。
 外部スクリプト取得時の文字コード判定の詳細は、HTML仕様およびRFC4329を参照してください。
 
 8.1.4.2 Fetching scripts
@@ -495,20 +494,20 @@ https://www.rfc-editor.org/rfc/rfc4329.html#section-4.2
 noscript要素
 ＜本文＞
 noscript要素を用いると、ブラウザーのJavaScriptが無効になっている場合のフォールバックコンテンツを提供できます。JavaScriptが有効である場合、この要素の内容は表示されません。
-たとえば、スクロールしてから画像が表示されるような場所に配置されるimg要素に対し、JavaScriptを用いて遅延読み込み（Lazy load）を行う場合、〓18〓のように記述することで、JavaScriptが無効の環境でも画像を表示させることができます。
+たとえば、スクロールしてから画像が表示されるような場所に配置されるimg要素に対し、JavaScriptを用いて遅延読み込み（Lazy load）を行う場合、〓17〓のように記述することで、JavaScriptが無効の環境でも画像を表示させることができます。
 
 ＜memo＞
 noscript要素を利用できるのは、HTML構文の場合のみです。XML構文ではnoscript要素は使用してはならないと定められています。
 
-〓18〓noscript要素の記述例
+〓17〓noscript要素の記述例
 ＜コード＞
 <img src="blank.jpg" data-src="target.jpg" alt="">
 <noscript><img src="target.jpg" alt=""></noscript>
 
 ＜本文＞
-フォールバックコンテンツの表現には、必ずしもnoscript要素は必要ありません。たとえば〓19〓のように、JavaScript無効時のコンテンツをHTMLに書いておき、JavaScriptによるDOM操作で書き換えると、HTMLに書いたメッセージはフォールバックとして機能します。
+フォールバックコンテンツの表現には、必ずしもnoscript要素は必要ありません。たとえば〓18〓のように、JavaScript無効時のコンテンツをHTMLに書いておき、JavaScriptによるDOM操作で書き換えることで、HTMLに書いたメッセージはフォールバックとして機能します。
 
-〓19〓noscript要素を使用せずにフォールバックコンテンツを記述する例
+〓18〓noscript要素を使用せずにフォールバックコンテンツを記述する例
 ＜コード＞
 <p id="message">（JavaScript無効時のフォールバックコンテンツ）</p>
 <script>
@@ -527,16 +526,16 @@ JavaScript有効時、noscript要素の内容は単なるテキストとみな�
 ＜本文＞
 JavaScript無効時は以下のようになります。
 
-・noscript要素がhead要素内で出現した場合は、子要素にできるのはlink、style、meta要素だけです。
-・noscript要素がhead要素の外に出現した場合、内容モデルがTransparentであるように振る舞います。ただし、子孫にnoscript要素を入れることはできません。
+・noscript要素がhead要素の内側で出現した場合、子要素にできるのはlink、style、meta要素だけです
+・noscript要素がhead要素の外側で出現した場合、内容モデルがTransparentであるように振る舞います。ただし、子孫にnoscript要素を入れることはできません
 
 ＜中見出し＞
 canvas要素
 ＜本文＞
 canvas要素は、JavaScriptで任意のビットマップを描画できるキャンバスを表します。グラフや画像、映像などの描画に利用できます。
-〓20〓はcanvas要素に円弧を描画する例です。表示例は〓21〓のようになります。
+〓19〓はcanvas要素に円弧を描画する例です。表示例は〓20〓のようになります。
 
-〓20〓canvas要素に円弧を描画する記述例
+〓19〓canvas要素に円弧を描画する記述例
 ＜コード＞
 <canvas id="canvas01" width="100" height="100">
   <img src="sample.png" alt="[図] 円弧の例">
@@ -550,7 +549,7 @@ canvas要素は、JavaScriptで任意のビットマップを描画できるキ�
   c.stroke();
 </script>
 
-〓21〓ブラウザーによる〓20〓の表示例
+〓20〓ブラウザーによる〓19〓の表示例
 
 ＜memo＞
 canvas要素にはさまざまなものを多岐にわたる方法で描画できます。具体的な描画の仕方は、MDNのチュートリアルなどを参照してください。
@@ -583,9 +582,9 @@ canvas要素以外で表現できるものにcanvas要素を利用するのは�
 かつて、ナビゲーションをすべてFlashで実装する企業サイトが流行し、アクセシビリティ上の大きな問題となりました。canvas要素も同じような使い方ができますが、同じ問題を繰り返さないようにしたいものです。
 
 ＜中見出し＞
-ウェブコンポーネント
+Web Components
 ＜本文＞
-「ウェブコンポーネント（Web Components）」は、HTML要素をコンポーネント化する技術群の総称です。主要な技術としては、以下の3つで構成されています。
+「Web Components」は、HTML要素をコンポーネント化する技術群の総称です。主要な技術としては、以下の3つで構成されています。
 
 ・カスタム要素
 ・Shadow DOM
@@ -594,14 +593,14 @@ canvas要素以外で表現できるものにcanvas要素を利用するのは�
 本書では、HTML要素として存在するtemplate要素、slot要素と、カスタム要素について簡単に紹介します。
 
 ＜memo＞＜コメント：1行目の「たとえば」で始まる文字列が抜けている＞
-ウェブコンポーネントの詳細は、MDNのWeb Componentsを参照してください。
-https://developer.mozilla.org/docs/Web/Web_Components 
+Web Componentsの詳細は、MDNを参照してください。
+https://developer.mozilla.org/docs/Web/Web_Components
 
 ＜中見出し＞
 template要素
 ＜本文＞
-template要素は何も表さず、その内容も含めレンダリングされません。主に、JavaScriptによって文書に挿入するHTMLの断片を書いておくために使用します。
-JavaScriptで使用するデータをHTMLに含めるという点は、script要素によるデータブロックと似ています。template要素の特徴は、内容がHTMLとして解析され、DOMツリーが作られる点です。このDOMツリーはどこにも挿入されず、template要素のcontentプロパティからDocumentFragmentオブジェクトとして取得できます。
+template要素は、主にJavaScriptによって文書に挿入できるHTMLの断片を宣言するために使用します。template要素は何も表さず、その内容も含めレンダリングされません。
+JavaScriptから使用するデータをHTMLに含めるという意味では、script要素によるデータブロックにも似ていますが、template要素の内容はHTMLとして解析され、DOMツリーが作られるという点で異なります。このDOMツリーはどこにも挿入されず、template要素のこのDOMツリーはどこにも挿入されず、template要素のcontentプロパティからDocumentFragmentオブジェクトとして取得できます。
 
 ＜memo＞
 template要素の利用法については、MDNを参照してください。
@@ -633,26 +632,26 @@ slot要素の内容モデルはTransparentです。slot要素はプレースホ�
 カスタム要素
 ＜本文＞
 「カスタム要素（Custom Elements）」は、Web Componentsを構成するものの1つです。
-歴史的に、HTML仕様で定義されていないオリジナルの要素を利用したいというニーズは常にありました。オリジナルの要素を実際に使用すると、ブラウザーは柔軟に解釈することがあるものの、仕様上は構文エラーとなっていました。
-カスタム要素を利用すると、一定の制約のもと、コンテンツ制作者が自由にHTMLの要素名を定義できます。これにより、HTML仕様に適合させながら、オリジナルの要素を利用できます。
+古くから、独自に定義した要素を利用したいというニーズがコンテンツ制作者にあります。そのような独自の要素を実際に使用すると、ブラウザーは柔軟に解釈することがある一方で、古いHTML仕様ではそのような独自の要素は定義されていないため、構文エラーとなります。
+現在のHTML仕様では、カスタム要素として、コンテンツ制作者が自由にHTMLの要素名を一定の制約のもとで定義できます。これにより、HTML仕様に適合させながら、独自に定義した要素を利用できます。
 
 ＜小見出し＞
 要素名の制約
 ＜本文＞
-カスタム要素の要素名の制約は、大まかには以下の3点となります。
+カスタム要素の要素名の制約は、大まかには以下の2点となります。
 
 ・アルファベットの小文字で始まること
-・ハイフンを含むこと
-・MathMLやSVGで既に定義されている要素名と同一であってはならないこと
+・1つ以上の-（ハイフン）を含むこと
 
 ＜memo＞
+要素名にハイフンを含む要素は、ほぼカスタム要素といえます。ただし、MathMLやSVGではハイフンを含む要素名が存在し、これらと同一の要素名をカスタム要素として利用できません。
 要素名についての正確な制約は、HTML仕様に示されるPotentialCustomElementNameで定義されています。
 https://html.spec.whatwg.org/multipage/custom-elements.html#prod-potentialcustomelementname
 
 ＜本文＞
-〓22〓はカスタム要素の使用例です。これは、Googleの検索結果で使用されている5つ星の評価のマークアップです。
+〓21〓はカスタム要素の使用例です。これは、Googleの検索結果で使用されている5つ星の評価のマークアップです。
 
-〓22〓カスタム要素の記述例
+〓21〓カスタム要素の記述例
 ＜コード＞
 <g-review-stars><span class="fTKmHE99XE4__star-default" role="img" aria-label="5 点中 3.5 点の評価、"><span style="width:46px"></span></span></g-review-stars>
 
