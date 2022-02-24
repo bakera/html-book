@@ -599,7 +599,7 @@ https://developer.mozilla.org/docs/Web/Web_Components
 ＜中見出し＞
 template要素
 ＜本文＞
-template要素は、主にJavaScriptによって文書に挿入できるHTMLの断片を宣言するために使用します。template要素は何も表さず、その内容も含めレンダリングされません。
+template要素は、それ自身は何も表さない、HTML断片のコンテナーです。template要素は、その内容も含めレンダリングされません。主に、JavaScriptによって文書に挿入するためのHTMLの断片を書いておくために使用します。
 JavaScriptから使用するデータをHTMLに含めるという意味では、script要素によるデータブロックにも似ていますが、template要素の内容はHTMLとして解析され、DOMツリーが作られるという点で異なります。このDOMツリーはどこにも挿入されず、template要素のcontentプロパティからDocumentFragmentオブジェクトとして取得できます。
 
 ＜memo＞
