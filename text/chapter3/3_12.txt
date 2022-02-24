@@ -644,8 +644,7 @@ slot要素の内容モデルはTransparentです。slot要素はプレースホ�
 ・1つ以上の-（ハイフン）を含むこと
 
 ＜memo＞
-要素名にハイフンを含む要素は、ほぼカスタム要素といえます。ただし、MathMLやSVGではハイフンを含む要素名が存在し、これらと同一の要素名をカスタム要素として利用できません。
-要素名についての正確な制約は、HTML仕様に示されるPotentialCustomElementNameで定義されています。
+要素名の正確な制約は、HTML仕様に示されるPotentialCustomElementNameで定義されています。
 https://html.spec.whatwg.org/multipage/custom-elements.html#prod-potentialcustomelementname
 
 ＜本文＞
