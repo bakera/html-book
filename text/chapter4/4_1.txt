@@ -597,7 +597,7 @@ hidden属性とCSS
 HTML仕様では、ユーザーエージェントスタイルシートに[hidden]{display:none}のスタイルを適用することを勧めています。これにより、ブラウザーはhidden属性の指定された要素を非表示にします。
 
 ＜memo＞
-HTML仕様の15.3.1 Hidden elementsでユーザーエージェントに対する具体的なCSSが提案されています。
+HTML仕様の15. Renderingでは、ユーザーエージェントスタイルシートの具体的な記述が提案されています。
 https://html.spec.whatwg.org/multipage/rendering.html#hidden-elements
 
 ＜本文＞
