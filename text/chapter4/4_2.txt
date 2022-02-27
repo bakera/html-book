@@ -73,7 +73,7 @@ WAI-ARIA 1.2からは、JavaScriptからARIA属性へアクセスする場合に
 https://www.w3.org/TR/wai-aria-1.2/#idl-interface
 
 ＜本文＞
-ロールの情報の中には、"Related Concepts"として、そのロールがどのHTML要素に類似するかという情報もあります。ただし、これはあくまで理解を手助けするための参考情報という位置付けです。HTML要素とロールとの対応関係については、後述のARIA in HTMLを参照する必要があります。
+ロールの情報の中には、"Related Concepts"として、そのロールがどのHTML要素に類似するかという情報もあります。ただし、これはあくまで理解を助けるための参考情報という位置付けです。HTML要素とロールとの対応関係については、後述のARIA in HTMLを参照する必要があります。
 
 ＜丸見出し＞
 ARIA in HTML
