@@ -78,7 +78,7 @@ https://www.w3.org/TR/wai-aria-1.2/#idl-interface
 ＜丸見出し＞
 ARIA in HTML
 ＜本文＞
-ARIA in HTMLは、HTMLをホスト言語とした場合のARIAの位置付けを規定した、コンテンツ制作者向けの文書です。ARIAロールとHTMLの要素との対応関係や、どのHTML要素にどのロールを指定できるかといった情報があります。
+ARIA in HTMLは、HTMLをホスト言語とした場合のARIAの位置付けを規定した文書です。ARIAロールとHTMLの要素との対応関係や、どのHTML要素にどのロールを指定できるかといった情報があります。
 この文書では、ARIA属性の具体的な使い方までは説明していません。使い方のガイドや具体例については、後述のUsing ARIAとWAI-ARIA Authoring Practicesを参照するように促しています。
 
 ＜memo＞
