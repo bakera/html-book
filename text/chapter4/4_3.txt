@@ -186,7 +186,7 @@ https://www.w3.org/TR/WCAG21/#focus-order
 操作可能な要素には、アクセシブルな名前を与える必要があります。名前を与える方法は、後述の「アクセシブルな名前を与える方法」を参照してください。
 
 ＜memo＞
-WAI-ARIA 1.2の5.2.8.4 Roles Supporting Name from Authorでは名前を与えられるロールを定めています。この一覧で「(name required)」とされているロールには、必ず名前を与えなければなりません。
+WAI-ARIA 1.2の5.2.8.4 Roles Supporting Name from Authorでは名前を付与できるロールを定めています。この一覧で「(name required)」とされているロールには、必ず名前を与えなければなりません。
 https://www.w3.org/TR/wai-aria-1.2/#namefromauthor
 
 ＜中見出し＞
