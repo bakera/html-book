@@ -303,7 +303,7 @@ https://www.w3.org/TR/wai-aria-1.2/#note-regarding-the-aria-1-1-none-role-0
 このようにすることで、セマンティクスの観点から矛盾のないタブコンポーネントを作成できます。
 
 ＜memo＞
-タブコンポーネントの詳細についてはAuthoring Practicesを参照してください。
+タブコンポーネントの詳細についてはWAI-ARIA Authoring Practicesを参照してください。
 3.24 Tabs
 https://www.w3.org/TR/wai-aria-practices/#tabpanel
 
@@ -352,7 +352,7 @@ HTMLの要素には、table要素やul要素のように、必ず特定の子孫
 </table>
 
 ＜本文＞
-table要素はとtd要素はそれぞれ、ネイティブロールとしてtableロールとcellロールを持ちますが、このままでは支援技術にテーブルとして扱われてしまい、混乱を招きます。そこで、〓11〓ではtable要素にpresentationロールを指定し、テーブルのセマンティクスを打ち消しています。
+table要素とtd要素はそれぞれ、ネイティブロールとしてtableロールとcellロールを持ちますが、このままでは支援技術にテーブルとして扱われてしまい、混乱を招きます。そこで、〓11〓ではtable要素にpresentationロールを指定し、テーブルのセマンティクスを打ち消しています。
 
 ＜memo＞
 table要素にth要素やcaption要素などが一切使われていない場合、ブラウザーはレイアウト目的のテーブルと判断して、独自のロールを割り当てることもあります。
@@ -407,7 +407,7 @@ aria-label属性は、要素に対して「アクセシブルな名前（accessi
 <button type="button" aria-label="閉じる" onclick="myDialog.close()">X</button>
 
 ＜本文＞
-視覚的には「X」がバツ印のように見え、閉じるボタンであることが伝わりますが、スクリーンリーダーは単に「エックス ボタン」などと読み上げてしまいます。〓13〓の例ではaria-label属性で「閉じる」というラベルを与えていることで、「閉じる ボタン」と読み上げることが期待されます。
+視覚的には「X」がバツ印のように見え、閉じるボタンであることが伝わりますが、スクリーンリーダーは単に「エックス ボタン」などと読み上げてしまいます。〓13〓の例ではaria-label属性で「閉じる」というラベルを与えているため、「閉じる ボタン」と読み上げることが期待されます。
 このとき、ボタンの内容であるテキスト「X」を読み上げない点に注意してください。もともとラベルを持っている要素にaria-label属性でラベルを与えた場合、元のラベルは上書きされる形になります。
 
 ＜丸見出し＞
@@ -475,7 +475,7 @@ aria-label属性と同様に、元あったラベルが上書きされること�
 〓17〓ボタンのラベルを読み上げさせる例
 ＜コード＞
 <div id="billing">請求書</div>
-<button id="submitbutton" aria-labelledby="billing submitbutton">
+<button id="savebutton" aria-labelledby="billing savebutton">
 下書き保存する
 </button>
 
@@ -486,7 +486,7 @@ aria-labelledby属性では不可視の要素も参照できます。〓18〓の
 ＜コード＞
 <div id="billing">請求書</div>
 <span id="billingsubname" hidden>を</span>
-<button id="submitbutton" aria-labelledby="billing billingsubname submitbutton">
+<button id="savebutton" aria-labelledby="billing billingsubname savebutton">
 下書き保存する
 </button>
 
@@ -575,10 +575,10 @@ aria-expanded属性を利用すると、その要素が所有しているか、�
 
 ＜本文＞
 aria-expanded属性はグローバル属性ではなく、特定のロールを持つ要素にしか指定できません。基本的に、開閉を制御するボタンとなる要素に指定します。開閉される要素の側に指定するものではないことに注意してください。
-ボタンのラベルや他のARIA属性から十分に状態が推測できる場合、aria-expanded属性は不要なこともあります。たとえば、〓21〓ではボタンのラベルが「パネルを開く」となっているため、現在はパネルが閉じている状態であると推測できます。
+ボタンのラベルや他のARIA属性から十分に状態が推測できる場合、aria-expanded属性は不要なこともあります。たとえば、〓21〓ではボタンのラベルが「パネルを開く」となっているため、パネルが閉じた際には単にaria-expanded属性を削除すればよく、aria-expanded="false"を指定しなくても、現在はパネルが閉じている状態であると推測できます。
 
 ＜memo＞
-同様の理由で、後述のaria-haspopup属性を持っている要素にはaria-expanded属性を指定しなくてよい場合があります。
+状態の推測を可能にする他のARIA属性の例としては、後述のaria-haspopup属性があります。
 
 ＜小見出し＞
 aria-controls属性（プロパティ）
@@ -611,7 +611,7 @@ aria-level属性は、要素の階層レベルを示します。属性値とし�
 
 〓23〓aria-level属性の記述例
 ＜コード＞
-<div class="heading" aria-level="7">見出し7</div>
+<div role="heading" aria-level="7">見出し7</div>
 
 ＜memo＞
 見出しの他、リストの階層を表すために用いることもできます。
@@ -641,7 +641,6 @@ assertiveを指定した場合、ライブリージョンの変化は即座に�
 
 ＜本文＞
 ライブリージョンロールにaria-live属性を指定すると、デフォルトの挙動を上書きできます。しかし、挙動を変更することは推奨されません。とくにassertiveの指定は慎重に行ってください。
-ライブリージョンが機能するためには、ドキュメントが読み込まれた時点であらかじめライブリージョンとして設定されている必要があります。JavaScriptによってあとから動的にaria-live属性を追加しても、その要素はライブリージョンにはなりません。
 
 ＜memo＞
 aria-live属性に関連する属性として、aria-atomic属性もあります。ライブリージョンの変化が発生したとき、変化した箇所だけを通知するか、ライブリージョン全体を通知するかを設定します。
