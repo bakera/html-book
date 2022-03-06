@@ -546,7 +546,7 @@ ARIA in HTMLでは、menu、ol、ul、nav要素にtablistロールが適用で�
 tabpanelロールは、ARIA in HTMLではsection要素に適用可能とされています。そのほか、任意のロールを適用可能な要素で利用できます。ただし、タブパネルの中にさまざまな要素が入る可能性を考えるとp要素は使い勝手に難があり、事実上、section要素とdiv要素のどちらかになるでしょう。タブパネルの中に見出しが入ってセクションとして成立しているならばsection要素、そうでなければdiv要素を利用するとよいでしょう。
 
 ＜memo＞
-以前はsection要素にtabpanelロールを指定できなかったため、section要素にtabpanelロールを指定すべきでないという解説を見かけることもあります。現在はそのような指定は可能です。
+以前はsection要素にtabpanelロールを指定できませんでしたが、現在は指定可能です。
 WAI-ARIA Authoring Practicesのタブの例では、タブパネルにdiv要素を使用しています。
 
 ＜本文＞
