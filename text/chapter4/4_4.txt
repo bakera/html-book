@@ -64,7 +64,6 @@ hamburgerMenuButton.addEventListener('click', event => {
 .hamburgerMenu.js-opened ul{
   display: block;
 }
-/* 実際には別のスタイル定義も必要だが省略 */
 
 これでメニューボタンは動作しますが、このメニューにはアクセシビリティ上の問題点が複数あります。ここでは、このマークアップで作成されたメニューが既に存在すると仮定して、アクセシビリティを向上していく過程の考え方を紹介します。
 
@@ -469,6 +468,11 @@ https://www.w3.org/TR/WCAG21/#pause-stop-hide
 事例3：タブのマークアップを検討する
 ＜本文＞
 「タブ（tabs）」は、複数のコンテンツを切り替えて表示する機能です。典型的には〓18〓のように、コンテンツが入る「タブパネル（tab panel）」を複数持っており、その表示を切り替えるためのタブ（tab）を持ちます。タブは、「タブリスト（tab list）」としてグループ化されます。
+
+＜memo＞
+WAI-ARIA Authoring Practicesでは、タブコンポーネント全体のタブ（tabs）と、個別のタブ（tab）を区別しています。
+Tabs
+https://www.w3.org/TR/wai-aria-practices/#tabpanel
 
 〓18〓タブの例（WAI-ARIA Authoring Practicesより）
 
