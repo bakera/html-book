@@ -63,6 +63,9 @@ Chapter2-1で説明したように、HTMLではタグを使って要素の種類
 ASCII空白文字はInfra Standardで定義されており、U+0009（タブ）、U+000A（LF）、U+000C（FF）、U+000D（CR）、U+0020（ASCIIスペース）が含まれます。
 https://infra.spec.whatwg.org/#ascii-whitespace
 
+なお、HTML構文の場合、構文解析の前に「改行の正規化（normalize newlines）」が行われることになっているため、CRやCR+LFはLFに置き換えられてからパースされます。
+https://html.spec.whatwg.org/multipage/parsing.html#preprocessing-the-input-stream
+
 〓06〓複数の属性を改行で区切った例
 ＜コード＞
 <a
