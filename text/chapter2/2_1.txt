@@ -111,7 +111,7 @@ https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-elemen
 <p>詩などの<br>文章では<br>改行位置が<br>重要になることもあります。</p>
 
 ＜memo＞
-HTML構文の場合、空要素の終了タグを書くことはできません。書いた場合は構文エラーとなり、単に無視されます。
+HTML構文の場合、空要素の終了タグを書くことはできません。書いた場合は構文エラーとなります。
 XML構文の場合はすべての要素に終了タグが必要で、br要素ならば <br></br> のように書くか、あるいはXMLの「空要素タグ（empty-element tag）」を利用して <br/> のように書きます。
 XMLの空要素タグの記法はHTML構文でも許可されており、HTML仕様ではこれをself-closing-tagと呼びます。<br/>と書いた場合、XML構文では空要素タグ、HTML構文ではself-closing-tagと解釈され、どちらの構文にも適合します。
 
