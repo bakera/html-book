@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package
+ xmlns="http://www.idpf.org/2007/opf"
+ version="3.0"
+ xml:lang="ja"
+ unique-identifier="unique-id"
+ prefix="ebpaj: http://www.ebpaj.jp/"
+>
+
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <!-- 作品名 -->
+    <dc:title id="title">HTML解体新書</dc:title>
+    <meta refines="#title" property="file-as">HTMLカイタイシンショ</meta>
+
+    <!-- 著者名 -->
+    <dc:creator id="creator01">太田良典</dc:creator>
+    <meta refines="#creator01" property="alternate-script" xml:lang="en">Yoshinori Ohta</meta>
+    <meta refines="#creator01" property="role" scheme="marc:relators">aut</meta>
+    <meta refines="#creator01" property="file-as">オオタヨシノリ</meta>
+    <meta refines="#creator01" property="display-seq">1</meta>
+
+    <dc:creator id="creator02">中村直樹</dc:creator>
+    <meta refines="#creator02" property="alternate-script" xml:lang="en">Naoki Nakamura</meta>
+    <meta refines="#creator02" property="role" scheme="marc:relators">aut</meta>
+    <meta refines="#creator02" property="file-as">ナカムラナオキ</meta>
+    <meta refines="#creator02" property="display-seq">2</meta>
+
+    <!-- 出版社名 -->
+    <dc:publisher id="publisher">株式会社ボーンデジタル</dc:publisher>
+    <meta refines="#publisher" property="alternate-script" xml:lang="en">Born Digital, Inc</meta>
+    <meta refines="#publisher" property="file-as">ボーンデジタル</meta>
+
+    <!-- 言語 -->
+    <dc:language>ja</dc:language>
+
+    <!-- ファイルid -->
+    <dc:identifier id="unique-id">urn:uuid:DACEB873-D505-404B-A52E-62D38DE1ED75</dc:identifier>
+
+    <!-- 更新日 -->
+    <meta property="dcterms:modified">2022-04-27T00:00:00Z</meta>
+
+    <!-- etc. -->
+    <meta property="ebpaj:guide-version">1.1.3</meta>
+
+</metadata>
+
+<manifest>
+
+    <!-- navigation -->
+    <item media-type="application/xhtml+xml" id="toc" href="navigation-documents.xhtml" properties="nav"/>
+
+    <!-- style -->
+    <item media-type="text/css" id="book-style"     href="style/default.css"/>
+ 
+    <!-- image -->
+    <item media-type="image/png" id="cover" href="image/cover.png" properties="cover-image"/>
+    <item media-type="image/png" id="fig1-1-01" href="image/1-1-01.png"/>
+
+    <!-- xhtml -->
+    <item media-type="application/xhtml+xml" id="cover"       href="xhtml/cover.xhtml"/>
+    <item media-type="application/xhtml+xml" id="caution"     href="xhtml/caution.xhtml"/>
+    <item media-type="application/xhtml+xml" id="toc"         href="xhtml/toc.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-1"  href="xhtml/1-1.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-2"  href="xhtml/1-2.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-3"  href="xhtml/1-3.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-4"  href="xhtml/1-4.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-5"  href="xhtml/1-5.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-6"  href="xhtml/1-6.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-7"  href="xhtml/1-7.xhtml"/>
+    <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
+
+</manifest>
+
+<spine page-progression-direction="ltr">
+    <itemref linear="yes" idref="cover"/>
+    <itemref linear="yes" idref="caution"/>
+    <itemref linear="yes" idref="toc"/>
+    <itemref linear="yes" idref="chapter1-1"/>
+    <itemref linear="yes" idref="chapter1-2"/>
+    <itemref linear="yes" idref="chapter1-3"/>
+    <itemref linear="yes" idref="chapter1-4"/>
+    <itemref linear="yes" idref="chapter1-5"/>
+    <itemref linear="yes" idref="chapter1-6"/>
+    <itemref linear="yes" idref="chapter1-7"/>
+    <itemref linear="yes" idref="colophon"/>
+</spine>
+
+</package>
