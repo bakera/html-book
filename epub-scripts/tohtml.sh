@@ -2,6 +2,6 @@ for pathname in ../epub_text/*.md
 do
   echo $pathname
   MarkdownFileName="${pathname##*/}"
-  HtmlFileName="${MarkdownFileName%.*}.html"
-  pandoc $pathname -o "result/html/$HtmlFileName" --standalone
+  HtmlFileName="${MarkdownFileName%.*}.xhtml"
+  pandoc $pathname -o "./epub/root/item/xhtml/$HtmlFileName" --standalone --template=template.html
 done
