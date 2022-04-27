@@ -68,6 +68,7 @@
     <item media-type="application/xhtml+xml" id="chapter1-5"  href="xhtml/1-5.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-6"  href="xhtml/1-6.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-7"  href="xhtml/1-7.xhtml"/>
+    <item media-type="application/xhtml+xml" id="profile"     href="xhtml/profile.xhtml"/>
     <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
 
 </manifest>
