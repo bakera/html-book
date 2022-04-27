@@ -84,6 +84,7 @@
     <itemref linear="yes" idref="chapter1-5"/>
     <itemref linear="yes" idref="chapter1-6"/>
     <itemref linear="yes" idref="chapter1-7"/>
+    <itemref linear="yes" idref="profile"/>
     <itemref linear="yes" idref="colophon"/>
 </spine>
 
