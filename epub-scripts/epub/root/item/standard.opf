@@ -56,9 +56,19 @@
     <!-- image -->
     <item media-type="image/png" id="cover" href="image/cover.png" properties="cover-image"/>
     <item media-type="image/png" id="fig1-1-01" href="image/1-1-01.png"/>
+    <item media-type="image/png" id="fig1-1-02" href="image/1-1-02.png"/>
+    <item media-type="image/png" id="fig1-2-01" href="image/1-2-01.png"/>
+    <item media-type="image/png" id="fig1-2-02" href="image/1-2-02.png"/>
+    <item media-type="image/png" id="fig1-2-03" href="image/1-2-03.png"/>
+    <item media-type="image/png" id="fig1-4-01" href="image/C1_04_01_1C.png"/>
+    <item media-type="image/png" id="fig1-5-01" href="image/1-5-01.png"/>
+    <item media-type="image/png" id="fig1-5-02" href="image/C1_05_02.png"/>
+    <item media-type="image/png" id="fig1-6-01" href="image/1-6-01.png"/>
+    <item media-type="image/png" id="fig1-6-02" href="image/1-6-02.png"/>
 
     <!-- xhtml -->
     <item media-type="application/xhtml+xml" id="cover"       href="xhtml/cover.xhtml"/>
+    <item media-type="application/xhtml+xml" id="intro"       href="xhtml/intro.xhtml"/>
     <item media-type="application/xhtml+xml" id="caution"     href="xhtml/caution.xhtml"/>
     <item media-type="application/xhtml+xml" id="toc"         href="xhtml/toc.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-1"  href="xhtml/1-1.xhtml"/>
@@ -75,6 +85,7 @@
 
 <spine page-progression-direction="ltr">
     <itemref linear="yes" idref="cover"/>
+    <itemref linear="yes" idref="intro"/>
     <itemref linear="yes" idref="caution"/>
     <itemref linear="yes" idref="toc"/>
     <itemref linear="yes" idref="chapter1-1"/>
