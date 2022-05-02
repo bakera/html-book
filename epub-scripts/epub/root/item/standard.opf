@@ -35,7 +35,7 @@
     <dc:language>ja</dc:language>
 
     <!-- ファイルid -->
-    <dc:identifier id="unique-id">urn:uuid:DACEB873-D505-404B-A52E-62D38DE1ED75</dc:identifier>
+    <dc:identifier id="unique-id">urn:uuid:91934B2A-F994-420E-BE9F-EEC2D013017A</dc:identifier>
 
     <!-- 更新日 -->
     <meta property="dcterms:modified">2022-04-27T00:00:00Z</meta>
@@ -46,7 +46,6 @@
 </metadata>
 
 <manifest>
-
     <!-- navigation -->
     <item media-type="application/xhtml+xml" id="toc" href="navigation-documents.xhtml" properties="nav"/>
 
@@ -54,7 +53,7 @@
     <item media-type="text/css" id="book-style"     href="style/default.css"/>
  
     <!-- image -->
-    <item media-type="image/png" id="cover" href="image/cover.png" properties="cover-image"/>
+    <item media-type="image/png" id="cover-image" href="image/cover.png" properties="cover-image"/>
     <item media-type="image/png" id="fig1-1-01" href="image/1-1-01.png"/>
     <item media-type="image/png" id="fig1-1-02" href="image/1-1-02.png"/>
     <item media-type="image/png" id="fig1-2-01" href="image/1-2-01.png"/>
@@ -70,7 +69,8 @@
     <item media-type="application/xhtml+xml" id="cover"       href="xhtml/cover.xhtml"/>
     <item media-type="application/xhtml+xml" id="intro"       href="xhtml/intro.xhtml"/>
     <item media-type="application/xhtml+xml" id="caution"     href="xhtml/caution.xhtml"/>
-    <item media-type="application/xhtml+xml" id="toc"         href="xhtml/toc.xhtml"/>
+    <item media-type="application/xhtml+xml" id="contents"         href="xhtml/toc.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-0"  href="xhtml/1-0.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-1"  href="xhtml/1-1.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-2"  href="xhtml/1-2.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-3"  href="xhtml/1-3.xhtml"/>
@@ -87,7 +87,8 @@
     <itemref linear="yes" idref="cover"/>
     <itemref linear="yes" idref="intro"/>
     <itemref linear="yes" idref="caution"/>
-    <itemref linear="yes" idref="toc"/>
+    <itemref linear="yes" idref="contents"/>
+    <itemref linear="yes" idref="chapter1-0"/>
     <itemref linear="yes" idref="chapter1-1"/>
     <itemref linear="yes" idref="chapter1-2"/>
     <itemref linear="yes" idref="chapter1-3"/>
