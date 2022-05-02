@@ -4,4 +4,6 @@ if [ -e $FILENAME ]; then
   rm $FILENAME
 fi
 zip -0 -X $FILENAME mimetype
-zip -r $FILENAME * -x mimetype
+zip -r $FILENAME * -x mimetype -x "*.DS_Store"
+
+# java -jar ../../epubcheck-4.2.6/epubcheck.jar $FILENAME
