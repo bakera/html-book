@@ -1,44 +1,8 @@
-html {
-    line-height: 1.5;
-    font-family: Georgia, serif;
-    font-size: 20px;
+body {
     color: #1a1a1a;
     background-color: #fdfdfd;
-}
-body {
+    line-height: 1.5;
     margin: 0 auto;
-    max-width: 36em;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    hyphens: auto;
-    overflow-wrap: break-word;
-    text-rendering: optimizeLegibility;
-    font-kerning: normal;
-}
-@media (max-width: 600px) {
-    body {
-        font-size: 0.9em;
-        padding: 1em;
-    }
-    h1 {
-        font-size: 1.8em;
-    }
-}
-@media print {
-    body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-    }
-    p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-    }
-    h2, h3, h4 {
-        page-break-after: avoid;
-    }
 }
 p {
     margin: 1em 0;
@@ -57,7 +21,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 h5, h6 {
     font-size: 1em;
-    font-style: italic;
 }
 h6 {
     font-weight: normal;
@@ -151,13 +114,6 @@ pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
-@media screen {
-    div.sourceCode { overflow: auto; }
-}
-@media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
 pre.numberSource code {
     counter-reset: source-line 0;
 }
@@ -179,11 +135,6 @@ pre.numberSource {
 }
 div.sourceCode
 {   }
-@media screen {
-    pre > code.sourceCode > span > a:first-child::before {
-        text-decoration: underline;
-    }
-}
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
@@ -214,3 +165,53 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 .display.math { display: block; text-align: center; margin: 0.5rem auto; }
+
+
+
+
+/* page style */
+
+h1{
+    font-size: 2.5em;
+}
+h1 .number{
+    color: #00A18A;
+}
+h2 {
+    font-size: 1.5em;
+    border-bottom: #00A18A solid 0.1em;
+}
+p{
+    text-indent: 1em;
+}
+
+em {
+    font-style: normal;
+    border: #CCE7DC solid 2px;
+    background: #CCE7DC;
+/*
+    text-decoration: underline;
+    text-decoration-line: underline overline;
+    text-decoration-color: #CCE7DC;
+*/
+}
+
+.chapter-title {
+    margin: 1em 2%;
+    padding: 1em 2%;
+    border: #4BB7A4 solid 0.5em;
+}
+.chapter-title h1{
+    font-size: 3em;
+    margin: 0;
+    border-bottom: #4BB7A4 solid 0.2em;
+    text-align: center;
+}
+.chapter-title .number{
+    font-size: 2em;    
+    display: block;
+}
+.chapter-title p {
+    font-size: 2em;
+    margin: 0.5em 0 1em;
+}
