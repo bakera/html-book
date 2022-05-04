@@ -179,16 +179,18 @@ h2 {
 p{
     text-indent: 1em;
 }
-
 em {
     font-style: normal;
     border: #CCE7DC solid 2px;
-    background: #CCE7DC;
-/*
-    text-decoration: underline;
-    text-decoration-line: underline overline;
-    text-decoration-color: #CCE7DC;
-*/
+}
+
+.column {
+    border: #00A18A solid 0.1em;
+    margin: 1em 2%;
+    padding: 1em 2%;
+}
+.column h2{
+    margin-top: 0;
 }
 
 /* cover */
@@ -241,4 +243,10 @@ em {
 }
 .colophon p{
     text-indent: 0;
+}
+.colophon dt{
+    margin: 1em 0 0 0;
+}
+.colophon dd{
+    margin: 0 0 0 2em;
 }

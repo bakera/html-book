@@ -35,7 +35,7 @@
     <dc:language>ja</dc:language>
 
     <!-- ファイルid -->
-    <dc:identifier id="unique-id">urn:uuid:CC94EFBA-4489-4614-BF47-391E1C88C8BA</dc:identifier>
+    <dc:identifier id="unique-id">urn:uuid:CBFA9F25-7671-4CA2-A6BF-103F48BF53E0</dc:identifier>
 
     <!-- 更新日 -->
     <meta property="dcterms:modified">2022-04-27T00:00:00Z</meta>
