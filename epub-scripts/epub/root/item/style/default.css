@@ -1,36 +1,11 @@
+html {
+    font-family: serif-ja, serif;
+}
 body {
     color: #1a1a1a;
     background-color: #fdfdfd;
     line-height: 1.5;
     margin: 0 auto;
-}
-p {
-    margin: 1em 0;
-}
-img {
-    max-width: 100%;
-}
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 1.4em;
-}
-h5, h6 {
-    font-size: 1em;
-}
-h6 {
-    font-weight: normal;
-}
-ol, ul {
-    padding-left: 1.7em;
-    margin-top: 1em;
-}
-li > ol, li > ul {
-    margin-top: 0;
-}
-blockquote {
-    margin: 1em 0 1em 1.7em;
-    padding-left: 1em;
-    border-left: 2px solid #e6e6e6;
-    color: #606060;
 }
 code {
     font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
@@ -162,28 +137,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 .display.math { display: block; text-align: center; margin: 0.5rem auto; }
 
 
-
-
 /* page style */
-
+h1,h2,h3,h4,h5,h6{
+    font-family: sans-serif-ja, sans-serif;
+    font-weight: bold;
+}
 h1{
     margin-top: 0;
     font-size: 2.5em;
 }
 h1 .number{
     color: #00A18A;
+    background-color: #FEFFFD;
 }
 h2 {
     font-size: 1.5em;
-    border-bottom: #00A18A solid 0.1em;
+    padding: 0.25em 1em 0.25em 0.75em;
+    border-radius: 0 1em 1em 0;
+    color: #FEFFFD;
+    background-color: #00A18A;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,1,4"><polygon points="0,0 1,2 0,4"/></svg>');
+    background-position-y: center;
+    background-repeat: no-repeat;
 }
-p{
+h3{
+    font-size: 1.25em;
+    padding: 0;
+    color: #00A18A;
+    background-color: #FEFFFD;
+}
+h4 {
+    font-size: 1em;
+    padding: 0 0 0 1.1em;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,80,80"><circle cx="40" cy="40" r="33" stroke-width="14" stroke="%2300A18A" fill="%234BB7A4"/></svg>');
+    background-size: 1em;
+    background-position-y: center;
+    background-repeat: no-repeat;
+}
+p {
+    margin: 1em 0;
     text-indent: 1em;
+}
+blockquote {
+    border: #00A18A solid 3px;
+    border-radius: 0.5em;
+    margin: 1em 0;
+    padding: 0.5em;
+    background-color: #CCE7DC;
+    color: #1a1a1a;
 }
 em {
     font-style: normal;
     border: #CCE7DC solid 2px;
+    background-color: #CCE7DC;
+    color: #1a1a1a;
 }
+ol, ul {
+    padding-left: 1.7em;
+    margin-top: 1em;
+}
+ul > li::marker{
+    color: #00A18A;
+}
+li > ol, li > ul {
+    margin-top: 0;
+}
+
+/* figure */
 .fignumber{
     border: #00A18A solid 2px;
     font-size: 0.75em;
@@ -206,15 +226,29 @@ figure .figbody{
     margin: 0.5em 0;
     border: #00A18A solid 2px;
     border-radius: 0.5em;
-    padding: 0.1em 1em;
+    padding: 1em;
+}
+figure img {
+    display: inline-block;
+    page-break-inside: avoid;
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: top;
 }
 .column {
-    border: #00A18A solid 0.1em;
+    border: #00A18A solid 3px;
+    border-radius: 0.5em;
     margin: 1em 2%;
     padding: 1em 2%;
 }
 .column h2{
-    margin-top: 0;
+    margin: 0;
+    padding: 0 0 0.25em 0;
+    color: #00A18A;
+    background-color: #FEFFFD;
+    background-image: none;
+    border-bottom: #00A18A solid 2px;
+    border-radius: 0;
 }
 
 /* cover */
