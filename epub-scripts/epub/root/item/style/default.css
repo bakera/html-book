@@ -152,13 +152,22 @@ h1 .number{
 }
 h2 {
     font-size: 1.5em;
+    line-height: 1;
     padding: 0.25em 1em 0.25em 0.75em;
     border-radius: 0 1em 1em 0;
     color: #FEFFFD;
     background-color: #00A18A;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,1,4"><polygon points="0,0 1,2 0,4"/></svg>');
-    background-position-y: center;
-    background-repeat: no-repeat;
+}
+h2::before{
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    margin: -0.25em 0.25em -0.25em -0.75em;
+    border: 0.825em solid transparent;
+    border-left: 0.5em solid #1a1a1a;
+    border-right: none;
 }
 h3{
     font-size: 1.25em;
@@ -168,11 +177,18 @@ h3{
 }
 h4 {
     font-size: 1em;
-    padding: 0 0 0 1.1em;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,80,80"><circle cx="40" cy="40" r="33" stroke-width="14" stroke="%2300A18A" fill="%234BB7A4"/></svg>');
-    background-size: 1em;
-    background-position-y: center;
-    background-repeat: no-repeat;
+    padding: 0;
+}
+h4::before{
+    content: "";
+    display: inline-block;
+    width: 0.55em;
+    height: 0.55em;
+    margin: 0 0.1em 0 0;
+    vertical-align: text-bottom;
+    background-color: #4BB7A4;
+    border: #00A18A solid 0.175em;
+    border-radius: 50%;
 }
 p {
     margin: 1em 0;
@@ -201,6 +217,12 @@ ul > li::marker{
 }
 li > ol, li > ul {
     margin-top: 0;
+}
+.footnote-ref{
+    padding: 0.1em 0.2em;
+}
+.footnote-ref sup::before{
+    content: "注";
 }
 
 /* figure */
@@ -241,7 +263,9 @@ figure img {
     margin: 1em 2%;
     padding: 1em 2%;
 }
-.column h2{
+.column h2,
+.column h3,
+.column h4{
     margin: 0;
     padding: 0 0 0.25em 0;
     color: #00A18A;
@@ -250,6 +274,10 @@ figure img {
     border-bottom: #00A18A solid 2px;
     border-radius: 0;
 }
+.column h2::before{
+    display: none;
+}
+
 
 /* cover */
 
