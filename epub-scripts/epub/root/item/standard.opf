@@ -35,7 +35,7 @@
     <dc:language>ja</dc:language>
 
     <!-- ファイルid -->
-    <dc:identifier id="unique-id">urn:uuid:CBFA9F25-7671-4CA2-A6BF-103F48BF53E0</dc:identifier>
+    <dc:identifier id="unique-id">urn:uuid:09D6CCDC-4FB7-4F4A-80B3-47B834C6B7F6</dc:identifier>
 
     <!-- 更新日 -->
     <meta property="dcterms:modified">2022-04-27T00:00:00Z</meta>
@@ -57,22 +57,21 @@
  
     <!-- image -->
     <item media-type="image/png" id="cover-image" href="image/cover.png" properties="cover-image"/>
-    <item media-type="image/png" id="fig1-1-01" href="image/1-1-01.png"/>
-    <item media-type="image/png" id="fig1-1-02" href="image/1-1-02.png"/>
-    <item media-type="image/png" id="fig1-2-01" href="image/1-2-01.png"/>
-    <item media-type="image/png" id="fig1-2-02" href="image/1-2-02.png"/>
-    <item media-type="image/png" id="fig1-2-03" href="image/1-2-03.png"/>
+    <item media-type="image/png" id="fig1-1-01" href="image/C1_01_01.png"/>
+    <item media-type="image/png" id="fig1-1-02" href="image/C1_01_02.png"/>
+    <item media-type="image/png" id="fig1-2-05" href="image/C1_02_05.png"/>
+    <item media-type="image/png" id="fig1-2-06" href="image/C1_02_05_1C.png"/>
     <item media-type="image/png" id="fig1-4-01" href="image/C1_04_01_1C.png"/>
-    <item media-type="image/png" id="fig1-5-01" href="image/1-5-01.png"/>
     <item media-type="image/png" id="fig1-5-02" href="image/C1_05_02.png"/>
-    <item media-type="image/png" id="fig1-6-01" href="image/1-6-01.png"/>
-    <item media-type="image/png" id="fig1-6-02" href="image/1-6-02.png"/>
+    <item media-type="image/png" id="fig1-7-01" href="image/C1_07_01_1C.png"/>
+    <item media-type="image/png" id="fig1-7-03" href="image/C1_07_03_1C.png"/>
+    <item media-type="image/png" id="fig3-1-01" href="image/C3_01_01.png"/>
 
     <!-- xhtml -->
     <item media-type="application/xhtml+xml" id="cover"       href="xhtml/cover.xhtml"/>
     <item media-type="application/xhtml+xml" id="intro"       href="xhtml/intro.xhtml"/>
     <item media-type="application/xhtml+xml" id="caution"     href="xhtml/caution.xhtml"/>
-    <item media-type="application/xhtml+xml" id="contents"         href="xhtml/toc.xhtml"/>
+    <item media-type="application/xhtml+xml" id="contents"    href="xhtml/toc.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-0"  href="xhtml/1-0.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-1"  href="xhtml/1-1.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-2"  href="xhtml/1-2.xhtml"/>
@@ -81,6 +80,8 @@
     <item media-type="application/xhtml+xml" id="chapter1-5"  href="xhtml/1-5.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-6"  href="xhtml/1-6.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-7"  href="xhtml/1-7.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-0"  href="xhtml/3-0.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-1"  href="xhtml/3-1.xhtml"/>
     <item media-type="application/xhtml+xml" id="profile"     href="xhtml/profile.xhtml"/>
     <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
 
@@ -99,6 +100,8 @@
     <itemref linear="yes" idref="chapter1-5"/>
     <itemref linear="yes" idref="chapter1-6"/>
     <itemref linear="yes" idref="chapter1-7"/>
+    <itemref linear="yes" idref="chapter3-0"/>
+    <itemref linear="yes" idref="chapter3-1"/>
     <itemref linear="yes" idref="profile"/>
     <itemref linear="yes" idref="colophon"/>
 </spine>
