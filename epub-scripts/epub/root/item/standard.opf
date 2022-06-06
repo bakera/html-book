@@ -35,7 +35,7 @@
     <dc:language>ja</dc:language>
 
     <!-- ファイルid -->
-    <dc:identifier id="unique-id">urn:uuid:17B1E691-94CF-4B3D-A79E-70F0774F850A</dc:identifier>
+    <dc:identifier id="unique-id">urn:uuid:96094610-09B5-46C4-BC49-FC2F1CAF56F4</dc:identifier>
 
     <!-- 更新日 -->
     <meta property="dcterms:modified">2022-04-27T00:00:00Z</meta>
@@ -67,6 +67,14 @@
     <item media-type="image/png" id="fig1-7-03" href="image/C1_07_03_1C.png"/>
     <item media-type="image/png" id="fig3-1-01" href="image/C3_01_01.png"/>
     <item media-type="image/png" id="fig3-2-05" href="image/C3_02_05_1C.png"/>
+    <item media-type="image/png" id="fig3-3-01" href="image/C3_03_01.png"/>
+    <item media-type="image/png" id="fig3-3-03" href="image/C3_03_03.png"/>
+    <item media-type="image/png" id="fig3-3-06" href="image/C3_03_06.png"/>
+    <item media-type="image/png" id="fig3-3-08" href="image/C3_03_08.png"/>
+    <item media-type="image/png" id="fig3-3-14" href="image/C3_03_14_1C.png"/>
+    <item media-type="image/png" id="fig3-3-16" href="image/C3_03_16_1C.png"/>
+    <item media-type="image/png" id="fig3-3-18" href="image/C3_03_18_1C.png"/>
+    <item media-type="image/png" id="fig3-3-22" href="image/C3_03_22_1C.png"/>
 
     <!-- xhtml -->
     <item media-type="application/xhtml+xml" id="cover"       href="xhtml/cover.xhtml"/>
@@ -84,6 +92,7 @@
     <item media-type="application/xhtml+xml" id="chapter3-0"  href="xhtml/3-0.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-1"  href="xhtml/3-1.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-2"  href="xhtml/3-2.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-3"  href="xhtml/3-3.xhtml"/>
     <item media-type="application/xhtml+xml" id="profile"     href="xhtml/profile.xhtml"/>
     <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
 
@@ -105,6 +114,7 @@
     <itemref linear="yes" idref="chapter3-0"/>
     <itemref linear="yes" idref="chapter3-1"/>
     <itemref linear="yes" idref="chapter3-2"/>
+    <itemref linear="yes" idref="chapter3-3"/>
     <itemref linear="yes" idref="profile"/>
     <itemref linear="yes" idref="colophon"/>
 </spine>
