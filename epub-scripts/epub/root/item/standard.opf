@@ -35,7 +35,7 @@
     <dc:language>ja</dc:language>
 
     <!-- ファイルid -->
-    <dc:identifier id="unique-id">urn:uuid:7C8275D0-C889-4757-9033-D1148432A09D</dc:identifier>
+    <dc:identifier id="unique-id">urn:uuid:28A1BCFE-4556-40B6-92A9-943787DE858C</dc:identifier>
 
     <!-- 更新日 -->
     <meta property="dcterms:modified">2022-04-27T00:00:00Z</meta>
@@ -83,6 +83,21 @@
     <item media-type="image/png" id="fig3-4-09" href="image/C3_04_09_1C.png"/>
     <item media-type="image/png" id="fig3-4-11" href="image/C3_04_11_1C.png"/>
     <item media-type="image/png" id="fig3-4-14" href="image/C3_04_14_1C.png"/>
+    <item media-type="image/png" id="fig3-5-05" href="image/C3_05_05_1C.png"/>
+    <item media-type="image/png" id="fig3-5-07" href="image/C3_05_07_1C.png"/>
+    <item media-type="image/png" id="fig3-5-10" href="image/C3_05_10_1C.png"/>
+    <item media-type="image/png" id="fig3-5-16" href="image/C3_05_16_1C.png"/>
+    <item media-type="image/png" id="fig3-5-25" href="image/C3_05_25_1C.png"/>
+    <item media-type="image/png" id="fig3-5-33" href="image/C3_05_33_1C.png"/>
+    <item media-type="image/png" id="fig3-5-36" href="image/C3_05_36_1C.png"/>
+    <item media-type="image/png" id="fig3-5-38" href="image/C3_05_38_1C.png"/>
+    <item media-type="image/png" id="fig3-5-40" href="image/C3_05_40_1C.png"/>
+    <item media-type="image/png" id="fig3-5-43" href="image/C3_05_43_1C.png"/>
+    <item media-type="image/png" id="fig3-5-47" href="image/C3_05_47_1C.png"/>
+    <item media-type="image/png" id="fig3-5-49" href="image/C3_05_49_1C.png"/>
+    <item media-type="image/png" id="fig3-5-51" href="image/C3_05_51_1C.png"/>
+    <item media-type="image/png" id="fig3-5-55" href="image/C3_05_55_1C.png"/>
+    <item media-type="image/png" id="fig3-5-62" href="image/C3_05_62_1C.png"/>
 
     <!-- xhtml -->
     <item media-type="application/xhtml+xml" id="cover"       href="xhtml/cover.xhtml"/>
@@ -102,6 +117,7 @@
     <item media-type="application/xhtml+xml" id="chapter3-2"  href="xhtml/3-2.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-3"  href="xhtml/3-3.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-4"  href="xhtml/3-4.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-5"  href="xhtml/3-5.xhtml"/>
     <item media-type="application/xhtml+xml" id="profile"     href="xhtml/profile.xhtml"/>
     <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
 
@@ -125,6 +141,7 @@
     <itemref linear="yes" idref="chapter3-2"/>
     <itemref linear="yes" idref="chapter3-3"/>
     <itemref linear="yes" idref="chapter3-4"/>
+    <itemref linear="yes" idref="chapter3-5"/>
     <itemref linear="yes" idref="profile"/>
     <itemref linear="yes" idref="colophon"/>
 </spine>
