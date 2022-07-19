@@ -35,7 +35,7 @@
     <dc:language>ja</dc:language>
 
     <!-- ファイルid -->
-    <dc:identifier id="unique-id">urn:uuid:28A1BCFE-4556-40B6-92A9-943787DE858C</dc:identifier>
+    <dc:identifier id="unique-id">urn:uuid:F75A310C-43A0-4BF3-B68B-26F7ABAFC7AB</dc:identifier>
 
     <!-- 更新日 -->
     <meta property="dcterms:modified">2022-04-27T00:00:00Z</meta>
@@ -98,6 +98,11 @@
     <item media-type="image/png" id="fig3-5-51" href="image/C3_05_51_1C.png"/>
     <item media-type="image/png" id="fig3-5-55" href="image/C3_05_55_1C.png"/>
     <item media-type="image/png" id="fig3-5-62" href="image/C3_05_62_1C.png"/>
+    <item media-type="image/png" id="fig3-6-01" href="image/C3_06_01_1C.png"/>
+    <item media-type="image/png" id="fig3-6-20" href="image/C3_06_20_1C.png"/>
+    <item media-type="image/png" id="fig3-7-03" href="image/C3_07_03_1C.png"/>
+    <item media-type="image/png" id="fig3-7-07" href="image/C3_07_07_1C.png"/>
+    <item media-type="image/png" id="fig3-7-09" href="image/C3_07_09_1C.png"/>
 
     <!-- xhtml -->
     <item media-type="application/xhtml+xml" id="cover"       href="xhtml/cover.xhtml"/>
@@ -118,6 +123,8 @@
     <item media-type="application/xhtml+xml" id="chapter3-3"  href="xhtml/3-3.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-4"  href="xhtml/3-4.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-5"  href="xhtml/3-5.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-6"  href="xhtml/3-6.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-7"  href="xhtml/3-7.xhtml"/>
     <item media-type="application/xhtml+xml" id="profile"     href="xhtml/profile.xhtml"/>
     <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
 
@@ -142,6 +149,8 @@
     <itemref linear="yes" idref="chapter3-3"/>
     <itemref linear="yes" idref="chapter3-4"/>
     <itemref linear="yes" idref="chapter3-5"/>
+    <itemref linear="yes" idref="chapter3-6"/>
+    <itemref linear="yes" idref="chapter3-7"/>
     <itemref linear="yes" idref="profile"/>
     <itemref linear="yes" idref="colophon"/>
 </spine>
