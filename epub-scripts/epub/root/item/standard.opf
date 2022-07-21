@@ -125,6 +125,7 @@
     <item media-type="application/xhtml+xml" id="chapter3-5"  href="xhtml/3-5.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-6"  href="xhtml/3-6.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-7"  href="xhtml/3-7.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-8"  href="xhtml/3-8.xhtml"/>
     <item media-type="application/xhtml+xml" id="profile"     href="xhtml/profile.xhtml"/>
     <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
 
@@ -151,6 +152,7 @@
     <itemref linear="yes" idref="chapter3-5"/>
     <itemref linear="yes" idref="chapter3-6"/>
     <itemref linear="yes" idref="chapter3-7"/>
+    <itemref linear="yes" idref="chapter3-8"/>
     <itemref linear="yes" idref="profile"/>
     <itemref linear="yes" idref="colophon"/>
 </spine>
