@@ -107,6 +107,20 @@
     <item media-type="image/png" id="fig3-9-03" href="image/C3_09_03_1C.png"/>
     <item media-type="image/png" id="fig3-9-05" href="image/C3_09_05_1C.png"/>
     <item media-type="image/png" id="fig3-9-09" href="image/C3_09_09_1C.png"/>
+    <item media-type="image/png" id="fig3-10-01" href="image/C3_10_01_1C.png"/>
+    <item media-type="image/png" id="fig3-10-03" href="image/C3_10_03_1C.png"/>
+    <item media-type="image/png" id="fig3-10-17" href="image/C3_10_17_1C.png"/>
+    <item media-type="image/png" id="fig3-10-18" href="image/C3_10_18_1C.png"/>
+    <item media-type="image/png" id="fig3-10-19" href="image/C3_10_19_1C.png"/>
+    <item media-type="image/png" id="fig3-10-22" href="image/C3_10_22_1C.png"/>
+    <item media-type="image/png" id="fig3-10-26" href="image/C3_10_26_1C.png"/>
+    <item media-type="image/png" id="fig3-10-27" href="image/C3_10_27_1C.png"/>
+    <item media-type="image/png" id="fig3-10-30" href="image/C3_10_30_1C.png"/>
+    <item media-type="image/png" id="fig3-10-32" href="image/C3_10_32_1C.png"/>
+    <item media-type="image/png" id="fig3-10-34" href="image/C3_10_34_1C.png"/>
+    <item media-type="image/png" id="fig3-10-38" href="image/C3_10_38_1C.png"/>
+    <item media-type="image/png" id="fig3-10-41" href="image/C3_10_41_1C.png"/>
+    <item media-type="image/png" id="fig3-10-44" href="image/C3_10_44_1C.png"/>
 
     <!-- xhtml -->
     <item media-type="application/xhtml+xml" id="cover"       href="xhtml/cover.xhtml"/>
@@ -131,6 +145,7 @@
     <item media-type="application/xhtml+xml" id="chapter3-7"  href="xhtml/3-7.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-8"  href="xhtml/3-8.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-9"  href="xhtml/3-9.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-10"  href="xhtml/3-10.xhtml"/>
     <item media-type="application/xhtml+xml" id="profile"     href="xhtml/profile.xhtml"/>
     <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
 
@@ -159,6 +174,7 @@
     <itemref linear="yes" idref="chapter3-7"/>
     <itemref linear="yes" idref="chapter3-8"/>
     <itemref linear="yes" idref="chapter3-9"/>
+    <itemref linear="yes" idref="chapter3-10"/>
     <itemref linear="yes" idref="profile"/>
     <itemref linear="yes" idref="colophon"/>
 </spine>
