@@ -121,6 +121,23 @@
     <item media-type="image/png" id="fig3-10-38" href="image/C3_10_38_1C.png"/>
     <item media-type="image/png" id="fig3-10-41" href="image/C3_10_41_1C.png"/>
     <item media-type="image/png" id="fig3-10-44" href="image/C3_10_44_1C.png"/>
+    <item media-type="image/png" id="fig3-11-02" href="image/C3_11_02_1C.png"/>
+    <item media-type="image/png" id="fig3-11-05-01" href="image/C3_11_05_01_1C.png"/>
+    <item media-type="image/png" id="fig3-11-05-02" href="image/C3_11_05_02_1C.png"/>
+    <item media-type="image/png" id="fig3-11-06" href="image/C3_11_06_1C.png"/>
+    <item media-type="image/png" id="fig3-11-07" href="image/C3_11_07_1C.png"/>
+    <item media-type="image/png" id="fig3-11-10" href="image/C3_11_10_1C.png"/>
+    <item media-type="image/png" id="fig3-11-12" href="image/C3_11_12_1C.png"/>
+    <item media-type="image/png" id="fig3-11-14" href="image/C3_11_14_1C.png"/>
+    <item media-type="image/png" id="fig3-11-17" href="image/C3_11_17_1C.png"/>
+    <item media-type="image/png" id="fig3-11-19" href="image/C3_11_19_1C.png"/>
+    <item media-type="image/png" id="fig3-11-23" href="image/C3_11_23_1C.png"/>
+    <item media-type="image/png" id="fig3-11-25" href="image/C3_11_25_1C.png"/>
+    <item media-type="image/png" id="fig3-11-28" href="image/C3_11_28_1C.png"/>
+    <item media-type="image/png" id="fig3-11-32" href="image/C3_11_32_1C.png"/>
+    <item media-type="image/png" id="fig3-11-34" href="image/C3_11_34_1C.png"/>
+    <item media-type="image/png" id="fig3-11-37" href="image/C3_11_37_1C.png"/>
+    <item media-type="image/png" id="fig3-11-39" href="image/C3_11_39_1C.png"/>
 
     <!-- xhtml -->
     <item media-type="application/xhtml+xml" id="cover"       href="xhtml/cover.xhtml"/>
@@ -146,6 +163,7 @@
     <item media-type="application/xhtml+xml" id="chapter3-8"  href="xhtml/3-8.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-9"  href="xhtml/3-9.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-10"  href="xhtml/3-10.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-11"  href="xhtml/3-11.xhtml"/>
     <item media-type="application/xhtml+xml" id="profile"     href="xhtml/profile.xhtml"/>
     <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
 
@@ -175,6 +193,7 @@
     <itemref linear="yes" idref="chapter3-8"/>
     <itemref linear="yes" idref="chapter3-9"/>
     <itemref linear="yes" idref="chapter3-10"/>
+    <itemref linear="yes" idref="chapter3-11"/>
     <itemref linear="yes" idref="profile"/>
     <itemref linear="yes" idref="colophon"/>
 </spine>
