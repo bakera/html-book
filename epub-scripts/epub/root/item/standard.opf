@@ -140,6 +140,8 @@
     <item media-type="image/png" id="fig3-11-39" href="image/C3_11_39_1C.png"/>
     <item media-type="image/png" id="fig3-12-02" href="image/C3_12_02_1C.png"/>
     <item media-type="image/png" id="fig3-12-04" href="image/C3_12_04_1C.png"/>
+    <item media-type="image/png" id="fig3-13-11" href="image/C3_13_13.png"/>
+    <item media-type="image/png" id="fig3-13-20" href="image/C3_13_22_1C.png"/>
 
     <!-- xhtml -->
     <item media-type="application/xhtml+xml" id="cover"       href="xhtml/cover.xhtml"/>
@@ -167,6 +169,7 @@
     <item media-type="application/xhtml+xml" id="chapter3-10"  href="xhtml/3-10.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-11"  href="xhtml/3-11.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-12"  href="xhtml/3-12.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-13"  href="xhtml/3-13.xhtml"/>
     <item media-type="application/xhtml+xml" id="profile"     href="xhtml/profile.xhtml"/>
     <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
 
@@ -198,6 +201,7 @@
     <itemref linear="yes" idref="chapter3-10"/>
     <itemref linear="yes" idref="chapter3-11"/>
     <itemref linear="yes" idref="chapter3-12"/>
+    <itemref linear="yes" idref="chapter3-13"/>
     <itemref linear="yes" idref="profile"/>
     <itemref linear="yes" idref="colophon"/>
 </spine>
