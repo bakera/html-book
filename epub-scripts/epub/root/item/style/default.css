@@ -141,6 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 h1,h2,h3,h4,h5,h6{
     font-family: sans-serif-ja, sans-serif;
     font-weight: bold;
+    page-break-after: avoid;
 }
 h1{
     margin-top: 0;
@@ -205,6 +206,7 @@ blockquote {
     padding: 0.5em;
     background-color: #CCE7DC;
     color: #1a1a1a;
+    page-break-inside: avoid;
 }
 em {
     font-style: normal;
@@ -244,6 +246,7 @@ li > ol, li > ul {
 figure{
     margin: 2em 1em;
     padding: 0;
+    page-break-inside: avoid;
 }
 figcaption{
     font-size: 0.9em;
@@ -266,6 +269,7 @@ figure img {
     border-radius: 0.5em;
     margin: 1em 2%;
     padding: 1em 2%;
+    page-break-inside: avoid;
 }
 .column h2,
 .column h3,
