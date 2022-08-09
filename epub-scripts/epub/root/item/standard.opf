@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package
+ xmlns="http://www.idpf.org/2007/opf"
+ version="3.0"
+ xml:lang="ja"
+ unique-identifier="unique-id"
+ prefix="ebpaj: http://www.ebpaj.jp/"
+>
+
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <!-- 作品名 -->
+    <dc:title id="title">HTML解体新書</dc:title>
+    <meta refines="#title" property="file-as">HTMLカイタイシンショ</meta>
+
+    <!-- 著者名 -->
+    <dc:creator id="creator01">太田良典</dc:creator>
+    <meta refines="#creator01" property="alternate-script" xml:lang="en">Yoshinori Ohta</meta>
+    <meta refines="#creator01" property="role" scheme="marc:relators">aut</meta>
+    <meta refines="#creator01" property="file-as">オオタヨシノリ</meta>
+    <meta refines="#creator01" property="display-seq">1</meta>
+
+    <dc:creator id="creator02">中村直樹</dc:creator>
+    <meta refines="#creator02" property="alternate-script" xml:lang="en">Naoki Nakamura</meta>
+    <meta refines="#creator02" property="role" scheme="marc:relators">aut</meta>
+    <meta refines="#creator02" property="file-as">ナカムラナオキ</meta>
+    <meta refines="#creator02" property="display-seq">2</meta>
+
+    <!-- 出版社名 -->
+    <dc:publisher id="publisher">株式会社ボーンデジタル</dc:publisher>
+    <meta refines="#publisher" property="alternate-script" xml:lang="en">Born Digital, Inc</meta>
+    <meta refines="#publisher" property="file-as">ボーンデジタル</meta>
+
+    <!-- 言語 -->
+    <dc:language>ja</dc:language>
+
+    <!-- ファイルid -->
+    <dc:identifier id="unique-id">urn:uuid:84344327-7BA9-407E-A56C-1B6C9F28F909</dc:identifier>
+
+    <!-- 更新日 -->
+    <meta property="dcterms:modified">2022-04-27T00:00:00Z</meta>
+
+    <!-- etc. -->
+    <meta property="ebpaj:guide-version">1.1.3</meta>
+
+    <!-- compatibility for EPUB 2.0 -->
+    <meta name="cover" content="cover-image"/>
+
+</metadata>
+
+<manifest>
+    <!-- navigation -->
+    <item media-type="application/xhtml+xml" id="toc" href="navigation-documents.xhtml" properties="nav"/>
+
+    <!-- style -->
+    <item media-type="text/css" id="book-style"     href="style/default.css"/>
+ 
+    <!-- image -->
+    <item media-type="image/png" id="cover-image" href="image/cover.png" properties="cover-image"/>
+    <item media-type="image/png" id="fig1-1-01" href="image/C1_01_01.png"/>
+    <item media-type="image/png" id="fig1-1-02" href="image/C1_01_02.png"/>
+    <item media-type="image/png" id="fig1-2-05" href="image/C1_02_05.png"/>
+    <item media-type="image/png" id="fig1-2-06" href="image/C1_02_05_1C.png"/>
+    <item media-type="image/png" id="fig1-4-01" href="image/C1_04_01_1C.png"/>
+    <item media-type="image/png" id="fig1-5-02" href="image/C1_05_02.png"/>
+    <item media-type="image/png" id="fig1-7-01" href="image/C1_07_01_1C.png"/>
+    <item media-type="image/png" id="fig1-7-03" href="image/C1_07_03_1C.png"/>
+    <item media-type="image/png" id="fig2-5-01" href="image/C2_05_01.png"/>
+    <item media-type="image/png" id="fig2-6-03" href="image/C2_06_03_1C.png"/>
+    <item media-type="image/png" id="fig2-6-13" href="image/C2_06_13_1C.png"/>
+    <item media-type="image/png" id="fig2-7-15" href="image/C2_07_15_1C.png"/>
+    <item media-type="image/png" id="fig3-1-01" href="image/C3_01_01.png"/>
+    <item media-type="image/png" id="fig3-2-05" href="image/C3_02_05_1C.png"/>
+    <item media-type="image/png" id="fig3-3-01" href="image/C3_03_01.png"/>
+    <item media-type="image/png" id="fig3-3-03" href="image/C3_03_03.png"/>
+    <item media-type="image/png" id="fig3-3-06" href="image/C3_03_06.png"/>
+    <item media-type="image/png" id="fig3-3-08" href="image/C3_03_08.png"/>
+    <item media-type="image/png" id="fig3-3-14" href="image/C3_03_14_1C.png"/>
+    <item media-type="image/png" id="fig3-3-16" href="image/C3_03_16_1C.png"/>
+    <item media-type="image/png" id="fig3-3-18" href="image/C3_03_18_1C.png"/>
+    <item media-type="image/png" id="fig3-3-22" href="image/C3_03_22_1C.png"/>
+    <item media-type="image/png" id="fig3-4-23" href="image/C3_04_23_1C.png"/>
+    <item media-type="image/png" id="fig3-4-25" href="image/C3_04_25_1C.png"/>
+    <item media-type="image/png" id="fig3-4-27" href="image/C3_04_27_1C.png"/>
+    <item media-type="image/png" id="fig3-4-29" href="image/C3_04_29_1C.png"/>
+    <item media-type="image/png" id="fig3-4-31" href="image/C3_04_31_1C.png"/>
+    <item media-type="image/png" id="fig3-4-09" href="image/C3_04_09_1C.png"/>
+    <item media-type="image/png" id="fig3-4-11" href="image/C3_04_11_1C.png"/>
+    <item media-type="image/png" id="fig3-4-14" href="image/C3_04_14_1C.png"/>
+    <item media-type="image/png" id="fig3-5-05" href="image/C3_05_05_1C.png"/>
+    <item media-type="image/png" id="fig3-5-07" href="image/C3_05_07_1C.png"/>
+    <item media-type="image/png" id="fig3-5-10" href="image/C3_05_10_1C.png"/>
+    <item media-type="image/png" id="fig3-5-16" href="image/C3_05_16_1C.png"/>
+    <item media-type="image/png" id="fig3-5-25" href="image/C3_05_25_1C.png"/>
+    <item media-type="image/png" id="fig3-5-33" href="image/C3_05_33_1C.png"/>
+    <item media-type="image/png" id="fig3-5-36" href="image/C3_05_36_1C.png"/>
+    <item media-type="image/png" id="fig3-5-38" href="image/C3_05_38_1C.png"/>
+    <item media-type="image/png" id="fig3-5-40" href="image/C3_05_40_1C.png"/>
+    <item media-type="image/png" id="fig3-5-43" href="image/C3_05_43_1C.png"/>
+    <item media-type="image/png" id="fig3-5-47" href="image/C3_05_47_1C.png"/>
+    <item media-type="image/png" id="fig3-5-49" href="image/C3_05_49_1C.png"/>
+    <item media-type="image/png" id="fig3-5-51" href="image/C3_05_51_1C.png"/>
+    <item media-type="image/png" id="fig3-5-55" href="image/C3_05_55_1C.png"/>
+    <item media-type="image/png" id="fig3-5-62" href="image/C3_05_62_1C.png"/>
+    <item media-type="image/png" id="fig3-6-01" href="image/C3_06_01_1C.png"/>
+    <item media-type="image/png" id="fig3-6-20" href="image/C3_06_20_1C.png"/>
+    <item media-type="image/png" id="fig3-7-03" href="image/C3_07_03_1C.png"/>
+    <item media-type="image/png" id="fig3-7-07" href="image/C3_07_07_1C.png"/>
+    <item media-type="image/png" id="fig3-7-09" href="image/C3_07_09_1C.png"/>
+    <item media-type="image/png" id="fig3-9-01" href="image/C3_09_01.png"/>
+    <item media-type="image/png" id="fig3-9-03" href="image/C3_09_03_1C.png"/>
+    <item media-type="image/png" id="fig3-9-05" href="image/C3_09_05_1C.png"/>
+    <item media-type="image/png" id="fig3-9-09" href="image/C3_09_09_1C.png"/>
+    <item media-type="image/png" id="fig3-10-01" href="image/C3_10_01_1C.png"/>
+    <item media-type="image/png" id="fig3-10-03" href="image/C3_10_03_1C.png"/>
+    <item media-type="image/png" id="fig3-10-17" href="image/C3_10_17_1C.png"/>
+    <item media-type="image/png" id="fig3-10-18" href="image/C3_10_18_1C.png"/>
+    <item media-type="image/png" id="fig3-10-19" href="image/C3_10_19_1C.png"/>
+    <item media-type="image/png" id="fig3-10-22" href="image/C3_10_22_1C.png"/>
+    <item media-type="image/png" id="fig3-10-26" href="image/C3_10_26_1C.png"/>
+    <item media-type="image/png" id="fig3-10-27" href="image/C3_10_27_1C.png"/>
+    <item media-type="image/png" id="fig3-10-30" href="image/C3_10_30_1C.png"/>
+    <item media-type="image/png" id="fig3-10-32" href="image/C3_10_32_1C.png"/>
+    <item media-type="image/png" id="fig3-10-34" href="image/C3_10_34_1C.png"/>
+    <item media-type="image/png" id="fig3-10-38" href="image/C3_10_38_1C.png"/>
+    <item media-type="image/png" id="fig3-10-41" href="image/C3_10_41_1C.png"/>
+    <item media-type="image/png" id="fig3-10-44" href="image/C3_10_44_1C.png"/>
+    <item media-type="image/png" id="fig3-11-02" href="image/C3_11_02_1C.png"/>
+    <item media-type="image/png" id="fig3-11-05-01" href="image/C3_11_05_01_1C.png"/>
+    <item media-type="image/png" id="fig3-11-05-02" href="image/C3_11_05_02_1C.png"/>
+    <item media-type="image/png" id="fig3-11-06" href="image/C3_11_06_1C.png"/>
+    <item media-type="image/png" id="fig3-11-07" href="image/C3_11_07_1C.png"/>
+    <item media-type="image/png" id="fig3-11-10" href="image/C3_11_10_1C.png"/>
+    <item media-type="image/png" id="fig3-11-12" href="image/C3_11_12_1C.png"/>
+    <item media-type="image/png" id="fig3-11-14" href="image/C3_11_14_1C.png"/>
+    <item media-type="image/png" id="fig3-11-17" href="image/C3_11_17_1C.png"/>
+    <item media-type="image/png" id="fig3-11-19" href="image/C3_11_19_1C.png"/>
+    <item media-type="image/png" id="fig3-11-23" href="image/C3_11_23_1C.png"/>
+    <item media-type="image/png" id="fig3-11-25" href="image/C3_11_25_1C.png"/>
+    <item media-type="image/png" id="fig3-11-28" href="image/C3_11_28_1C.png"/>
+    <item media-type="image/png" id="fig3-11-32" href="image/C3_11_32_1C.png"/>
+    <item media-type="image/png" id="fig3-11-34" href="image/C3_11_34_1C.png"/>
+    <item media-type="image/png" id="fig3-11-37" href="image/C3_11_37_1C.png"/>
+    <item media-type="image/png" id="fig3-11-39" href="image/C3_11_39_1C.png"/>
+    <item media-type="image/png" id="fig3-12-02" href="image/C3_12_02_1C.png"/>
+    <item media-type="image/png" id="fig3-12-04" href="image/C3_12_04_1C.png"/>
+    <item media-type="image/png" id="fig3-13-11" href="image/C3_13_13.png"/>
+    <item media-type="image/png" id="fig3-13-20" href="image/C3_13_22_1C.png"/>
+    <item media-type="image/png" id="fig4-3-14" href="image/C4_03_14_1C.png"/>
+    <item media-type="image/png" id="fig4-4-1-1" href="image/C4_04_01_1_1C.png"/>
+    <item media-type="image/png" id="fig4-4-1-2" href="image/C4_04_01_2_1C.png"/>
+    <item media-type="image/png" id="fig4-4-16" href="image/C4_03_16.png"/>
+    <item media-type="image/png" id="fig4-4-18" href="image/C4_04_18_1C.png"/>
+    <item media-type="image/png" id="fig4-4-23" href="image/C4_04_23_1C.png"/>
+    <item media-type="image/png" id="fig4-4-25" href="image/C4_04_25_1C.png"/>
+
+    <!-- xhtml -->
+    <item media-type="application/xhtml+xml" id="cover"       href="xhtml/cover.xhtml"/>
+    <item media-type="application/xhtml+xml" id="intro"       href="xhtml/intro.xhtml"/>
+    <item media-type="application/xhtml+xml" id="caution"     href="xhtml/caution.xhtml"/>
+    <item media-type="application/xhtml+xml" id="contents"    href="xhtml/toc.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-0"  href="xhtml/1-0.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-1"  href="xhtml/1-1.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-2"  href="xhtml/1-2.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-3"  href="xhtml/1-3.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-4"  href="xhtml/1-4.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-5"  href="xhtml/1-5.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-6"  href="xhtml/1-6.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter1-7"  href="xhtml/1-7.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-0"  href="xhtml/2-0.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-1"  href="xhtml/2-1.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-2"  href="xhtml/2-2.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-3"  href="xhtml/2-3.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-4"  href="xhtml/2-4.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-5"  href="xhtml/2-5.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-6"  href="xhtml/2-6.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-7"  href="xhtml/2-7.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-8"  href="xhtml/2-8.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-0"  href="xhtml/3-0.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-1"  href="xhtml/3-1.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-2"  href="xhtml/3-2.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-3"  href="xhtml/3-3.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-4"  href="xhtml/3-4.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-5"  href="xhtml/3-5.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-6"  href="xhtml/3-6.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-7"  href="xhtml/3-7.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-8"  href="xhtml/3-8.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-9"  href="xhtml/3-9.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-10"  href="xhtml/3-10.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-11"  href="xhtml/3-11.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-12"  href="xhtml/3-12.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter3-13"  href="xhtml/3-13.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter4-0"  href="xhtml/4-0.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter4-1"  href="xhtml/4-1.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter4-2"  href="xhtml/4-2.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter4-3"  href="xhtml/4-3.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter4-4"  href="xhtml/4-4.xhtml"/>
+    <item media-type="application/xhtml+xml" id="profile"     href="xhtml/profile.xhtml"/>
+    <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
+
+</manifest>
+
+<spine page-progression-direction="ltr">
+    <itemref linear="yes" idref="cover"/>
+    <itemref linear="yes" idref="intro"/>
+    <itemref linear="yes" idref="caution"/>
+    <itemref linear="yes" idref="contents"/>
+    <itemref linear="yes" idref="chapter1-0"/>
+    <itemref linear="yes" idref="chapter1-1"/>
+    <itemref linear="yes" idref="chapter1-2"/>
+    <itemref linear="yes" idref="chapter1-3"/>
+    <itemref linear="yes" idref="chapter1-4"/>
+    <itemref linear="yes" idref="chapter1-5"/>
+    <itemref linear="yes" idref="chapter1-6"/>
+    <itemref linear="yes" idref="chapter1-7"/>
+    <itemref linear="yes" idref="chapter2-0"/>
+    <itemref linear="yes" idref="chapter2-1"/>
+    <itemref linear="yes" idref="chapter2-2"/>
+    <itemref linear="yes" idref="chapter2-3"/>
+    <itemref linear="yes" idref="chapter2-4"/>
+    <itemref linear="yes" idref="chapter2-5"/>
+    <itemref linear="yes" idref="chapter2-6"/>
+    <itemref linear="yes" idref="chapter2-7"/>
+    <itemref linear="yes" idref="chapter2-8"/>
+    <itemref linear="yes" idref="chapter3-0"/>
+    <itemref linear="yes" idref="chapter3-1"/>
+    <itemref linear="yes" idref="chapter3-2"/>
+    <itemref linear="yes" idref="chapter3-3"/>
+    <itemref linear="yes" idref="chapter3-4"/>
+    <itemref linear="yes" idref="chapter3-5"/>
+    <itemref linear="yes" idref="chapter3-6"/>
+    <itemref linear="yes" idref="chapter3-7"/>
+    <itemref linear="yes" idref="chapter3-8"/>
+    <itemref linear="yes" idref="chapter3-9"/>
+    <itemref linear="yes" idref="chapter3-10"/>
+    <itemref linear="yes" idref="chapter3-11"/>
+    <itemref linear="yes" idref="chapter3-12"/>
+    <itemref linear="yes" idref="chapter3-13"/>
+    <itemref linear="yes" idref="chapter4-0"/>
+    <itemref linear="yes" idref="chapter4-1"/>
+    <itemref linear="yes" idref="chapter4-2"/>
+    <itemref linear="yes" idref="chapter4-3"/>
+    <itemref linear="yes" idref="chapter4-4"/>
+    <itemref linear="yes" idref="profile"/>
+    <itemref linear="yes" idref="colophon"/>
+</spine>
+
+</package>
