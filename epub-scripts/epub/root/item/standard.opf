@@ -35,7 +35,7 @@
     <dc:language>ja</dc:language>
 
     <!-- ファイルid -->
-    <dc:identifier id="unique-id">urn:uuid:F75A310C-43A0-4BF3-B68B-26F7ABAFC7AB</dc:identifier>
+    <dc:identifier id="unique-id">urn:uuid:84344327-7BA9-407E-A56C-1B6C9F28F909</dc:identifier>
 
     <!-- 更新日 -->
     <meta property="dcterms:modified">2022-04-27T00:00:00Z</meta>
@@ -65,6 +65,10 @@
     <item media-type="image/png" id="fig1-5-02" href="image/C1_05_02.png"/>
     <item media-type="image/png" id="fig1-7-01" href="image/C1_07_01_1C.png"/>
     <item media-type="image/png" id="fig1-7-03" href="image/C1_07_03_1C.png"/>
+    <item media-type="image/png" id="fig2-5-01" href="image/C2_05_01.png"/>
+    <item media-type="image/png" id="fig2-6-03" href="image/C2_06_03_1C.png"/>
+    <item media-type="image/png" id="fig2-6-13" href="image/C2_06_13_1C.png"/>
+    <item media-type="image/png" id="fig2-7-15" href="image/C2_07_15_1C.png"/>
     <item media-type="image/png" id="fig3-1-01" href="image/C3_01_01.png"/>
     <item media-type="image/png" id="fig3-2-05" href="image/C3_02_05_1C.png"/>
     <item media-type="image/png" id="fig3-3-01" href="image/C3_03_01.png"/>
@@ -156,6 +160,14 @@
     <item media-type="application/xhtml+xml" id="chapter1-5"  href="xhtml/1-5.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-6"  href="xhtml/1-6.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-7"  href="xhtml/1-7.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-1"  href="xhtml/2-1.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-2"  href="xhtml/2-2.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-3"  href="xhtml/2-3.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-4"  href="xhtml/2-4.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-5"  href="xhtml/2-5.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-6"  href="xhtml/2-6.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-7"  href="xhtml/2-7.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-8"  href="xhtml/2-8.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-0"  href="xhtml/3-0.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-1"  href="xhtml/3-1.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-2"  href="xhtml/3-2.xhtml"/>
@@ -170,6 +182,10 @@
     <item media-type="application/xhtml+xml" id="chapter3-11"  href="xhtml/3-11.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-12"  href="xhtml/3-12.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-13"  href="xhtml/3-13.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter4-1"  href="xhtml/4-1.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter4-2"  href="xhtml/4-2.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter4-3"  href="xhtml/4-3.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter4-4"  href="xhtml/4-4.xhtml"/>
     <item media-type="application/xhtml+xml" id="profile"     href="xhtml/profile.xhtml"/>
     <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
 
@@ -188,6 +204,14 @@
     <itemref linear="yes" idref="chapter1-5"/>
     <itemref linear="yes" idref="chapter1-6"/>
     <itemref linear="yes" idref="chapter1-7"/>
+    <itemref linear="yes" idref="chapter2-1"/>
+    <itemref linear="yes" idref="chapter2-2"/>
+    <itemref linear="yes" idref="chapter2-3"/>
+    <itemref linear="yes" idref="chapter2-4"/>
+    <itemref linear="yes" idref="chapter2-5"/>
+    <itemref linear="yes" idref="chapter2-6"/>
+    <itemref linear="yes" idref="chapter2-7"/>
+    <itemref linear="yes" idref="chapter2-8"/>
     <itemref linear="yes" idref="chapter3-0"/>
     <itemref linear="yes" idref="chapter3-1"/>
     <itemref linear="yes" idref="chapter3-2"/>
@@ -202,6 +226,10 @@
     <itemref linear="yes" idref="chapter3-11"/>
     <itemref linear="yes" idref="chapter3-12"/>
     <itemref linear="yes" idref="chapter3-13"/>
+    <itemref linear="yes" idref="chapter4-1"/>
+    <itemref linear="yes" idref="chapter4-2"/>
+    <itemref linear="yes" idref="chapter4-3"/>
+    <itemref linear="yes" idref="chapter4-4"/>
     <itemref linear="yes" idref="profile"/>
     <itemref linear="yes" idref="colophon"/>
 </spine>
