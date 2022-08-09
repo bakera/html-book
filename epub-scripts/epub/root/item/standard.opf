@@ -167,6 +167,7 @@
     <item media-type="application/xhtml+xml" id="chapter1-5"  href="xhtml/1-5.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-6"  href="xhtml/1-6.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter1-7"  href="xhtml/1-7.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter2-0"  href="xhtml/2-0.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter2-1"  href="xhtml/2-1.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter2-2"  href="xhtml/2-2.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter2-3"  href="xhtml/2-3.xhtml"/>
@@ -189,6 +190,7 @@
     <item media-type="application/xhtml+xml" id="chapter3-11"  href="xhtml/3-11.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-12"  href="xhtml/3-12.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter3-13"  href="xhtml/3-13.xhtml"/>
+    <item media-type="application/xhtml+xml" id="chapter4-0"  href="xhtml/4-0.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter4-1"  href="xhtml/4-1.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter4-2"  href="xhtml/4-2.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter4-3"  href="xhtml/4-3.xhtml"/>
@@ -211,6 +213,7 @@
     <itemref linear="yes" idref="chapter1-5"/>
     <itemref linear="yes" idref="chapter1-6"/>
     <itemref linear="yes" idref="chapter1-7"/>
+    <itemref linear="yes" idref="chapter2-0"/>
     <itemref linear="yes" idref="chapter2-1"/>
     <itemref linear="yes" idref="chapter2-2"/>
     <itemref linear="yes" idref="chapter2-3"/>
@@ -233,6 +236,7 @@
     <itemref linear="yes" idref="chapter3-11"/>
     <itemref linear="yes" idref="chapter3-12"/>
     <itemref linear="yes" idref="chapter3-13"/>
+    <itemref linear="yes" idref="chapter4-0"/>
     <itemref linear="yes" idref="chapter4-1"/>
     <itemref linear="yes" idref="chapter4-2"/>
     <itemref linear="yes" idref="chapter4-3"/>
