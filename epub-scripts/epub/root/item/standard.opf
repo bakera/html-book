@@ -35,7 +35,7 @@
     <dc:language>ja</dc:language>
 
     <!-- ファイルid -->
-    <dc:identifier id="unique-id">urn:uuid:84344327-7BA9-407E-A56C-1B6C9F28F909</dc:identifier>
+    <dc:identifier id="unique-id">urn:uuid:1C56F72D-FF85-4580-A078-A743C3D2F08B</dc:identifier>
 
     <!-- 更新日 -->
     <meta property="dcterms:modified">2022-04-27T00:00:00Z</meta>
@@ -66,6 +66,7 @@
     <item media-type="image/png" id="fig1-7-01" href="image/C1_07_01_1C.png"/>
     <item media-type="image/png" id="fig1-7-03" href="image/C1_07_03_1C.png"/>
     <item media-type="image/png" id="fig2-5-01" href="image/C2_05_01.png"/>
+    <item media-type="image/png" id="sushi" href="image/sushi.png"/>
     <item media-type="image/png" id="fig2-6-03" href="image/C2_06_03_1C.png"/>
     <item media-type="image/png" id="fig2-6-13" href="image/C2_06_13_1C.png"/>
     <item media-type="image/png" id="fig2-7-15" href="image/C2_07_15_1C.png"/>
@@ -195,6 +196,7 @@
     <item media-type="application/xhtml+xml" id="chapter4-2"  href="xhtml/4-2.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter4-3"  href="xhtml/4-3.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter4-4"  href="xhtml/4-4.xhtml"/>
+    <item media-type="application/xhtml+xml" id="index"     href="xhtml/index-word.xhtml"/>
     <item media-type="application/xhtml+xml" id="profile"     href="xhtml/profile.xhtml"/>
     <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
 
@@ -241,6 +243,7 @@
     <itemref linear="yes" idref="chapter4-2"/>
     <itemref linear="yes" idref="chapter4-3"/>
     <itemref linear="yes" idref="chapter4-4"/>
+    <itemref linear="yes" idref="index"/>
     <itemref linear="yes" idref="profile"/>
     <itemref linear="yes" idref="colophon"/>
 </spine>

@@ -210,7 +210,6 @@ blockquote {
     padding: 0.5em;
     background-color: #CCE7DC;
     color: #1a1a1a;
-    page-break-inside: avoid;
 }
 em {
     font-style: normal;
@@ -250,7 +249,6 @@ li > ol, li > ul {
 figure{
     margin: 2em 1em;
     padding: 0;
-    page-break-inside: avoid;
 }
 figcaption{
     font-size: 0.9em;
@@ -273,7 +271,6 @@ section.column {
     border-radius: 0.5em;
     margin: 1em 0;
     padding: 1em;
-    page-break-inside: avoid;
 }
 section.column h2,
 section.column h3,
@@ -292,6 +289,9 @@ section.column h4::before{
     display: none;
 }
 
+img.gryph{
+    height: 1em;
+}
 
 /* cover */
 
