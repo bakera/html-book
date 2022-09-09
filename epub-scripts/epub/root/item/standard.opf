@@ -35,7 +35,7 @@
     <dc:language>ja</dc:language>
 
     <!-- ファイルid -->
-    <dc:identifier id="unique-id">urn:uuid:1C56F72D-FF85-4580-A078-A743C3D2F08B</dc:identifier>
+    <dc:identifier id="unique-id">urn:uuid:8CD2C765-DF2F-4DE7-B202-1BA9B291F5DA</dc:identifier>
 
     <!-- 更新日 -->
     <meta property="dcterms:modified">2022-04-27T00:00:00Z</meta>
@@ -196,7 +196,6 @@
     <item media-type="application/xhtml+xml" id="chapter4-2"  href="xhtml/4-2.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter4-3"  href="xhtml/4-3.xhtml"/>
     <item media-type="application/xhtml+xml" id="chapter4-4"  href="xhtml/4-4.xhtml"/>
-    <item media-type="application/xhtml+xml" id="index"     href="xhtml/index-word.xhtml"/>
     <item media-type="application/xhtml+xml" id="profile"     href="xhtml/profile.xhtml"/>
     <item media-type="application/xhtml+xml" id="colophon"    href="xhtml/colophon.xhtml"/>
 
@@ -243,7 +242,6 @@
     <itemref linear="yes" idref="chapter4-2"/>
     <itemref linear="yes" idref="chapter4-3"/>
     <itemref linear="yes" idref="chapter4-4"/>
-    <itemref linear="yes" idref="index"/>
     <itemref linear="yes" idref="profile"/>
     <itemref linear="yes" idref="colophon"/>
 </spine>
