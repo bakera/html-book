@@ -153,21 +153,10 @@ h1 .number{
 h2 {
     font-size: 1.5em;
     line-height: 1;
-    padding: 0.25em 1em 0.25em 0.75em;
+    padding: 0.25em 1em 0.25em 0.5em;
     border-radius: 0 1em 1em 0;
     color: #FEFFFD;
     background-color: #00A18A;
-}
-h2::before{
-    content: "";
-    display: inline-block;
-    width: 0;
-    height: 0;
-    vertical-align: middle;
-    margin: -0.25em 0.25em -0.25em -0.75em;
-    border: 0.825em solid transparent;
-    border-left: 0.5em solid #1a1a1a;
-    border-right: none;
 }
 h3{
     font-size: 1.25em;
