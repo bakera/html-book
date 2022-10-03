@@ -35,7 +35,7 @@
     <dc:language>ja</dc:language>
 
     <!-- ファイルid -->
-    <dc:identifier id="unique-id">urn:uuid:8CD2C765-DF2F-4DE7-B202-1BA9B291F5DA</dc:identifier>
+    <dc:identifier id="unique-id">urn:uuid:AD888F96-4F4D-4A42-81C3-592B6134EC6D</dc:identifier>
 
     <!-- 更新日 -->
     <meta property="dcterms:modified">2022-04-27T00:00:00Z</meta>
@@ -103,6 +103,7 @@
     <item media-type="image/png" id="fig3-5-51" href="image/C3_05_51_1C.png"/>
     <item media-type="image/png" id="fig3-5-55" href="image/C3_05_55_1C.png"/>
     <item media-type="image/png" id="fig3-5-62" href="image/C3_05_62_1C.png"/>
+    <item media-type="image/png" id="arabian" href="image/arabian.png"/>
     <item media-type="image/png" id="fig3-6-01" href="image/C3_06_01_1C.png"/>
     <item media-type="image/png" id="fig3-6-20" href="image/C3_06_20_1C.png"/>
     <item media-type="image/png" id="fig3-7-03" href="image/C3_07_03_1C.png"/>
