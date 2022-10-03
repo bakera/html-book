@@ -9,5 +9,6 @@ do
     | sed 's/<\/figcaption>/<\/figcaption>\n<div class="figbody">/g' \
     | sed 's/<\/figure>/<\/div>\n<\/figure>/g' \
     | sed 's/↩/ \(本文へ\)/g' \
+    | sed 's/إيان/<img src="..\/image\/arabian.png" alt="إيان" class="gryph" \/>/g' \
     > "./epub/root/item/xhtml/$HtmlFileName"
 done
