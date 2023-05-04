@@ -35,7 +35,7 @@
     <dc:language>ja</dc:language>
 
     <!-- ファイルid -->
-    <dc:identifier id="unique-id">urn:uuid:84344327-7BA9-407E-A56C-1B6C9F28F909</dc:identifier>
+    <dc:identifier id="unique-id">urn:uuid:AD888F96-4F4D-4A42-81C3-592B6134EC6D</dc:identifier>
 
     <!-- 更新日 -->
     <meta property="dcterms:modified">2022-04-27T00:00:00Z</meta>
@@ -66,6 +66,7 @@
     <item media-type="image/png" id="fig1-7-01" href="image/C1_07_01_1C.png"/>
     <item media-type="image/png" id="fig1-7-03" href="image/C1_07_03_1C.png"/>
     <item media-type="image/png" id="fig2-5-01" href="image/C2_05_01.png"/>
+    <item media-type="image/png" id="sushi" href="image/sushi.png"/>
     <item media-type="image/png" id="fig2-6-03" href="image/C2_06_03_1C.png"/>
     <item media-type="image/png" id="fig2-6-13" href="image/C2_06_13_1C.png"/>
     <item media-type="image/png" id="fig2-7-15" href="image/C2_07_15_1C.png"/>
@@ -102,6 +103,7 @@
     <item media-type="image/png" id="fig3-5-51" href="image/C3_05_51_1C.png"/>
     <item media-type="image/png" id="fig3-5-55" href="image/C3_05_55_1C.png"/>
     <item media-type="image/png" id="fig3-5-62" href="image/C3_05_62_1C.png"/>
+    <item media-type="image/png" id="arabian" href="image/arabian.png"/>
     <item media-type="image/png" id="fig3-6-01" href="image/C3_06_01_1C.png"/>
     <item media-type="image/png" id="fig3-6-20" href="image/C3_06_20_1C.png"/>
     <item media-type="image/png" id="fig3-7-03" href="image/C3_07_03_1C.png"/>

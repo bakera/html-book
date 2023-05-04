@@ -9,7 +9,6 @@ body {
 }
 code {
     font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
-    font-size: 85%;
     margin: 0;
 }
 pre {
@@ -154,21 +153,10 @@ h1 .number{
 h2 {
     font-size: 1.5em;
     line-height: 1;
-    padding: 0.25em 1em 0.25em 0.75em;
+    padding: 0.25em 1em 0.25em 0.5em;
     border-radius: 0 1em 1em 0;
     color: #FEFFFD;
     background-color: #00A18A;
-}
-h2::before{
-    content: "";
-    display: inline-block;
-    width: 0;
-    height: 0;
-    vertical-align: middle;
-    margin: -0.25em 0.25em -0.25em -0.75em;
-    border: 0.825em solid transparent;
-    border-left: 0.5em solid #1a1a1a;
-    border-right: none;
 }
 h3{
     font-size: 1.25em;
@@ -195,6 +183,11 @@ h5 {
     font-size: 1em;
     padding: 0;
 }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: inherit;
+    text-decoration: none;
+}
+
 p {
     margin: 1em 0;
     text-indent: 1em;
@@ -206,7 +199,6 @@ blockquote {
     padding: 0.5em;
     background-color: #CCE7DC;
     color: #1a1a1a;
-    page-break-inside: avoid;
 }
 em {
     font-style: normal;
@@ -246,7 +238,6 @@ li > ol, li > ul {
 figure{
     margin: 2em 1em;
     padding: 0;
-    page-break-inside: avoid;
 }
 figcaption{
     font-size: 0.9em;
@@ -264,28 +255,32 @@ figure img {
     max-width: 100%;
     vertical-align: top;
 }
-.column {
-    border: #00A18A solid 3px;
+section.column {
+    border: #00A18A solid 2px;
     border-radius: 0.5em;
-    margin: 1em 2%;
-    padding: 1em 2%;
-    page-break-inside: avoid;
+    margin: 1em 0;
+    padding: 1em;
 }
-.column h2,
-.column h3,
-.column h4{
+section.column h2,
+section.column h3,
+section.column h4{
     margin: 0;
     padding: 0 0 0.25em 0;
     color: #00A18A;
+    font-size: 1.5em;
     background-color: #FEFFFD;
     background-image: none;
     border-bottom: #00A18A solid 2px;
     border-radius: 0;
 }
-.column h2::before{
+section.column h2::before,
+section.column h4::before{
     display: none;
 }
 
+img.gryph{
+    height: 1em;
+}
 
 /* cover */
 
